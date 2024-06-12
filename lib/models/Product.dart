@@ -27,10 +27,11 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
+      "assets/images/moisturizer.png",
+      "assets/images/moisturizer1.png",
+      "assets/images/moisturizer2.png",
+      "assets/images/moisturizer3.png",
+      "assets/images/moisturizer4.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -38,8 +39,8 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
-    price: 64.99,
+    title: "Tolerriane Fluide Oil Free Moisturizer",
+    price: 30.99,
     description: description,
     rating: 4.8,
     isFavourite: true,
@@ -48,7 +49,7 @@ List<Product> demoProducts = [
   Product(
     id: 2,
     images: [
-      "assets/images/Image Popular Product 2.png",
+      "assets/images/pixi.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -56,8 +57,8 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
-    price: 50.5,
+    title: "Pixi Hydrating Milky Serum",
+    price: 24,
     description: description,
     rating: 4.1,
     isPopular: true,
@@ -65,7 +66,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "assets/images/glap.png",
+      "assets/images/dalba.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -73,7 +74,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
+    title: "d'Alba White Truffle VEGAN First Spray Serum 100ml",
     price: 36.55,
     description: description,
     rating: 4.1,
@@ -83,7 +84,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "assets/images/wireless headset.png",
+      "assets/images/clinique1.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -91,8 +92,8 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Head",
-    price: 20.20,
+    title: "Moisture Surge™ 100H Auto-Replenishing Hydrator™",
+    price: 26,
     description: description,
     rating: 4.1,
     isFavourite: true,
@@ -100,10 +101,10 @@ List<Product> demoProducts = [
   Product(
     id: 1,
     images: [
-      "assets/images/ps4_console_white_1.png",
-      "assets/images/ps4_console_white_2.png",
-      "assets/images/ps4_console_white_3.png",
-      "assets/images/ps4_console_white_4.png",
+      "assets/images/clinique2.png",
+      "assets/images/detail_clinique1.png",
+      "assets/images/detail_clinique2.png",
+      "assets/images/detail_clinique3.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -111,7 +112,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Wireless Controller for PS4™",
+    title: "Clinique Smart Clinical Repair™ Wrinkle Correcting Serum",
     price: 64.99,
     description: description,
     rating: 4.8,
@@ -121,7 +122,7 @@ List<Product> demoProducts = [
   Product(
     id: 2,
     images: [
-      "assets/images/Image Popular Product 2.png",
+      "assets/images/cosrx1.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -129,8 +130,8 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Nike Sport White - Man Pant",
-    price: 50.5,
+    title: "COSRX Advanced Snail 96 Mucin Power Essence",
+    price: 30.43,
     description: description,
     rating: 4.1,
     isPopular: true,
@@ -138,7 +139,7 @@ List<Product> demoProducts = [
   Product(
     id: 3,
     images: [
-      "assets/images/glap.png",
+      "assets/images/laneige1.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -146,7 +147,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Gloves XC Omega - Polygon",
+    title: "Laneige Water Sleeping Mask",
     price: 36.55,
     description: description,
     rating: 4.1,
@@ -156,7 +157,7 @@ List<Product> demoProducts = [
   Product(
     id: 4,
     images: [
-      "assets/images/wireless headset.png",
+      "assets/images/cetaphil1.png",
     ],
     colors: [
       const Color(0xFFF6625E),
@@ -164,7 +165,7 @@ List<Product> demoProducts = [
       const Color(0xFFDECB9C),
       Colors.white,
     ],
-    title: "Logitech Head",
+    title: "Cetaphil Bright Healthy Radiance Gentle Renewing Cleanser",
     price: 20.20,
     description: description,
     rating: 4.1,
@@ -173,4 +174,4 @@ List<Product> demoProducts = [
 ];
 
 const String description =
-    "Wireless Controller for PS4™ gives you what you want in your gaming from over precision control your games to sharing …";
+    "This 3-in-1 cleanser offers gentle exfoliation using Vitamin E-infused jojoba beads to deeply cleanse the skin to reveal brighter, healthier skin in just 14 days. Formulated with GentleBright Technology™ containing Sea Daffodil and Niacinamide to help with improving the appearance of skin ageing and to even out skin tone while still respecting the skin barrier, making it the ideal brightening cleanser for those with sensitive skin.";
