@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
-
+import 'add_review_page.dart'; 
 import '../../models/Product.dart';
-import 'components/color_dots.dart';
 import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
+import 'add_review_page.dart';
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
@@ -27,13 +27,13 @@ class DetailsScreen extends StatelessWidget {
         ),
       );
     }
-    
+
     final product = args.product;
     final reviews = [
       {
         'rating': 5,
         'comment': 'Great product! Highly recommend.',
-        'image':  'assets/images/user-1.png',
+        'image': 'assets/images/user-1.png',
         'name': 'Kim Seokjin',
       },
       {
@@ -49,6 +49,7 @@ class DetailsScreen extends StatelessWidget {
         'name': 'Jang Wonyoung',
       },
     ];
+
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -75,7 +76,6 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
         ),
-    
       ),
       body: ListView(
         children: [
@@ -92,8 +92,16 @@ class DetailsScreen extends StatelessWidget {
                   color: const Color(0xFFF6F7F9),
                   child: Column(
                     children: [
-                      ColorDots(product: product),
                       Reviews(reviews: reviews),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, AddReviewScreen.routeName);
+                          },
+                          child: const Text("Add Your Review"),
+                        ),
+                      ),
                     ],
                   ),
                 ),
