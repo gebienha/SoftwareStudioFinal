@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/screens/moredetail/seemoredetail.dart';
 
 import '../../../constants.dart';
 import '../../../models/Product.dart';
-import 'seemoredetail.dart'; // Import the new page
 
-class ProductDescription extends StatelessWidget {
-   static String routeName = "/product_desc";
+class ProductDescription extends StatefulWidget {
   const ProductDescription({
     Key? key,
     required this.product,
@@ -17,6 +16,26 @@ class ProductDescription extends StatelessWidget {
   final GestureTapCallback? pressOnSeeMore;
 
   @override
+  _ProductDescriptionState createState() => _ProductDescriptionState();
+}
+
+class _ProductDescriptionState extends State<ProductDescription> {
+  late bool isFavourite;
+
+  @override
+  void initState() {
+    super.initState();
+    isFavourite = widget.product.isFavourite;
+  }
+
+  void toggleFavourite() {
+    setState(() {
+      isFavourite = !isFavourite;
+      widget.product.isFavourite = isFavourite; // Update the product's isFavourite status
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,32 +43,35 @@ class ProductDescription extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
-            product.title,
+            widget.product.title,
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         Align(
           alignment: Alignment.centerRight,
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            width: 48,
-            decoration: BoxDecoration(
-              color: product.isFavourite
-                  ? const Color(0xFFFFE6E6)
-                  : const Color(0xFFF5F6F9),
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20),
-                bottomLeft: Radius.circular(20),
+          child: GestureDetector(
+            onTap: toggleFavourite,
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              width: 48,
+              decoration: BoxDecoration(
+                color: isFavourite
+                    ? const Color(0xFFFFE6E6)
+                    : const Color(0xFFF5F6F9),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                ),
               ),
-            ),
-            child: SvgPicture.asset(
-              "assets/icons/Heart Icon_2.svg",
-              colorFilter: ColorFilter.mode(
-                  product.isFavourite
-                      ? const Color(0xFFFF4848)
-                      : const Color(0xFFDBDEE4),
-                  BlendMode.srcIn),
-              height: 16,
+              child: SvgPicture.asset(
+                "assets/icons/Heart Icon_2.svg",
+                colorFilter: ColorFilter.mode(
+                    isFavourite
+                        ? const Color(0xFFFF4848)
+                        : const Color(0xFFDBDEE4),
+                    BlendMode.srcIn),
+                height: 16,
+              ),
             ),
           ),
         ),
@@ -59,7 +81,7 @@ class ProductDescription extends StatelessWidget {
             right: 64,
           ),
           child: Text(
-            product.description,
+            widget.product.description,
             maxLines: 3,
           ),
         ),
@@ -70,9 +92,10 @@ class ProductDescription extends StatelessWidget {
           ),
           child: TextButton(
             onPressed: () {
-              Navigator.push(
+              Navigator.pushNamed(
                 context,
-                MaterialPageRoute(builder: (context) => DetailPage()),
+                SeeMoreDetailScreen.routeName,
+                arguments: ProductDetailsArguments(product: widget.product),
               );
             },
             child: const Row(
