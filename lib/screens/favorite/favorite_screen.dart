@@ -9,36 +9,48 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Filter the demoProducts to get only the favorite products
+    final favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+
     return SafeArea(
       child: Column(
         children: [
-          Text(
-            "Favorites",
-            style: Theme.of(context).textTheme.titleLarge,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "Favorites",
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
           ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: GridView.builder(
-                itemCount: demoProducts.length,
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 200,
-                  childAspectRatio: 0.7,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 16,
-                ),
-                itemBuilder: (context, index) => ProductCard(
-                  product: demoProducts[index],
-                  onPress: () => Navigator.pushNamed(
-                    context,
-                    DetailsScreen.routeName,
-                    arguments:
-                        ProductDetailsArguments(product: demoProducts[index]),
-                  ),
-                ),
-              ),
+              child: favoriteProducts.isNotEmpty
+                  ? GridView.builder(
+                      itemCount: favoriteProducts.length,
+                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 200,
+                        childAspectRatio: 0.7,
+                        mainAxisSpacing: 20,
+                        crossAxisSpacing: 16,
+                      ),
+                      itemBuilder: (context, index) => ProductCard(
+                        product: favoriteProducts[index],
+                        onPress: () => Navigator.pushNamed(
+                          context,
+                          DetailsScreen.routeName,
+                          arguments: ProductDetailsArguments(product: favoriteProducts[index]),
+                        ),
+                      ),
+                    )
+                  : Center(
+                      child: Text(
+                        "No favorite products yet.",
+                        style: Theme.of(context).textTheme.subtitle1,
+                      ),
+                    ),
             ),
-          )
+          ),
         ],
       ),
     );
