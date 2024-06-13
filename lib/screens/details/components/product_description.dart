@@ -3,8 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 import '../../../models/Product.dart';
+import 'seemoredetail.dart'; // Import the new page
 
 class ProductDescription extends StatelessWidget {
+   static String routeName = "/product_desc";
   const ProductDescription({
     Key? key,
     required this.product,
@@ -66,8 +68,13 @@ class ProductDescription extends StatelessWidget {
             horizontal: 20,
             vertical: 12,
           ),
-          child: GestureDetector(
-            onTap: () {},
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailPage()),
+              );
+            },
             child: const Row(
               children: [
                 Text(
@@ -75,7 +82,7 @@ class ProductDescription extends StatelessWidget {
                   style: TextStyle(
                       fontWeight: FontWeight.w600, color: kPrimaryColor),
                 ),
-                SizedBox(width: 5),
+                SizedBox(width: 3),
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
