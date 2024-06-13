@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 
 import '../../models/Product.dart';
@@ -7,6 +6,7 @@ import 'components/color_dots.dart';
 import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
+import 'components/reviews.dart';
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
@@ -15,9 +15,40 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductDetailsArguments agrs =
-        ModalRoute.of(context)!.settings.arguments as ProductDetailsArguments;
-    final product = agrs.product;
+    final args = ModalRoute.of(context)!.settings.arguments;
+    if (args == null || args is! ProductDetailsArguments) {
+      // Handle the error by showing a placeholder or returning early
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text("Product Details"),
+        ),
+        body: const Center(
+          child: Text("No product details available."),
+        ),
+      );
+    }
+    
+    final product = args.product;
+    final reviews = [
+      {
+        'rating': 5,
+        'comment': 'Great product! Highly recommend.',
+        'image':  'assets/images/user-1.png',
+        'name': 'Kim Seokjin',
+      },
+      {
+        'rating': 4,
+        'comment': 'Good quality, but a bit expensive.',
+        'image': 'assets/images/user-2.jpeg',
+        'name': 'Cha Eunwoo',
+      },
+      {
+        'rating': 3,
+        'comment': 'Average product, not bad but not great either.',
+        'image': 'assets/images/user-3.jpg',
+        'name': 'Jang Wonyoung',
+      },
+    ];
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -44,35 +75,7 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
         ),
-        actions: [
-          Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(right: 20),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Row(
-                  children: [
-                    const Text(
-                      "4.7",
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(width: 4),
-                    SvgPicture.asset("assets/icons/Star Icon.svg"),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
+    
       ),
       body: ListView(
         children: [
@@ -85,14 +88,15 @@ class DetailsScreen extends StatelessWidget {
                   product: product,
                   pressOnSeeMore: () {},
                 ),
-                // TopRoundedContainer(
-                //   color: const Color(0xFFF6F7F9),
-                //   child: Column(
-                //     children: [
-                //       ColorDots(product: product),
-                //     ],
-                //   ),
-                // ),
+                TopRoundedContainer(
+                  color: const Color(0xFFF6F7F9),
+                  child: Column(
+                    children: [
+                      ColorDots(product: product),
+                      Reviews(reviews: reviews),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
