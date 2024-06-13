@@ -6,7 +6,7 @@ import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
-import 'add_review_page.dart';
+
 
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
