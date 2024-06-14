@@ -1,17 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/components/product_card.dart';
+import 'package:shop_app/components/favorites_card.dart';
 import 'package:shop_app/models/Product.dart';
 
 import '../details/details_screen.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Filter the demoProducts to get only the favorite products
-    final favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+  _FavoriteScreenState createState() => _FavoriteScreenState();
+}
 
+class _FavoriteScreenState extends State<FavoriteScreen> {
+  late List<Product> favoriteProducts;
+
+  @override
+  void initState() {
+    super.initState();
+    favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+  }
+
+  void updateFavoriteStatus() {
+    setState(() {
+      favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
@@ -26,20 +42,18 @@ class FavoriteScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: favoriteProducts.isNotEmpty
-                  ? GridView.builder(
+                  ? ListView.builder(
                       itemCount: favoriteProducts.length,
-                      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 200,
-                        childAspectRatio: 0.7,
-                        mainAxisSpacing: 20,
-                        crossAxisSpacing: 16,
-                      ),
-                      itemBuilder: (context, index) => ProductCard(
-                        product: favoriteProducts[index],
-                        onPress: () => Navigator.pushNamed(
-                          context,
-                          DetailsScreen.routeName,
-                          arguments: ProductDetailsArguments(product: favoriteProducts[index]),
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 16.0), // Add space after each FavoriteCard
+                        child: FavoriteCard(
+                          product: favoriteProducts[index],
+                          onPress: () => Navigator.pushNamed(
+                            context,
+                            DetailsScreen.routeName,
+                            arguments: ProductDetailsArguments(product: favoriteProducts[index]),
+                          ),
+                          onFavoriteToggled: updateFavoriteStatus,
                         ),
                       ),
                     )
