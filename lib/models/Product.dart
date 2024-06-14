@@ -227,7 +227,7 @@ const String briefdescription8 = "This 3-in-1 cleanser offers gentle exfoliation
 
 
 const String description1 = "This oil-free moisturizer hydrates and soothes sensitive skin. Formulated with Glycerin, Vitamin B3, and La Roche-Posay Thermal Water to hydrate for up to 48-hours and help to replenish the skin's moisture barrier. With a limited number of ingredients in a light, mattifying texture, this hydrating formula improves skin comfort." "\n\n• Dermatologist Tested\n•Suitable for sensitive skin\n• Paraben Free\n•Fragrance Free\n•Oil Free\n•Non-comedogenic\n• Allergy Tested\n• Preservative Free\n";
-const String description2 = "• This nutrient-rich serum restores dehydrated skin, revealing its natural radiance.\n•Silky-smooth & lightweight, it gives a burst of hydration without a heavy feel.\n• Rose Flower extract, Jojoba Oil and Aloe Vera nourish, while Glycerin traps moisture to the skin for a plumped effect.\n• Volume: 30 ml / 1.01 fl oz" ;
+const String description2 = "• This nutrient-rich serum restores dehydrated skin, revealing its natural radiance.\n• Silky-smooth & lightweight, it gives a burst of hydration without a heavy feel.\n• Rose Flower extract, Jojoba Oil and Aloe Vera nourish, while Glycerin traps moisture to the skin for a plumped effect.\n• Volume: 30 ml / 1.01 fl oz" ;
 const String description3 =  "Premium White Truffles carefully extracted from Piedmont, Italy, infused with Tocopherol(vitamin E) make d'Alba's signature ingredient Trufferol. Full of antioxidants, white truffles are 6 times more effective than well-known propolis.";
 const String description4 =  "Refreshing oil-free face moisturizer with aloe bioferment and hyaluronic acid delivers instant hydration that soothes in 3 seconds. 100% instantly show a boost in hydration and glow.";
 const String description5 =  "Clinique's most advanced anti-aging serum with 9.5% peptides and 1% advanced retinoid. Helps reduce the look of wrinkles, visibly lift, smooth, firm, and boost radiance. 100% show visibly reduced lines and wrinkles.*";
@@ -263,7 +263,7 @@ const String ingredient7 = "";
 const String ingredient8 = "";
 
 const String howto1 = "Step 1: After cleansing, apply to face and neck\nStep 2: Apply the moisturizer in gentle circular motions\nStep 3: Repeat application process morning and/or evening";
-const String howto2 = "• Use: Either in the AM and PM or when needed\n• Step 1: Cleanse your skin with a Pixi Beauty facial cleanser\n• Step 2: Apply a Pixi Beauty Facial Toner\n • Step 3: Massage two to three drops of Hydrating Milky Serum onto clean, dry skin\n• Step 4: Apply Pixi Beauty facial moisturizer";
+const String howto2 = "• Use: Either in the AM and PM or when needed\n• Step 1: Cleanse your skin with a Pixi Beauty facial cleanser\n• Step 2: Apply a Pixi Beauty Facial Toner\n• Step 3: Massage two to three drops of Hydrating Milky Serum onto clean, dry skin\n• Step 4: Apply Pixi Beauty facial moisturizer";
 const String howto3 = "";
 const String howto4 = "";
 const String howto5 = "";
