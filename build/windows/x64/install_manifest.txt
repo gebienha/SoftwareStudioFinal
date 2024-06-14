@@ -73,8 +73,8 @@ C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/ru
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/Pattern%20Success.png
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/paypal.png
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/pixi.png
-C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/pixi2.webp
-C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/pixi3.webp
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/pixi2.png
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/pixi3.png
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/product%201%20image.png
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/Profile%20Image.png
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/Debug/data/flutter_assets/assets/images/ps4_console_blue_1.png
