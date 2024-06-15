@@ -15,6 +15,8 @@ import 'screens/sign_up/sign_up_screen.dart';
 import 'screens/splash/splash_screen.dart';
 import 'screens/details/add_review_page.dart';
 import 'screens/moredetail/seemoredetail.dart';
+import 'screens/AIChat/AIChatScreen.dart';
+import 'screens/questions/quiz.dart';
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
@@ -33,4 +35,6 @@ final Map<String, WidgetBuilder> routes = {
   ProfileScreen.routeName: (context) => const ProfileScreen(),
   AddReviewScreen.routeName: (context) => const AddReviewScreen(),
   SeeMoreDetailScreen.routeName: (context) => const SeeMoreDetailScreen(),
+  AIChatScreen.routeName: (context) => const AIChatScreen(),
+  Quiz.routeName: (context) => const Quiz(),
 };
