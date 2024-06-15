@@ -7,17 +7,47 @@ import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
 
-
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   static String routeName = "/details";
 
-  const DetailsScreen({super.key});
+  const DetailsScreen({Key? key}) : super(key: key);
+
+  @override
+  _DetailsScreenState createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  List<Map<String, dynamic>> reviews = [
+    {
+      'rating': 5,
+      'comment': 'Great product! Highly recommend.',
+      'image': 'assets/images/user-1.png',
+      'name': 'Kim Seokjin',
+    },
+    {
+      'rating': 4,
+      'comment': 'Good quality, but a bit expensive.',
+      'image': 'assets/images/user-2.jpeg',
+      'name': 'Cha Eunwoo',
+    },
+    {
+      'rating': 3,
+      'comment': 'Average product, not bad but not great either.',
+      'image': 'assets/images/user-3.jpg',
+      'name': 'Jang Wonyoung',
+    },
+  ];
+
+  void _addReview(Map<String, dynamic> review) {
+    setState(() {
+      reviews.add(review);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments;
     if (args == null || args is! ProductDetailsArguments) {
-      // Handle the error by showing a placeholder or returning early
       return Scaffold(
         appBar: AppBar(
           title: const Text("Product Details"),
@@ -29,26 +59,6 @@ class DetailsScreen extends StatelessWidget {
     }
 
     final product = args.product;
-    final reviews = [
-      {
-        'rating': 5,
-        'comment': 'Great product! Highly recommend.',
-        'image': 'assets/images/user-1.png',
-        'name': 'Kim Seokjin',
-      },
-      {
-        'rating': 4,
-        'comment': 'Good quality, but a bit expensive.',
-        'image': 'assets/images/user-2.jpeg',
-        'name': 'Cha Eunwoo',
-      },
-      {
-        'rating': 3,
-        'comment': 'Average product, not bad but not great either.',
-        'image': 'assets/images/user-3.jpg',
-        'name': 'Jang Wonyoung',
-      },
-    ];
 
     return Scaffold(
       extendBody: true,
@@ -96,8 +106,15 @@ class DetailsScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, AddReviewScreen.routeName);
+                          onPressed: () async {
+                            final newReview = await Navigator.pushNamed(
+                              context, 
+                              AddReviewScreen.routeName
+                            );
+
+                            if (newReview != null && newReview is Map<String, dynamic>) {
+                              _addReview(newReview);
+                            }
                           },
                           child: const Text("Add Your Review"),
                         ),
