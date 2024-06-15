@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class AddReviewScreen extends StatefulWidget {
   static String routeName = "/add_review";
 
-  const AddReviewScreen({super.key});
+  const AddReviewScreen({Key? key}) : super(key: key);
 
   @override
   _AddReviewScreenState createState() => _AddReviewScreenState();
@@ -15,29 +14,27 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
   String _selectedUsagePeriod = '1 day';
   bool _isOtherSelected = false;
   final TextEditingController _otherUsageController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _reviewController = TextEditingController();
+
+  @override
+  void dispose() {
+    _otherUsageController.dispose();
+    _nameController.dispose();
+    _reviewController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            style: ElevatedButton.styleFrom(
-              shape: const CircleBorder(),
-              padding: EdgeInsets.zero,
-              elevation: 0,
-              backgroundColor: Colors.white,
-            ),
-            child: const Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.black,
-              size: 20,
-            ),
-          ),
+        title: const Text("Add Review"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: Padding(
@@ -53,15 +50,17 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _nameController,
+              decoration: const InputDecoration(
                 labelText: "Name",
                 border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: _reviewController,
+              decoration: const InputDecoration(
                 labelText: "Review",
                 border: OutlineInputBorder(),
               ),
@@ -116,7 +115,16 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // TODO
+                if (_nameController.text.isNotEmpty && _reviewController.text.isNotEmpty && _rating > 0) {
+                  final newReview = {
+                    'name': _nameController.text,
+                    'comment': _reviewController.text,
+                    'rating': _rating,
+                    'image': 'assets/images/user-placeholder.png', // Placeholder image
+                  };
+
+                  Navigator.pop(context, newReview);
+                }
               },
               child: const Text("Submit Review"),
             ),
@@ -124,11 +132,5 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _otherUsageController.dispose();
-    super.dispose();
   }
 }
