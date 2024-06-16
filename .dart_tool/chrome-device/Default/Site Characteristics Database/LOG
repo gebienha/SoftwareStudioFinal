@@ -1,2 +1,20 @@
-2024/06/15-22:16:49.111 356c Creating DB C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.c2d4146\flutter_tools_chrome_device.60690ace\Default\Site Characteristics Database since it was missing.
-2024/06/15-22:16:49.151 356c Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.c2d4146\flutter_tools_chrome_device.60690ace\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/16-21:41:57.518 1e54 Reusing MANIFEST C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.53a667ba\flutter_tools_chrome_device.74dc3481\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/16-21:41:57.518 1e54 Recovering log #3
+2024/06/16-21:41:57.518 1e54 Level-0 table #10: started
+2024/06/16-21:41:57.523 1e54 Level-0 table #10: 194 bytes OK
+2024/06/16-21:41:57.523 1e54 Recovering log #6
+2024/06/16-21:41:57.523 1e54 Level-0 table #11: started
+2024/06/16-21:41:57.526 1e54 Level-0 table #11: 165 bytes OK
+2024/06/16-21:41:57.527 1e54 Recovering log #10
+2024/06/16-21:41:57.527 1e54 Reusing old log C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.53a667ba\flutter_tools_chrome_device.74dc3481\Default\Site Characteristics Database/000010.log 
+2024/06/16-21:41:57.533 1e54 Delete type=0 #3
+2024/06/16-21:41:57.533 1e54 Delete type=0 #6
+2024/06/16-21:41:57.535 1e54 Compacting 5@0 + 0@1 files
+2024/06/16-21:41:57.543 1e54 Generated table #12@0: 2 keys, 194 bytes
+2024/06/16-21:41:57.543 1e54 Compacted 5@0 + 0@1 files => 194 bytes
+2024/06/16-21:41:57.547 1e54 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/06/16-21:41:57.547 1e54 Delete type=2 #4
+2024/06/16-21:41:57.547 1e54 Delete type=2 #7
+2024/06/16-21:41:57.547 1e54 Delete type=2 #8
+2024/06/16-21:41:57.547 1e54 Delete type=2 #10
+2024/06/16-21:41:57.548 1e54 Delete type=2 #11

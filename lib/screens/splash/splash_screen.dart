@@ -4,6 +4,7 @@ import '../../constants.dart';
 import '../sign_in/sign_in_screen.dart';
 import 'components/splash_content.dart';
 import '../home/home_screen.dart';
+import '../questions/quiz.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash";
@@ -82,7 +83,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       const Spacer(flex: 3),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, SignInScreen.routeName);
+                          Navigator.pushNamed(context, Quiz.routeName);//SignInScreen.routeName);
                         },
                         child: const Text("Continue"),
                       ),

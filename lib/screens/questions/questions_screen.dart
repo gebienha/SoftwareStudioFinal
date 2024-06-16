@@ -48,6 +48,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             Text(
               currentQuestion.text,
               textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
+                fontFamily: 'Muli'
+              ),
             ),
             const SizedBox(height: 30),
             ...currentQuestion.answers.map((answer) {
