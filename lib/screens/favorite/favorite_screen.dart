@@ -60,7 +60,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   : Center(
                       child: Text(
                         "No favorite products yet.",
-                        style: Theme.of(context).textTheme.subtitle1,
+                        //style: Theme.of(context).textTheme.subtitle1,
                       ),
                     ),
             ),

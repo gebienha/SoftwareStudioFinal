@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
 import 'questions_screen.dart';
 import 'quiz_question.dart';
 import 'results_screen.dart';
 import '../AIChat/AIChatScreen.dart';
+import '../../../constants.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -61,14 +63,16 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 78, 13, 151),
-                Color.fromARGB(255, 107, 15, 168),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            gradient: kPrimaryGradientColor,
+            // LinearGradient(
+            //   colors: [
+
+            //     // Color.fromARGB(255, 150, 201, 191),
+            //     // Color.fromARGB(255, 0, 0, 0),
+            //   ],
+            //   begin: Alignment.topLeft,
+            //   end: Alignment.bottomRight,
+            // ),
           ),
           child: screenWidget,
         ),
