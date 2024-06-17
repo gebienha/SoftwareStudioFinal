@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
-
+import 'package:provider/provider.dart';
 import 'screens/cart/cart_screen.dart';
 import 'screens/complete_profile/complete_profile_screen.dart';
 import 'screens/details/details_screen.dart';
@@ -17,6 +17,8 @@ import 'screens/details/add_review_page.dart';
 import 'screens/moredetail/seemoredetail.dart';
 import 'screens/AIChat/AIChatScreen.dart';
 import 'screens/questions/quiz.dart';
+import 'models/Review.dart';
+
 // We use name route
 // All our routes will be available here
 final Map<String, WidgetBuilder> routes = {
@@ -30,7 +32,10 @@ final Map<String, WidgetBuilder> routes = {
   OtpScreen.routeName: (context) => const OtpScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
   ProductsScreen.routeName: (context) => const ProductsScreen(),
-  DetailsScreen.routeName: (context) => const DetailsScreen(),
+  DetailsScreen.routeName: (context) => ChangeNotifierProvider(
+        create: (context) => ReviewsProvider(),
+        child: const DetailsScreen(),
+      ),
   CartScreen.routeName: (context) => const CartScreen(),
   ProfileScreen.routeName: (context) => const ProfileScreen(),
   AddReviewScreen.routeName: (context) => const AddReviewScreen(),
