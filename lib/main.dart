@@ -35,3 +35,24 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+class NavigationService {
+  static final NavigationService _instance = NavigationService._internal();
+
+  factory NavigationService() {
+    return _instance;
+  }
+
+  NavigationService._internal();
+
+  Function(int index)? updateIndex;
+
+  void setUpdateIndexCallback(Function(int index) callback) {
+    updateIndex = callback;
+  }
+
+  void callUpdateIndex(int index) {
+    if (updateIndex != null) {
+      updateIndex!(index);
+    }
+  }
+}
