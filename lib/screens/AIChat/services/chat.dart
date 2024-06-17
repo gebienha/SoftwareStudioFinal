@@ -4,10 +4,7 @@ import '../models/chat_message.dart';
 import 'package:http/http.dart' as http;
 
 class ChatService {
-  static const String _apiKey =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiN2QzMWYxYzQtMmRlZS00OWYyLWFkOGMtYzliZDhjMzU0MzUxIiwidHlwZSI6ImFwaV90b2tlbiJ9.MztGlxMf72GcyRcUQGPBfs9bjmpRV4EVgLRuFVdaJdA'; // FIXME: Replace with your API key
-  static const String _url = 'https://api.openai.com/v1/chat/completions';
-
+  
   final _messagesStreamController =
       StreamController<List<ChatMessage>>.broadcast();
   // Assume that the messages are stored in descending order (latest message first)
