@@ -4,13 +4,16 @@ import 'routes.dart';
 import 'theme.dart';
 import 'models/Review.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/screens/questions/quiz.dart';
+import 'package:shop_app/screens/questions/results_screen.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ReviewsProvider()),
-        // Add other providers here if needed
+        ChangeNotifierProvider(create: (context) => BenderaProvider()),
+        ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
       ],
       child: MyApp(),
     ),
