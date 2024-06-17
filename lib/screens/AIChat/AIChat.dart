@@ -5,6 +5,8 @@ import '../../constants.dart';
 import 'components/AIChat_form.dart';
 import 'models/chat_message.dart';
 import 'services/assistant.dart';
+import 'package:shop_app/screens/questions/results_screen.dart';
+import 'package:provider/provider.dart';
 //import 'services/chat.dart';
 
 class AIChat extends StatefulWidget {
@@ -20,6 +22,18 @@ class _ChatScreenState extends State<AIChat> {
   void initState() {
     super.initState();
     _chatService.fetchMessages();
+    
+    // Get the summary data from the provider
+    final summaryData = Provider.of<QuizSummaryProvider>(context, listen: false).summaryData;
+    
+    // Format the summary data as a string
+    final summaryMessage = summaryData.map((data) {
+      final questionIndex = data['question_index'] as int?;
+      return 'Q${questionIndex != null ? questionIndex + 1 : 'N/A'}: ${data['question']}\nYour Answer: ${data['user_answer']}';
+    }).join('\n\n');
+    
+    // Send the summary message
+    _chatService.fetchPromptResponse(summaryMessage);
   }
 
   @override
