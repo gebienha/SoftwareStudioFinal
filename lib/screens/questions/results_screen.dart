@@ -3,7 +3,19 @@ import 'package:flutter/material.dart';
 import 'questions_summary.dart';
 import 'quiz_question.dart';
 import '../login_success/login_success_screen.dart';
+import 'package:provider/provider.dart';
 //import 'components/questions_form.dart';
+
+class QuizSummaryProvider with ChangeNotifier {
+  List<Map<String, Object>> _summaryData = [];
+
+  List<Map<String, Object>> get summaryData => _summaryData;
+
+  void setSummaryData(List<Map<String, Object>> summary) {
+    _summaryData = summary;
+    notifyListeners();
+  }
+}
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
@@ -38,6 +50,8 @@ class ResultsScreen extends StatelessWidget {
     /*final numCorrectQuestions = summaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
     }).length;*/
+    final summary = summaryData;
+    Provider.of<QuizSummaryProvider>(context, listen: false).setSummaryData(summary);
 
     return SizedBox(
       width: double.infinity,
