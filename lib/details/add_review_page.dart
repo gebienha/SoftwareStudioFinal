@@ -116,10 +116,12 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
             ElevatedButton(
               onPressed: () {
                 if (_nameController.text.isNotEmpty && _reviewController.text.isNotEmpty && _rating > 0) {
+                  final usagePeriod = _isOtherSelected ? _otherUsageController.text : _selectedUsagePeriod;
                   final newReview = {
                     'name': _nameController.text,
                     'comment': _reviewController.text,
                     'rating': _rating,
+                    'usagePeriod': usagePeriod,
                     'image': 'assets/images/user-placeholder.png', // Placeholder image
                   };
 
