@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AspectRatio(
-              aspectRatio: 1.02,
+              aspectRatio: aspectRetio,
               child: Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -51,7 +51,7 @@ class ProductCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    color: kPrimaryColor,
+                    color: Color(0xFF60C6A2), // Green color for price
                   ),
                 ),
                 InkWell(
@@ -71,7 +71,7 @@ class ProductCard extends StatelessWidget {
                       "assets/icons/Heart Icon_2.svg",
                       colorFilter: ColorFilter.mode(
                           product.isFavourite
-                              ? const Color(0xFFFF4848)
+                              ? Color.fromARGB(255, 83, 98, 232)
                               : const Color(0xFFDBDEE4),
                           BlendMode.srcIn),
                     ),

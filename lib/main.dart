@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
-
 import 'routes.dart';
 import 'theme.dart';
+import 'models/Review.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ReviewsProvider()),
+        // Add other providers here if needed
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -23,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

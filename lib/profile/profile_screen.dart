@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
 
@@ -11,7 +10,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profile"),
+        title: null,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
+        leading: const SizedBox(), // This removes the back arrow
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),

@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/cart/cart_screen.dart';
-import 'add_review_page.dart'; 
+import 'package:provider/provider.dart';
+import 'package:shop_app/cart/cart_screen.dart';
+import 'add_review_page.dart';
+import 'package:shop_app/models/Review.dart';
 import '../../models/Product.dart';
 import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
 
-
 class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
 
-  const DetailsScreen({super.key});
+  const DetailsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments;
     if (args == null || args is! ProductDetailsArguments) {
-      // Handle the error by showing a placeholder or returning early
       return Scaffold(
         appBar: AppBar(
           title: const Text("Product Details"),
@@ -29,26 +29,7 @@ class DetailsScreen extends StatelessWidget {
     }
 
     final product = args.product;
-    final reviews = [
-      {
-        'rating': 5,
-        'comment': 'Great product! Highly recommend.',
-        'image': 'assets/images/user-1.png',
-        'name': 'Kim Seokjin',
-      },
-      {
-        'rating': 4,
-        'comment': 'Good quality, but a bit expensive.',
-        'image': 'assets/images/user-2.jpeg',
-        'name': 'Cha Eunwoo',
-      },
-      {
-        'rating': 3,
-        'comment': 'Average product, not bad but not great either.',
-        'image': 'assets/images/user-3.jpg',
-        'name': 'Jang Wonyoung',
-      },
-    ];
+    final reviewsProvider = Provider.of<ReviewsProvider>(context);
 
     return Scaffold(
       extendBody: true,
@@ -92,12 +73,19 @@ class DetailsScreen extends StatelessWidget {
                   color: const Color(0xFFF6F7F9),
                   child: Column(
                     children: [
-                      Reviews(reviews: reviews),
+                      Reviews(reviews: reviewsProvider.reviews),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, AddReviewScreen.routeName);
+                          onPressed: () async {
+                            final newReview = await Navigator.pushNamed(
+                              context,
+                              AddReviewScreen.routeName,
+                            );
+
+                            if (newReview != null && newReview is Map<String, dynamic>) {
+                              reviewsProvider.addReview(newReview);
+                            }
                           },
                           child: const Text("Add Your Review"),
                         ),
