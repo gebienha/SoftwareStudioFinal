@@ -75,16 +75,16 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            gradient: kPrimaryGradientColor,
-            // LinearGradient(
-            //   colors: [
+            gradient: 
+            LinearGradient(
+              colors: [
 
-            //     // Color.fromARGB(255, 150, 201, 191),
-            //     // Color.fromARGB(255, 0, 0, 0),
-            //   ],
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.bottomRight,
-            // ),
+                Color.fromARGB(255, 197, 237, 224),
+                Color.fromARGB(255, 255, 255, 255),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
           child: screenWidget,
         ),

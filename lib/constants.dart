@@ -5,7 +5,7 @@ const kPrimaryLightColor = Color(0xFFFFECDF);
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
-  colors: [Color(4289131218), Color.fromARGB(255, 97, 199, 162)],
+  colors: [Color.fromARGB(255, 174, 237, 211), Color.fromARGB(255, 91, 189, 153)],
 );
 const kSecondaryColor = Color(0xFF979797);
 const kTextColor = Colors.black;
