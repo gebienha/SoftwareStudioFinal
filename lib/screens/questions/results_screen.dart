@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
 
 import 'questions_summary.dart';
 import 'quiz_question.dart';
@@ -62,13 +63,29 @@ class ResultsScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Text(
+                'We\'ve got your result! :D',
+                style: TextStyle(
+                  fontFamily: 'Muli',
+                  fontSize: 30,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+              ),
+              const SizedBox(height: 20),
               TextButton.icon(
                 onPressed: _onRestart,
                 style: TextButton.styleFrom(
-                  foregroundColor: Colors.white,
+                  backgroundColor: kPrimaryColor,
+                  foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 ),
-                icon: const Icon(Icons.refresh),
-                label: const Text('Restart Quiz!'),
+                //icon: const Icon(Icons.arrow_forward_ios),
+                label: const Text(
+                  'Proceed to Chat', 
+                style: TextStyle(
+                  fontSize: 15, 
+                  color: Colors.white
+                  ),
+                ),
               ),
             ],
           ),
