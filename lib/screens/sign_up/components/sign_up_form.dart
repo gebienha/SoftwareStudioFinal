@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
@@ -66,8 +65,16 @@ class _SignUpFormState extends State<SignUpForm> {
             decoration: const InputDecoration(
               labelText: "Email",
               hintText: "Enter your email",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
+              labelStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
             ),
@@ -97,8 +104,16 @@ class _SignUpFormState extends State<SignUpForm> {
             decoration: const InputDecoration(
               labelText: "Password",
               hintText: "Enter your password",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
+              labelStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
             ),
@@ -128,8 +143,16 @@ class _SignUpFormState extends State<SignUpForm> {
             decoration: const InputDecoration(
               labelText: "Confirm Password",
               hintText: "Re-enter your password",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
+              labelStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
             ),
@@ -144,7 +167,23 @@ class _SignUpFormState extends State<SignUpForm> {
                 Navigator.pushNamed(context, CompleteProfileScreen.routeName);
               }
             },
-            child: const Text("Continue"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF60C6A2),
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              minimumSize: Size(100, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            child: const Text(
+              "Continue",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ],
       ),

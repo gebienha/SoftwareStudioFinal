@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class OtpForm extends StatefulWidget {
-  const OtpForm({
-    Key? key,
-  }) : super(key: key);
+  const OtpForm({Key? key}) : super(key: key);
 
   @override
   _OtpFormState createState() => _OtpFormState();
@@ -43,7 +41,7 @@ class _OtpFormState extends State<OtpForm> {
     return Form(
       child: Column(
         children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -104,10 +102,26 @@ class _OtpFormState extends State<OtpForm> {
               ),
             ],
           ),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           ElevatedButton(
             onPressed: () {},
-            child: const Text("Continue"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF60C6A2),
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              minimumSize: Size(100, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            child: const Text(
+              "Continue",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ],
       ),
