@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../constants.dart';
-
 class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
     Key? key,
     required this.svgSrc,
     this.numOfitem = 0,
     required this.press,
+    this.color = Colors.white,
+    this.backgroundColor,
   }) : super(key: key);
 
   final String svgSrc;
   final int numOfitem;
   final GestureTapCallback press;
+  final Color color;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +26,16 @@ class IconBtnWithCounter extends StatelessWidget {
         clipBehavior: Clip.none,
         children: [
           Container(
-            padding: const EdgeInsets.all(12),
-            height: 46,
-            width: 46,
+            padding: const EdgeInsets.all(8), // Adjusted padding to make the button smaller
+            height: 40, // Adjusted height to make the button smaller
+            width: 40, // Adjusted width to make the button smaller
             decoration: BoxDecoration(
-              color: kSecondaryColor.withOpacity(0.1),
+              color: backgroundColor ?? const Color(0xFFE0E0E0), // Lighter gray background
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(
               svgSrc,
-              color: Colors.white, // White icon inside the circle
+              color: color, // Use the specified icon color
             ),
           ),
           if (numOfitem != 0)
