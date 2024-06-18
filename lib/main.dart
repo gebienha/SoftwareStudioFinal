@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'routes.dart';
 import 'theme.dart';
 import 'models/Review.dart';
@@ -7,11 +9,17 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/screens/questions/results_screen.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  // Make sure you have your Firebase options configured
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ReviewsProvider()),
+        ChangeNotifierProvider(create: (context) => ReviewsProvider()),
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
       ],
