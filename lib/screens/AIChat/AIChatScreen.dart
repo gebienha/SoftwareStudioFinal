@@ -25,10 +25,14 @@ class AIChatScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
             onPressed: () {
+              int flag;
               final benderaProvider = Provider.of<BenderaProvider>(context, listen: false);
-              benderaProvider.bendera = 1;
+              flag= benderaProvider.bendera== 0? 1: 0;
+              benderaProvider.bendera = 1; // This will automatically save to Firestore
               NavigationService().callUpdateIndex(0);  // Call the global method to update index
-              Navigator.pop(context);
+              if (flag==1){
+                Navigator.pop(context);
+              }
             },
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
