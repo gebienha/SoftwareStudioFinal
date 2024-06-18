@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ReviewsProvider with ChangeNotifier {
   //demo data for reviews
@@ -27,9 +28,19 @@ class ReviewsProvider with ChangeNotifier {
   ];
 
   List<Map<String, dynamic>> get reviews => _reviews;
+  ReviewsProvider() {
+    fetchReviews();
+  }
+  
+  Future<void> fetchReviews() async {
+    final snapshot = await FirebaseFirestore.instance.collection('reviews').get();
+    _reviews.addAll(snapshot.docs.map((doc) => doc.data()).toList());
+    notifyListeners();
+  }
 
-  void addReview(Map<String, dynamic> review) {
+  Future<void> addReview(Map<String, dynamic> review) async {
+    await FirebaseFirestore.instance.collection('reviews').add(review);
     _reviews.add(review);
-    notifyListeners(); //notify listeners for data changed
+    notifyListeners();
   }
 }
