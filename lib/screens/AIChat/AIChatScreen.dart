@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'AIChat.dart';
+import 'package:shop_app/screens/questions/quiz.dart';
+import 'package:shop_app/screens/questions/results_screen.dart';
+import 'package:provider/provider.dart';
+import '../../../main.dart';
 
 
 class AIChatScreen extends StatelessWidget {
@@ -21,6 +25,9 @@ class AIChatScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
             onPressed: () {
+              final benderaProvider = Provider.of<BenderaProvider>(context, listen: false);
+              benderaProvider.bendera = 1;
+              NavigationService().callUpdateIndex(0);  // Call the global method to update index
               Navigator.pop(context);
             },
             style: ElevatedButton.styleFrom(
@@ -37,7 +44,7 @@ class AIChatScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: AIChat(),
+      //body: AIChat(),
     );
   }
 }
