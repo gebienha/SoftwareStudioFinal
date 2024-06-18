@@ -4,6 +4,7 @@ import 'components/discount_banner.dart';
 import 'components/home_header.dart';
 import 'components/popular_product.dart';
 import 'components/special_offers.dart';
+import 'components/search_field.dart'; // Import SearchField
 
 class HomeScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -19,6 +20,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               HomeHeader(),
               DiscountBanner(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Center(child: SearchField()), // Add SearchField
+              ),
               Categories(),
               SpecialOffers(),
               SizedBox(height: 20),
