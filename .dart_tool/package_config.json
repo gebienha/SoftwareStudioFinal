@@ -50,6 +50,24 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "firebase_core",
+      "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_platform_interface-5.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/firebase_core_web-2.17.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///D:/kuliah%20aaaaaaaaa/I2P/Software%20Studios/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -70,6 +88,12 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///D:/kuliah%20aaaaaaaaa/I2P/Software%20Studios/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///D:/kuliah%20aaaaaaaaa/I2P/Software%20Studios/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -150,6 +174,12 @@
       "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-6.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "provider",
@@ -254,7 +284,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-06-18T06:20:25.118912Z",
+  "generated": "2024-06-18T06:35:43.842586Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }
