@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
-
-import 'questions_summary.dart';
 import 'quiz_question.dart';
 import '../login_success/login_success_screen.dart';
 import 'package:provider/provider.dart';
@@ -47,10 +45,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numTotalQuestions = QuizQuestion.questions.length;
-    /*final numCorrectQuestions = summaryData.where((data) {
-      return data['user_answer'] == data['correct_answer'];
-    }).length;*/
     final summary = summaryData;
     Provider.of<QuizSummaryProvider>(context, listen: false).setSummaryData(summary);
 
