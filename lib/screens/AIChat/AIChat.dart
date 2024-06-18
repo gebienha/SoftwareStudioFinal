@@ -25,6 +25,9 @@ class _ChatScreenState extends State<AIChat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chat App'),
+      ),
       body: Column(
         children: [
           Expanded(

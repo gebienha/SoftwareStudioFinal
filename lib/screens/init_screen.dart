@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/screens/favorite/favorite_screen.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
+import '../../../main.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/screens/AIChat/AIChatScreen.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
@@ -21,25 +23,44 @@ class InitScreen extends StatefulWidget {
 class _InitScreenState extends State<InitScreen> {
   int currentSelectedIndex = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    NavigationService().setUpdateIndexCallback(updateCurrentIndex);
+  }
+
   void updateCurrentIndex(int index) {
     setState(() {
       currentSelectedIndex = index;
     });
   }
 
-  final pages = [
-    const HomeScreen(),
-    const FavoriteScreen(),
-    const Quiz(),
-    const ProfileScreen()
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final benderaProvider = Provider.of<BenderaProvider>(context);
+
+    final pages = [
+      const HomeScreen(),
+      const FavoriteScreen(),
+      benderaProvider.bendera == 0 ? const Quiz() : const AIChatScreen(),
+      const ProfileScreen(),
+    ];
+
     return Scaffold(
-      body: pages[currentSelectedIndex],
+      body: Column(
+        children: [
+          Expanded(
+            child: pages[currentSelectedIndex],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: updateCurrentIndex,
+        onTap: (index) {
+          updateCurrentIndex(index);
+        },
         currentIndex: currentSelectedIndex,
         showSelectedLabels: false,
         showUnselectedLabels: false,
@@ -111,7 +132,7 @@ class _InitScreenState extends State<InitScreen> {
                 BlendMode.srcIn,
               ),
             ),
-            label: "Fav",
+            label: "Profile",
           ),
         ],
       ),

@@ -5,6 +5,18 @@ import 'quiz_question.dart';
 import 'results_screen.dart';
 import '../AIChat/AIChatScreen.dart';
 import '../../../constants.dart';
+import 'package:provider/provider.dart';
+
+class BenderaProvider with ChangeNotifier {
+  int _bendera = 0;
+
+  int get bendera => _bendera;
+
+  set bendera(int value) {
+    _bendera = value;
+    notifyListeners();
+  }
+}
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
