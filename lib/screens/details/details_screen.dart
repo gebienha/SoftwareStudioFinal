@@ -84,7 +84,7 @@ class DetailsScreen extends StatelessWidget {
                             );
 
                             if (newReview != null && newReview is Map<String, dynamic>) {
-                              reviewsProvider.addReview(newReview);
+                              await reviewsProvider.addReview(newReview);
                             }
                           },
                           child: const Text("Add Your Review"),
