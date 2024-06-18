@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
@@ -67,8 +66,16 @@ class _SignFormState extends State<SignForm> {
             decoration: const InputDecoration(
               labelText: "Email",
               hintText: "Enter your email",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
+              labelStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
             ),
@@ -98,8 +105,16 @@ class _SignFormState extends State<SignForm> {
             decoration: const InputDecoration(
               labelText: "Password",
               hintText: "Enter your password",
-              // If  you are using latest version of flutter then lable text and hint text shown like this
-              // if you r using flutter less then 1.20.* then maybe this is not working properly
+              labelStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
+              hintStyle: TextStyle(
+                color: Color(0xFF7C9399),
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w700,
+              ),
               floatingLabelBehavior: FloatingLabelBehavior.always,
               suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
             ),
@@ -109,27 +124,41 @@ class _SignFormState extends State<SignForm> {
             children: [
               Checkbox(
                 value: remember,
-                activeColor: kPrimaryColor,
+                activeColor: Color(0xFF60C6A2),
                 onChanged: (value) {
                   setState(() {
                     remember = value;
                   });
                 },
               ),
-              const Text("Remember me"),
+              const Text(
+                "Remember Me",
+                style: TextStyle(
+                  color: Color(0x9918181B),
+                  fontSize: 12,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
               const Spacer(),
               GestureDetector(
                 onTap: () => Navigator.pushNamed(
                     context, ForgotPasswordScreen.routeName),
                 child: const Text(
-                  "Forgot Password",
-                  style: TextStyle(decoration: TextDecoration.underline),
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: Color(0x9918181B),
+                    fontSize: 12,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                    decoration: TextDecoration.underline,
+                  ),
                 ),
-              )
+              ),
             ],
           ),
           FormError(errors: errors),
-          const SizedBox(height: 16),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
@@ -139,7 +168,23 @@ class _SignFormState extends State<SignForm> {
                 Navigator.pushNamed(context, LoginSuccessScreen.routeName);
               }
             },
-            child: const Text("Continue"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFF60C6A2),
+              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+              minimumSize: Size(100, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+            ),
+            child: const Text(
+              "Continue",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ],
       ),
