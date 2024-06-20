@@ -1,6 +1,11 @@
-2024/06/20-18:06:08.179 fac Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/MANIFEST-000001
-2024/06/20-18:06:08.180 fac Recovering log #6
-2024/06/20-18:06:08.181 fac Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/000006.log 
-2024/06/20-18:06:08.183 fac Delete type=0 #3
-2024/06/20-18:06:08.183 fac Delete type=0 #4
-2024/06/20-18:06:08.183 fac Delete type=2 #5
+2024/06/21-01:04:50.061 50d0 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.8d4419ed\flutter_tools_chrome_device.110b4f5d\Default\shared_proto_db/MANIFEST-000001
+2024/06/21-01:04:50.062 50d0 Recovering log #12
+2024/06/21-01:04:50.064 50d0 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.8d4419ed\flutter_tools_chrome_device.110b4f5d\Default\shared_proto_db/000012.log 
+2024/06/21-01:04:50.064 50d0 Delete type=2 #3
+2024/06/21-01:04:50.064 50d0 Delete type=0 #3
+2024/06/21-01:04:50.065 50d0 Delete type=0 #4
+2024/06/21-01:04:50.065 50d0 Delete type=2 #5
+2024/06/21-01:04:50.065 50d0 Delete type=0 #6
+2024/06/21-01:04:50.065 50d0 Delete type=2 #7
+2024/06/21-01:04:50.065 50d0 Delete type=0 #9
+2024/06/21-01:04:50.065 50d0 Delete type=2 #10

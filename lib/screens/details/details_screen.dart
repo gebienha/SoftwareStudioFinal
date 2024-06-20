@@ -20,10 +20,10 @@ class DetailsScreen extends StatelessWidget {
     if (args == null || args is! ProductDetailsArguments) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Product Details"),
+          title: const Text("Product Details", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
         body: const Center(
-          child: Text("No product details available."),
+          child: Text("No product details available.", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
       );
     }
