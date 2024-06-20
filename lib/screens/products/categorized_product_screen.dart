@@ -6,7 +6,7 @@ import '../../../main.dart';
 import '../details/details_screen.dart';
 
 class CategorizedProductsScreen extends StatelessWidget {
-  static const String routeName = "/products";
+  static const String routeName = "/categorizedproducts";
 
   final String categoryId;
 

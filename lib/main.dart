@@ -10,9 +10,6 @@ import 'models/Product.dart';
 import 'screens/category/category_screen.dart';
 import 'screens/questions/quiz.dart';
 import 'screens/questions/results_screen.dart';
-import 'screens/filter/state/filtered_products_notifier.dart';
-import 'screens/filter/state/filters_notifier.dart';
-import 'screens/filter/filters_page.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/products/categorized_product_screen.dart';
 import 'routes.dart';
@@ -23,18 +20,12 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-       ChangeNotifierProvider(create: (context) => ReviewsProvider()),
+        ChangeNotifierProvider(create: (context) => ReviewsProvider()),
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
         Provider<NavigationService>(create: (_) => NavigationService()),
         Provider<List<Product>>(create: (_) => demoProducts),
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
-        ChangeNotifierProvider<FiltersNotifier>(create: (_) => FiltersNotifier()),
-        ChangeNotifierProxyProvider2<List<Product>, FiltersNotifier, FilteredProductsNotifier>(
-          create: (_) => FilteredProductsNotifier(),
-          update: (_, allProducts, filtersNotifier, previousFilteredProductsNotifier) =>
-              previousFilteredProductsNotifier!..updateFilteredProducts(allProducts, filtersNotifier.filters),
-        ),
       ],
       child: MyApp(),
     ),
@@ -53,6 +44,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme(context),
       initialRoute: SplashScreen.routeName,
       routes: routes,
+      onGenerateRoute: generateRoute,
+
     );
   }
 }

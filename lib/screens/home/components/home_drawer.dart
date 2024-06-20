@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../category/category_screen.dart';
 import '../../../main.dart';
-import '../../filter/filters_page.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({Key? key}) : super(key: key);
@@ -77,26 +76,6 @@ class HomeDrawer extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 CategoriesScreen.routeName);// Navigate to the Categories screen
-            },
-          ),
-          ListTile(
-            leading: Icon(
-              Icons.settings,
-              size: 26,
-              color: Theme.of(context).colorScheme.onBackground,
-            ),
-            title: Text(
-              'Filters',
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
-              ),
-            ),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(
-                context,
-                FiltersPage.routeName); // Navigate to the Filters screen
             },
           ),
         ],
