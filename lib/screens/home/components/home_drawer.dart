@@ -4,6 +4,17 @@ import 'package:provider/provider.dart';
 import '../../category/category_screen.dart';
 import '../../../main.dart';
 
+// Define your constants for color theme and fonts
+const kPrimaryColor = Color.fromARGB(255, 97, 199, 162);
+const kPrimaryLightColor = Color(0xFFFFECDF);
+const kPrimaryGradientColor = LinearGradient(
+  begin: Alignment.topLeft,
+  end: Alignment.bottomRight,
+  colors: [Color(4289131218), Color.fromARGB(255, 97, 199, 162)],
+);
+const kSecondaryColor = Color(0xFF979797);
+const kTextColor = Colors.black;
+
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({Key? key}) : super(key: key);
 
@@ -15,27 +26,20 @@ class HomeDrawer extends StatelessWidget {
           DrawerHeader(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Theme.of(context).colorScheme.primaryContainer,
-                  Theme.of(context).colorScheme.primaryContainer.withOpacity(0.8),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
+              gradient: kPrimaryGradientColor,
             ),
             child: Row(
               children: [
                 Icon(
                   Icons.spa_outlined,
-                  size: 48,
-                  color: Theme.of(context).colorScheme.primary,
+                  size: 32,
+                  color: Color.fromRGBO(57, 55, 55, 1),
                 ),
                 const SizedBox(width: 18),
                 Text(
-                  '💄 BeautyBlendr!',
+                  'BeautyBlendr',
                   style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Color.fromRGBO(57, 55, 55, 1),
                   ),
                 ),
               ],
@@ -45,12 +49,12 @@ class HomeDrawer extends StatelessWidget {
             leading: Icon(
               Icons.home,
               size: 26,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: kTextColor,
             ),
             title: Text(
               'Home',
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+              style: TextStyle(
+                color: kTextColor,
                 fontSize: 24,
               ),
             ),
@@ -62,12 +66,12 @@ class HomeDrawer extends StatelessWidget {
             leading: Icon(
               Icons.category,
               size: 26,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: kTextColor,
             ),
             title: Text(
               'Categories',
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Theme.of(context).colorScheme.onBackground,
+              style: TextStyle(
+                color: kTextColor,
                 fontSize: 24,
               ),
             ),
@@ -75,7 +79,8 @@ class HomeDrawer extends StatelessWidget {
               Navigator.pop(context); // Close the drawer
               Navigator.pushNamed(
                 context,
-                CategoriesScreen.routeName);// Navigate to the Categories screen
+                CategoriesScreen.routeName,
+              ); // Navigate to the Categories screen
             },
           ),
         ],
