@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../../models/Product.dart';
 import '../../models/category.dart';
-import '../../../main.dart';
 import 'category_grid_item.dart';
-import '../../screens/products/products_screen.dart';
+import '../../screens/products/categorized_product_screen.dart';
 
 class CategoriesScreen extends StatefulWidget {
   const CategoriesScreen({Key? key}) : super(key: key);
@@ -39,13 +37,12 @@ class _CategoriesScreenState extends State<CategoriesScreen>
   }
 
   void _selectCategory(BuildContext context, Category category) {
-  Navigator.pushNamed(
-    context,
-    CategorizedProductsScreen.routeName,
-    arguments: category.id, // Pass the categoryId as arguments
-  );
-}
-
+    Navigator.pushNamed(
+      context,
+      CategorizedProductsScreen.routeName,
+      arguments: category.id, // Pass the categoryId as argument
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

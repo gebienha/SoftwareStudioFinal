@@ -10,10 +10,6 @@ class Product {
   final double rating, price;
   final bool  isPopular;
   final List<String> categories;
-  final bool typeNormal;
-  final bool typeOily;
-  final bool typeDry;
-  final bool typeCombination;
 
   bool isFavourite;
   Product({
@@ -32,11 +28,6 @@ class Product {
     required this.ingredient,
     required this.howto,
     required this.categories,
-    required this.typeNormal,
-    required this.typeOily,
-    required this.typeDry,
-    required this.typeCombination,
-
   });
 }
 
@@ -67,8 +58,28 @@ const dummyCategories = {
     color: kPrimaryColor,
   ),
    'essence': Category(
-    id: 'facial',
-    title: 'Facial Wash',
+    id: 'essence',
+    title: 'Essence',
+    color: kPrimaryColor,
+  ),
+  'normal': Category(
+    id: 'normal',
+    title: 'Normal Skin Type',
+    color: kPrimaryColor,
+  ),
+  'oily': Category(
+    id: 'oily',
+    title: 'Oily Skin Type',
+    color: kPrimaryColor,
+  ),
+  'dry': Category(
+    id: 'dry',
+    title: 'Dry Skin Type',
+    color: kPrimaryColor,
+  ),
+  'combi': Category(
+    id: 'combi',
+    title: 'Combination Skin Type',
     color: kPrimaryColor,
   ),
 };
@@ -78,11 +89,7 @@ const dummyCategories = {
 List<Product> demoProducts = [
   Product(
     id: 1,
-    categories: ['moist', 'all'],
-    typeNormal: true,
-    typeOily: true,
-    typeDry: false,
-    typeCombination: true,
+    categories: ['moist', 'all', 'normal','oily','combi'],
 
     images: [
       "assets/images/moisturizer.png",
@@ -110,11 +117,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
-    categories: ['serum', 'all'],
-    typeNormal: true,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['serum', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/pixi.png",
       "assets/images/pixi2.png",
@@ -139,11 +142,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
-    categories: ['serum', 'all'],
-    typeNormal: true,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['serum', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/dalba.png",
       "assets/images/dalba2.png",
@@ -169,11 +168,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 4,
-    categories: ['moist', 'all'],
-    typeNormal: false,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['moist', 'all', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/clinique1.png",
       "assets/images/cliniques-moist1.png",
@@ -197,11 +192,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 5,
-    categories: ['serum', 'all'],
-    typeNormal: false,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['serum', 'all', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/clinique2.png",
       "assets/images/detail_clinique1.png",
@@ -227,11 +218,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 6,
-    categories: ['essence', 'all'],
-    typeNormal: true,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['essence', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/cosrx1.png",
       "assets/images/cosrx2.png",
@@ -257,11 +244,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 7,
-    categories: ['mask', 'all'],
-    typeNormal: true,
-    typeOily: false,
-    typeDry: true,
-    typeCombination: false,
+    categories: ['mask', 'all', 'normal',  'dry'],
     images: [
       "assets/images/laneige1.png",
       "assets/images/laneige2.png",
@@ -287,11 +270,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 8,
-    categories: ['facial', 'all'],
-    typeNormal: true,
-    typeOily: true,
-    typeDry: true,
-    typeCombination: true,
+    categories: ['facial', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/cetaphil1.png",
       "assets/images/cetaphil2.png",
