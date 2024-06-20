@@ -1,10 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/screens/category/category_screen.dart';
-import 'package:shop_app/screens/filter/filters_page.dart';
 import 'package:shop_app/screens/products/categorized_product_screen.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
-import 'package:shop_app/screens/filter/state/filtered_products_notifier.dart';
+
 import 'package:shop_app/screens/details/details_screen.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
@@ -24,7 +23,6 @@ import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/models/Review.dart';
 import 'package:shop_app/models/Product.dart'; // Ensure Product model is imported
 
-import 'package:shop_app/screens/filter/state/filters_notifier.dart'; // Import FiltersNotifier
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -36,8 +34,6 @@ final Map<String, WidgetBuilder> routes = {
   CompleteProfileScreen.routeName: (context) => const CompleteProfileScreen(),
   OtpScreen.routeName: (context) => const OtpScreen(),
   HomeScreen.routeName: (context) => const HomeScreen(),
-  CategorizedProductsScreen.routeName: (context) => CategorizedProductsScreen(categoryId: 'all'),
-
   DetailsScreen.routeName: (context) => ChangeNotifierProvider(
     create: (context) => ReviewsProvider(),
     child: const DetailsScreen(),
@@ -49,5 +45,20 @@ final Map<String, WidgetBuilder> routes = {
   AIChatScreen.routeName: (context) => const AIChatScreen(),
   Quiz.routeName: (context) => const Quiz(),
   CategoriesScreen.routeName: (context) => const CategoriesScreen(),
-  FiltersPage.routeName: (context) => const FiltersPage(),
+  ProductsScreen.routeName: (context) => const ProductsScreen(),
 };
+
+Route<dynamic> generateRoute(RouteSettings settings) {
+  switch (settings.name) {
+    case CategorizedProductsScreen.routeName:
+      final categoryId = settings.arguments as String;
+      return MaterialPageRoute(
+        builder: (context) => CategorizedProductsScreen(categoryId: categoryId),
+      );
+    // Add other cases for different routes here
+    default:
+      return MaterialPageRoute(
+        builder: (context) => const InitScreen(), // Default screen
+      );
+  }
+}

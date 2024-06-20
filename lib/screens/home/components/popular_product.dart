@@ -17,7 +17,7 @@ class PopularProducts extends StatelessWidget {
           child: SectionTitle(
             title: "All Products",
             press: () {
-              Navigator.pushNamed(context, CategorizedProductsScreen.routeName);
+              Navigator.pushNamed(context, ProductsScreen.routeName);
             },
           ),
         ),
