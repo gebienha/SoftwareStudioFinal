@@ -72,7 +72,7 @@ class ResultsScreen extends StatelessWidget {
                   backgroundColor: kPrimaryColor,
                   foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 ),
-                //icon: const Icon(Icons.arrow_forward_ios),
+                icon: const Icon(Icons.arrow_forward_ios),
                 label: const Text(
                   'Proceed to Chat', 
                 style: TextStyle(

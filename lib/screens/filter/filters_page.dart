@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
 import 'state/filters_notifier.dart';
 import 'package:provider/provider.dart';
 
 class FiltersPage extends StatefulWidget{
+  static const String routeName = "/filter";
   const FiltersPage({
     super.key,
   });
@@ -79,7 +81,7 @@ class _FiltersPage extends State<FiltersPage> with SingleTickerProviderStateMixi
         title: const Text('Your Filters'),
       ),
       body: Container(
-        color: const Color.fromARGB(255, 0, 0, 0),
+        color: Color.fromARGB(255, 255, 255, 255),
         child: Stack(
           fit: StackFit.expand,
           children: [
@@ -150,7 +152,7 @@ class _FiltersPage extends State<FiltersPage> with SingleTickerProviderStateMixi
           color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
-      activeColor: Theme.of(context).colorScheme.tertiary,
+      activeColor: kPrimaryColor,
       contentPadding: const EdgeInsets.only(left: 34, right: 22),
     );
   }

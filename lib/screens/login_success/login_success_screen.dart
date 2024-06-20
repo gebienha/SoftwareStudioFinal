@@ -11,7 +11,7 @@ class LoginSuccessScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const SizedBox(),
-        title: const Text("Login Success", style: TextStyle(color: Color(0xFF60C6A2))),
+        title: const Text("Login Success", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
