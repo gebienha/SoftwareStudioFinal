@@ -77,20 +77,20 @@ class SeeMoreDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: TopRoundedContainer(
-        color: Colors.white,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              child: const Text("Add To Wishlist"),
-            ),
-          ),
-        ),
-      ),
+      // bottomNavigationBar: TopRoundedContainer(
+      //   color: Colors.white,
+      //   child: SafeArea(
+      //     child: Padding(
+      //       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+      //       child: ElevatedButton(
+      //         onPressed: () {
+      //           Navigator.pushNamed(context, CartScreen.routeName);
+      //         },
+      //         child: const Text("Add To Wishlist"),
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
