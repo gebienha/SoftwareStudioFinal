@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'routes.dart';
 import 'theme.dart';
 import 'models/Review.dart';
@@ -15,7 +17,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => ReviewsProvider()),
+        ChangeNotifierProvider(create: (context) => ReviewsProvider()),
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
       ],

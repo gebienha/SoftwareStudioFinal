@@ -88,5 +88,4 @@ class DefaultFirebaseOptions {
     databaseURL: 'https://beautyblendr-5b2d6-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'beautyblendr-5b2d6.appspot.com',
   );
-
 }

@@ -71,7 +71,7 @@ class ProductCard extends StatelessWidget {
                       "assets/icons/Heart Icon_2.svg",
                       colorFilter: ColorFilter.mode(
                           product.isFavourite
-                              ? Color.fromARGB(255, 83, 98, 232)
+                              ? const Color(0xFFFF4848)
                               : const Color(0xFFDBDEE4),
                           BlendMode.srcIn),
                     ),

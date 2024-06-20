@@ -114,9 +114,13 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
               ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                if (_nameController.text.isNotEmpty && _reviewController.text.isNotEmpty && _rating > 0) {
-                  final usagePeriod = _isOtherSelected ? _otherUsageController.text : _selectedUsagePeriod;
+              onPressed: () async {
+                if (_nameController.text.isNotEmpty &&
+                    _reviewController.text.isNotEmpty &&
+                    _rating > 0) {
+                  final usagePeriod = _isOtherSelected
+                      ? _otherUsageController.text
+                      : _selectedUsagePeriod;
                   final newReview = {
                     'name': _nameController.text,
                     'comment': _reviewController.text,

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'components/categories.dart';
 import 'components/discount_banner.dart';
