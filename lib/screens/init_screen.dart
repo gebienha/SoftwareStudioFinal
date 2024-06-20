@@ -9,6 +9,7 @@ import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/screens/AIChat/AIChatScreen.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
 
+
 const Color inActiveIconColor = Color(0xFFB6B6B6);
 
 class InitScreen extends StatefulWidget {

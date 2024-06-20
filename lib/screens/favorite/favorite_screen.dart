@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/components/favorites_card.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/favorite/service/firestore.dart';
 
 import '../details/details_screen.dart';
 
@@ -12,17 +13,31 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
-  late List<Product> favoriteProducts;
+  late Future<List<Product>> favoriteProductsFuture;
+  final FirestoreService _firestoreService = FirestoreService();
 
   @override
   void initState() {
     super.initState();
-    favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+    favoriteProductsFuture = _fetchFavoriteProducts();
+  }
+
+  Future<List<Product>> _fetchFavoriteProducts() async {
+    // Fetch favorite products from Firestore
+    List<int> favoriteIds = await _firestoreService.getFavoriteIds();
+    // Assuming demoProducts is a list of all available products
+    List<Product> favoriteProducts = demoProducts.where((product) => favoriteIds.contains(product.id)).toList();
+
+    for (var product in favoriteProducts) {
+      product.isFavourite = true;
+    }
+    
+    return favoriteProducts;
   }
 
   void updateFavoriteStatus() {
     setState(() {
-      favoriteProducts = demoProducts.where((product) => product.isFavourite).toList();
+      favoriteProductsFuture = _fetchFavoriteProducts();
     });
   }
 
@@ -41,28 +56,39 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16),
-              child: favoriteProducts.isNotEmpty
-                  ? ListView.builder(
-                      itemCount: favoriteProducts.length,
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.only(bottom: 16.0), // Add space after each FavoriteCard
-                        child: FavoriteCard(
-                          product: favoriteProducts[index],
-                          onPress: () => Navigator.pushNamed(
-                            context,
-                            DetailsScreen.routeName,
-                            arguments: ProductDetailsArguments(product: favoriteProducts[index]),
-                          ),
-                          onFavoriteToggled: updateFavoriteStatus,
-                        ),
-                      ),
-                    )
-                  : Center(
+              child: FutureBuilder<List<Product>>(
+                future: favoriteProductsFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text("An error occurred."));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return Center(
                       child: Text(
                         "No favorite products yet.",
                         //style: Theme.of(context).textTheme.subtitle1,
                       ),
-                    ),
+                    );
+                  } else {
+                    return ListView.builder(
+                      itemCount: snapshot.data!.length,
+                      itemBuilder: (context, index) => Padding(
+                        padding: const EdgeInsets.only(bottom: 16.0), // Add space after each FavoriteCard
+                        child: FavoriteCard(
+                          product: snapshot.data![index],
+                          onPress: () => Navigator.pushNamed(
+                            context,
+                            DetailsScreen.routeName,
+                            arguments: ProductDetailsArguments(product: snapshot.data![index]),
+                          ),
+                          onFavoriteToggled: updateFavoriteStatus,
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
             ),
           ),
         ],

@@ -84,7 +84,7 @@ class DetailsScreen extends StatelessWidget {
                             );
 
                             if (newReview != null && newReview is Map<String, dynamic>) {
-                              reviewsProvider.addReview(newReview);
+                              await reviewsProvider.addReview(newReview);
                             }
                           },
                           child: const Text("Add Your Review"),
@@ -97,20 +97,6 @@ class DetailsScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: TopRoundedContainer(
-        color: Colors.white,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              child: const Text("Add To Wishlist"),
-            ),
-          ),
-        ),
       ),
     );
   }

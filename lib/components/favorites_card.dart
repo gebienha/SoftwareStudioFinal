@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../constants.dart';
 import '../models/Product.dart';
+import 'package:shop_app/screens/favorite/service/firestore.dart';
 
 class FavoriteCard extends StatefulWidget {
   const FavoriteCard({
@@ -25,18 +27,35 @@ class FavoriteCard extends StatefulWidget {
 
 class _FavoriteCardState extends State<FavoriteCard> {
   late bool isFavourite;
+  final FirestoreService _firestoreService = FirestoreService();
 
   @override
   void initState() {
     super.initState();
     isFavourite = widget.product.isFavourite;
+    _fetchFavoriteStatus();
   }
 
-  void toggleFavourite() {
+  void _fetchFavoriteStatus() async {
+    bool favoriteStatus = await _firestoreService.isFavorite(widget.product.id);
+    setState(() {
+      isFavourite = favoriteStatus;
+      widget.product.isFavourite = favoriteStatus; // Update the product's isFavourite status
+    });
+  }
+
+  void toggleFavourite() async {
     setState(() {
       isFavourite = !isFavourite;
       widget.product.isFavourite = isFavourite; // Update the product's isFavourite status
     });
+
+    if (isFavourite) {
+      await _firestoreService.addFavorite(widget.product.id);
+    } else {
+      await _firestoreService.removeFavorite(widget.product.id);
+    }
+
     widget.onFavoriteToggled();
   }
 
@@ -126,7 +145,7 @@ class _FavoriteCardState extends State<FavoriteCard> {
                           width: 30,
                           decoration: BoxDecoration(
                             color: isFavourite
-                                ? kPrimaryColor.withOpacity(0.15)
+                                ? const Color(0xFFFFC0CB).withOpacity(0.15) // Pink color when favorite
                                 : kSecondaryColor.withOpacity(0.1),
                             shape: BoxShape.circle,
                           ),

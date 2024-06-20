@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
+import 'category.dart';
 
 class Product {
   final int id;
@@ -7,6 +9,12 @@ class Product {
   final List<Color> colors;
   final double rating, price;
   final bool  isPopular;
+  final List<String> categories;
+  final bool typeNormal;
+  final bool typeOily;
+  final bool typeDry;
+  final bool typeCombination;
+
   bool isFavourite;
   Product({
     required this.id,
@@ -22,16 +30,60 @@ class Product {
     required this.recommend,
     required this.benefit,
     required this.ingredient,
-    required this.howto
+    required this.howto,
+    required this.categories,
+    required this.typeNormal,
+    required this.typeOily,
+    required this.typeDry,
+    required this.typeCombination,
 
   });
 }
+
+const dummyCategories = {
+  'all': Category(
+    id: 'all',
+    title: 'All Products',
+    color: kPrimaryColor,
+  ),
+  'moist': Category(
+    id: 'moist',
+    title: 'Moisturizer',
+    color: kPrimaryColor,
+  ),
+  'serum': Category(
+    id: 'serum',
+    title: 'Serum',
+    color: kPrimaryColor,
+  ),
+  'mask': Category(
+    id: 'mask',
+    title: 'Mask',
+    color: kPrimaryColor,
+  ),
+  'facial': Category(
+    id: 'facial',
+    title: 'Facial Wash',
+    color: kPrimaryColor,
+  ),
+   'essence': Category(
+    id: 'facial',
+    title: 'Facial Wash',
+    color: kPrimaryColor,
+  ),
+};
 
 // Our demo Products
 
 List<Product> demoProducts = [
   Product(
     id: 1,
+    categories: ['moist', 'all'],
+    typeNormal: true,
+    typeOily: true,
+    typeDry: false,
+    typeCombination: true,
+
     images: [
       "assets/images/moisturizer.png",
       "assets/images/moisturizer1.png",
@@ -58,6 +110,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
+    categories: ['serum', 'all'],
+    typeNormal: true,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/pixi.png",
       "assets/images/pixi2.png",
@@ -82,6 +139,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
+    categories: ['serum', 'all'],
+    typeNormal: true,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/dalba.png",
       "assets/images/dalba2.png",
@@ -107,6 +169,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 4,
+    categories: ['moist', 'all'],
+    typeNormal: false,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/clinique1.png",
       "assets/images/cliniques-moist1.png",
@@ -130,6 +197,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 5,
+    categories: ['serum', 'all'],
+    typeNormal: false,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/clinique2.png",
       "assets/images/detail_clinique1.png",
@@ -155,6 +227,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 6,
+    categories: ['essence', 'all'],
+    typeNormal: true,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/cosrx1.png",
       "assets/images/cosrx2.png",
@@ -180,6 +257,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 7,
+    categories: ['mask', 'all'],
+    typeNormal: true,
+    typeOily: false,
+    typeDry: true,
+    typeCombination: false,
     images: [
       "assets/images/laneige1.png",
       "assets/images/laneige2.png",
@@ -205,6 +287,11 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 8,
+    categories: ['facial', 'all'],
+    typeNormal: true,
+    typeOily: true,
+    typeDry: true,
+    typeCombination: true,
     images: [
       "assets/images/cetaphil1.png",
       "assets/images/cetaphil2.png",
@@ -263,7 +350,7 @@ const String recommend2 = "Skin Type: All";
 const String recommend3 = "Skin Type: All";
 const String recommend4 = "Skin Concern: Dry skin \nSkin Type: Very Dry to Dry, Dry Combination, Combination Oily, Oily";
 const String recommend5 = "Skin Concern: Anti-Aging\nSkin Type: Very Dry to Dry, Dry Combination, Combination Oily, Oily";
-const String recommend6 = "Skin Concern: Dull & rough skin, Dasrk spots & scars\nSkin Type: All";
+const String recommend6 = "Skin Concern: Dull & rough skin, Dark spots & scars\nSkin Type: All";
 const String recommend7 = "Skin Type: Normal, Dry";
 const String recommend8 = "Skin Concern: Dull and uneven skin tone\nSkin Type: All";
 

@@ -98,28 +98,28 @@ class _ProductDescriptionState extends State<ProductDescription> {
                     widget.product.isFavourite = !widget.product.isFavourite;
                   });
                 },
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: widget.product.isFavourite
-                        ? const Color(0xFFFFE6E6)
-                        : const Color(0xFFF5F6F9),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
-                    ),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/icons/Heart Icon_2.svg",
-                    colorFilter: ColorFilter.mode(
-                      widget.product.isFavourite
-                          ? const Color(0xFFFF4848)
-                          : const Color(0xFFDBDEE4),
-                      BlendMode.srcIn,
-                    ),
-                    height: 16,
-                  ),
-                ),
+                // child: Container(
+                //   padding: const EdgeInsets.all(16),
+                //   decoration: BoxDecoration(
+                //     color: widget.product.isFavourite
+                //         ? const Color(0xFFFFE6E6)
+                //         : const Color(0xFFF5F6F9),
+                //     borderRadius: const BorderRadius.only(
+                //       topLeft: Radius.circular(20),
+                //       bottomLeft: Radius.circular(20),
+                //     ),
+                //   ),
+                //   child: SvgPicture.asset(
+                //     "assets/icons/Heart Icon_2.svg",
+                //     colorFilter: ColorFilter.mode(
+                //       widget.product.isFavourite
+                //           ? const Color(0xFFFF4848)
+                //           : const Color(0xFFDBDEE4),
+                //       BlendMode.srcIn,
+                //     ),
+                //     height: 16,
+                //   ),
+                // ),
               ),
             ],
           ),
