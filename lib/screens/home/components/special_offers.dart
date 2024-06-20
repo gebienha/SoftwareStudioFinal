@@ -27,7 +27,7 @@ class SpecialOffers extends StatelessWidget {
                 category: "Teen Favorite",
                 numOfBrands: 18,
                 press: () {
-                  Navigator.pushNamed(context, CategorizedProductsScreen.routeName);
+                  Navigator.pushNamed(context, ProductsScreen.routeName);
                 },
               ),
               SpecialOfferCard(
@@ -35,7 +35,7 @@ class SpecialOffers extends StatelessWidget {
                 category: "Affordable Bundles",
                 numOfBrands: 24,
                 press: () {
-                  Navigator.pushNamed(context, CategorizedProductsScreen.routeName);
+                  Navigator.pushNamed(context, ProductsScreen.routeName);
                 },
               ),
               const SizedBox(width: 20),
