@@ -18,4 +18,9 @@ class FirestoreService {
     final snapshot = await favorites.get();
     return snapshot.docs.map((doc) => doc['itemID'] as int).toList();
   }
+
+  Future<bool> isFavorite(int id) async {
+    final snapshot = await favorites.where('itemID', isEqualTo: id).get();
+    return snapshot.docs.isNotEmpty;
+  }
 }
