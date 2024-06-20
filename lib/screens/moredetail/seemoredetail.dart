@@ -5,6 +5,7 @@ import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
+import 'package:provider/provider.dart';
 
 class SeeMoreDetailScreen extends StatelessWidget {
   static String routeName = "/SeeMoreDetails";
@@ -77,20 +78,6 @@ class SeeMoreDetailScreen extends StatelessWidget {
           ),
         ],
       ),
-      // bottomNavigationBar: TopRoundedContainer(
-      //   color: Colors.white,
-      //   child: SafeArea(
-      //     child: Padding(
-      //       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-      //       child: ElevatedButton(
-      //         onPressed: () {
-      //           Navigator.pushNamed(context, CartScreen.routeName);
-      //         },
-      //         child: const Text("Add To Wishlist"),
-      //       ),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

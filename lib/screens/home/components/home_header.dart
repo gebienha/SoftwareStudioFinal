@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'icon_btn_with_counter.dart';
+import '../../category/category_screen.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -16,7 +17,9 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: "assets/icons/Settings.svg",
             press: () {
-              // Add your navigation or action for settings here
+              Navigator.pushNamed(
+                context,
+                CategoriesScreen.routeName);// Add your navigation or action for settings here
             },
             color: Colors.white, // White icon color
             backgroundColor: const Color(0xFFE0E0E0), // Lighter gray background
