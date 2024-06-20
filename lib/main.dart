@@ -28,6 +28,7 @@ void main() async {
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
         Provider<NavigationService>(create: (_) => NavigationService()),
         Provider<List<Product>>(create: (_) => demoProducts),
+        ChangeNotifierProvider(create: (_) => FavoriteProvider()),
         ChangeNotifierProvider<FiltersNotifier>(create: (_) => FiltersNotifier()),
         ChangeNotifierProxyProvider2<List<Product>, FiltersNotifier, FilteredProductsNotifier>(
           create: (_) => FilteredProductsNotifier(),

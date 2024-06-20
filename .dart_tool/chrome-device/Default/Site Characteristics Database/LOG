@@ -1,21 +1,10 @@
-<<<<<<< HEAD
-2024/06/20-15:19:41.118 57b8 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.8311b625\flutter_tools_chrome_device.812b6887\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/20-15:19:41.119 57b8 Recovering log #17
-2024/06/20-15:19:41.120 57b8 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.8311b625\flutter_tools_chrome_device.812b6887\Default\Site Characteristics Database/000017.log 
-2024/06/20-15:19:41.121 57b8 Delete type=0 #3
-2024/06/20-15:19:41.121 57b8 Delete type=2 #4
-2024/06/20-15:19:41.121 57b8 Delete type=0 #6
-2024/06/20-15:19:41.121 57b8 Delete type=2 #7
-2024/06/20-15:19:41.121 57b8 Delete type=2 #8
-2024/06/20-15:19:41.121 57b8 Delete type=0 #10
-2024/06/20-15:19:41.122 57b8 Delete type=2 #12
-=======
-2024/06/20-15:59:52.225 726c Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.4c5bdb0e\flutter_tools_chrome_device.82645651\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/20-15:59:52.226 726c Recovering log #10
-2024/06/20-15:59:52.226 726c Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.4c5bdb0e\flutter_tools_chrome_device.82645651\Default\Site Characteristics Database/000010.log 
-2024/06/20-15:59:52.227 726c Delete type=0 #3
-2024/06/20-15:59:52.227 726c Delete type=2 #4
-2024/06/20-15:59:52.227 726c Delete type=0 #6
-2024/06/20-15:59:52.228 726c Delete type=2 #7
-2024/06/20-15:59:52.228 726c Delete type=2 #8
->>>>>>> a8e8811085f5bed8ab7b7a1adbb12fc6c1ac3660
+2024/06/20-16:51:15.867 73c0 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.5db4bae9\flutter_tools_chrome_device.3108aace\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/20-16:51:15.868 73c0 Recovering log #17
+2024/06/20-16:51:15.870 73c0 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.5db4bae9\flutter_tools_chrome_device.3108aace\Default\Site Characteristics Database/000017.log 
+2024/06/20-16:51:15.871 73c0 Delete type=0 #3
+2024/06/20-16:51:15.872 73c0 Delete type=2 #4
+2024/06/20-16:51:15.872 73c0 Delete type=0 #6
+2024/06/20-16:51:15.872 73c0 Delete type=2 #7
+2024/06/20-16:51:15.872 73c0 Delete type=2 #8
+2024/06/20-16:51:15.872 73c0 Delete type=0 #10
+2024/06/20-16:51:15.872 73c0 Delete type=2 #12

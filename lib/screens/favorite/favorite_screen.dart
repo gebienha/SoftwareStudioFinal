@@ -26,7 +26,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     // Fetch favorite products from Firestore
     List<int> favoriteIds = await _firestoreService.getFavoriteIds();
     // Assuming demoProducts is a list of all available products
-    return demoProducts.where((product) => favoriteIds.contains(product.id)).toList();
+    List<Product> favoriteProducts = demoProducts.where((product) => favoriteIds.contains(product.id)).toList();
+
+    for (var product in favoriteProducts) {
+      product.isFavourite = true;
+    }
+    
+    return favoriteProducts;
   }
 
   void updateFavoriteStatus() {
