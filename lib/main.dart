@@ -14,9 +14,13 @@ import 'screens/home/home_screen.dart';
 import 'screens/products/categorized_product_screen.dart';
 import 'routes.dart';
 
-void main() async {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // Make sure you have your Firebase options configured
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     MultiProvider(
       providers: [
@@ -24,14 +28,8 @@ void main() async {
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
         Provider<NavigationService>(create: (_) => NavigationService()),
-        Provider<List<Product>>(create: (_) => demoProducts),
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
-        ChangeNotifierProvider<FiltersNotifier>(create: (_) => FiltersNotifier()),
-        ChangeNotifierProxyProvider2<List<Product>, FiltersNotifier, FilteredProductsNotifier>(
-          create: (_) => FilteredProductsNotifier(),
-          update: (_, allProducts, filtersNotifier, previousFilteredProductsNotifier) =>
-              previousFilteredProductsNotifier!..updateFilteredProducts(allProducts, filtersNotifier.filters),
-        ),
+        Provider<List<Product>>(create: (_) => demoProducts),
       ],
       child: MyApp(),
     ),
