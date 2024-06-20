@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/splash/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:go_router/go_router.dart';
 import 'firebase_options.dart';
-import 'routes.dart';
+import 'package:provider/provider.dart';// Import the navigation service
+import 'screens/splash/splash_screen.dart';
 import 'theme.dart';
 import 'models/Review.dart';
-import 'package:provider/provider.dart';
-import 'package:shop_app/screens/questions/quiz.dart';
-import 'package:shop_app/screens/questions/results_screen.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:shop_app/firebase_options.dart';
+import 'models/Product.dart';
+import 'screens/category/category_screen.dart';
+import 'screens/questions/quiz.dart';
+import 'screens/questions/results_screen.dart';
+import 'screens/filter/state/filtered_products_notifier.dart';
+import 'screens/filter/state/filters_notifier.dart';
+import 'screens/filter/filters_page.dart';
+import 'screens/home/home_screen.dart';
+import 'screens/products/categorized_product_screen.dart';
+import 'routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,9 +23,17 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => ReviewsProvider()),
+       ChangeNotifierProvider(create: (context) => ReviewsProvider()),
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
+        Provider<NavigationService>(create: (_) => NavigationService()),
+        Provider<List<Product>>(create: (_) => demoProducts),
+        ChangeNotifierProvider<FiltersNotifier>(create: (_) => FiltersNotifier()),
+        ChangeNotifierProxyProvider2<List<Product>, FiltersNotifier, FilteredProductsNotifier>(
+          create: (_) => FilteredProductsNotifier(),
+          update: (_, allProducts, filtersNotifier, previousFilteredProductsNotifier) =>
+              previousFilteredProductsNotifier!..updateFilteredProducts(allProducts, filtersNotifier.filters),
+        ),
       ],
       child: MyApp(),
     ),
@@ -41,6 +55,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class NavigationService {
   static final NavigationService _instance = NavigationService._internal();
 

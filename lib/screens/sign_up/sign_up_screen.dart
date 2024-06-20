@@ -16,7 +16,7 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
-        title: const Text("Sign Up", style: TextStyle(color: Color(0xFF60C6A2))),
+        title: const Text("Sign Up", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       body: SafeArea(
         child: SizedBox(

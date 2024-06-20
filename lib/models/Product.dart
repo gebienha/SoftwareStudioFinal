@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/constants.dart';
-import '../screens/filter/category.dart';
+import 'category.dart';
 
 class Product {
   final int id;
@@ -9,7 +9,7 @@ class Product {
   final List<Color> colors;
   final double rating, price;
   final bool  isPopular;
-  final String categories;
+  final List<String> categories;
   final bool typeNormal;
   final bool typeOily;
   final bool typeDry;
@@ -41,6 +41,11 @@ class Product {
 }
 
 const dummyCategories = {
+  'all': Category(
+    id: 'all',
+    title: 'All Products',
+    color: kPrimaryColor,
+  ),
   'moist': Category(
     id: 'moist',
     title: 'Moisturizer',
@@ -73,7 +78,7 @@ const dummyCategories = {
 List<Product> demoProducts = [
   Product(
     id: 1,
-    categories: 'moist',
+    categories: ['moist', 'all'],
     typeNormal: true,
     typeOily: true,
     typeDry: false,
@@ -105,7 +110,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
-    categories: 'serum',
+    categories: ['serum', 'all'],
     typeNormal: true,
     typeOily: true,
     typeDry: true,
@@ -134,7 +139,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
-    categories: 'serum',
+    categories: ['serum', 'all'],
     typeNormal: true,
     typeOily: true,
     typeDry: true,
@@ -164,7 +169,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 4,
-    categories: 'moist',
+    categories: ['moist', 'all'],
     typeNormal: false,
     typeOily: true,
     typeDry: true,
@@ -192,7 +197,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 5,
-    categories: 'serum',
+    categories: ['serum', 'all'],
     typeNormal: false,
     typeOily: true,
     typeDry: true,
@@ -222,7 +227,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 6,
-    categories: 'essence',
+    categories: ['essence', 'all'],
     typeNormal: true,
     typeOily: true,
     typeDry: true,
@@ -252,7 +257,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 7,
-    categories: 'mask',
+    categories: ['mask', 'all'],
     typeNormal: true,
     typeOily: false,
     typeDry: true,
@@ -282,7 +287,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 8,
-    categories: 'facial',
+    categories: ['facial', 'all'],
     typeNormal: true,
     typeOily: true,
     typeDry: true,
