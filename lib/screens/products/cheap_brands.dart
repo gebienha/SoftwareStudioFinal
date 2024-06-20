@@ -10,7 +10,7 @@ class CheapBrandsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Cheap Brands in 2024"),
+        title: const Text("Affordable Brands in 2024", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       body: SafeArea(
         child: Padding(
