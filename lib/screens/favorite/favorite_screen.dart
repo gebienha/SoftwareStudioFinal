@@ -46,11 +46,11 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     return SafeArea(
       child: Column(
         children: [
-          Padding(
+          const Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
               "Favorites",
-              style: Theme.of(context).textTheme.titleLarge,
+              style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)
             ),
           ),
           Expanded(
