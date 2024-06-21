@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shop_app/theme_model.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';// Import the navigation service
 import 'screens/splash/splash_screen.dart';
 import 'theme.dart';
 import 'models/Review.dart';
 import 'models/Product.dart';
-import 'screens/category/category_screen.dart';
 import 'screens/questions/quiz.dart';
 import 'screens/questions/results_screen.dart';
 import 'screens/home/home_screen.dart';
-import 'screens/products/categorized_product_screen.dart';
 import 'routes.dart';
 
 void main() async {
@@ -38,14 +37,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'BeautyBlendr',
-      theme: AppTheme.lightTheme(context),
-      initialRoute: SplashScreen.routeName,
-      routes: routes,
-      onGenerateRoute: generateRoute,
+    return ChangeNotifierProvider(
+      create: (_) => ThemeModel(),
+      child: Consumer(
+        builder: (context, ThemeModel themeNotifier, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'BeautyBlendr',
+            theme: themeNotifier.isDark? AppTheme.darkTheme(context) : AppTheme.lightTheme(context),
+            initialRoute: SplashScreen.routeName,
+            routes: routes,
+            onGenerateRoute: generateRoute,
 
+          );
+        },
+      ),
     );
   }
 }

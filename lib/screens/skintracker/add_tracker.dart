@@ -11,6 +11,7 @@ class _AddTrackerState extends State<AddTracker> {
   final _formKey = GlobalKey<FormState>();
   DateTime _selectedDate = DateTime.now();
   String? _selectedCondition;
+  final _descController = TextEditingController();
   final List<String> _conditions = [
     'Breakouts',
     'Acne',
@@ -30,6 +31,7 @@ class _AddTrackerState extends State<AddTracker> {
     await FirebaseFirestore.instance.collection('skin_tracker').add({
       'date': _selectedDate,
       'condition': _selectedCondition,
+      'description': _descController.text,
       'timestamp': FieldValue.serverTimestamp(),
     });
 
@@ -42,43 +44,79 @@ class _AddTrackerState extends State<AddTracker> {
       appBar: AppBar(
         title: Text('Add Skin Condition'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              ListTile(
-                title: Text(
-                  'Date: ${DateFormat.yMd().format(_selectedDate)}',
+              TextFormField(
+                controller: _descController,
+                decoration: const InputDecoration(
+                  labelText: 'Description',
                 ),
-                trailing: Icon(Icons.calendar_today),
-                onTap: _presentDatePicker,
-              ),
-              DropdownButtonFormField<String>(
-                decoration: InputDecoration(labelText: 'Condition'),
-                items: _conditions
-                    .map((condition) => DropdownMenuItem(
-                          child: Text(condition),
-                          value: condition,
-                        ))
-                    .toList(),
-                onChanged: (value) {
-                  setState(() {
-                    _selectedCondition = value;
-                  });
-                },
                 validator: (value) {
-                  if (value == null) {
-                    return 'Please select a condition';
+                  if (value!.isEmpty) {
+                    return 'Please enter a description';
                   }
                   return null;
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 5,
+                    child: DropdownButtonFormField<String>(
+                      decoration: InputDecoration(labelText: 'Condition'),
+                      items: _conditions
+                          .map((condition) => DropdownMenuItem(
+                                child: Text(condition),
+                                value: condition,
+                              ))
+                          .toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedCondition = value;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null) {
+                          return 'Please select a condition';
+                        }
+                        return null;
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Expanded(
+                    flex: 3,
+                    child: ListTile(
+                      title: Text(
+                        'Date: ${DateFormat.yMd().format(_selectedDate)}',
+                      ),
+                      trailing: Icon(Icons.calendar_today),
+                      onTap: _presentDatePicker,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
               ElevatedButton(
                 onPressed: _submitData,
                 child: Text('Add Condition'),
+              ),
+              SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+                ),
+                child: Text('Cancel'),
               ),
             ],
           ),
