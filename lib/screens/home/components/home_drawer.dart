@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../../category/category_screen.dart';
 import '../../../main.dart';
+import 'package:shop_app/screens/favorite/favorite_screen.dart';
 
 // Define your constants for color theme and fonts
 const kPrimaryColor = Color.fromARGB(255, 97, 199, 162);
@@ -65,6 +66,28 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
+              Icons.shopping_cart,
+              size: 26,
+              color: kTextColor,
+            ),
+            title: const Text(
+              'Products',
+              style: TextStyle(
+                color: kTextColor,
+                fontSize: 24,
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(
+                context,
+                '/categorizedproducts',
+                arguments: 'all', // Pass the categoryId as argument
+              ); // Navigate to the Home screen
+            },
+          ),
+          ListTile(
+            leading: const Icon(
               Icons.category,
               size: 26,
               color: kTextColor,
@@ -82,6 +105,43 @@ class HomeDrawer extends StatelessWidget {
                 context,
                 CategoriesScreen.routeName,
               ); // Navigate to the Categories screen
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.monitor_heart,
+              size: 26,
+              color: kTextColor,
+            ),
+            title: const Text(
+              'Favorite',
+              style: TextStyle(
+                color: kTextColor,
+                fontSize: 24,
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, "/favorite");
+              // Navigator.pushNamed(context, '/favorite');  // Navigate to the Home screen
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.edit_calendar_outlined,
+              size: 26,
+              color: kTextColor,
+            ),
+            title: const Text(
+              'Skin Tracker',
+              style: TextStyle(
+                color: kTextColor,
+                fontSize: 24,
+              ),
+            ),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.pushNamed(context, '/skin-tracker');  // Navigate to the Home screen
             },
           ),
         ],
