@@ -44,40 +44,6 @@ class FavoriteProvider with ChangeNotifier {
   }
 }
 
-
-// class HomeScreen extends StatelessWidget {
-//   static String routeName = "/home";
-
-//   const HomeScreen({super.key});
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('BeautyBlendr')),
-//       drawer: HomeDrawer(),
-//       body: SafeArea(
-//         child: SingleChildScrollView(
-//           padding: EdgeInsets.symmetric(vertical: 16),
-//           child: Column(
-//             children: [
-//               HomeHeader(),
-//               DiscountBanner(),
-//               Padding(
-//                 padding: EdgeInsets.symmetric(horizontal: 20),
-//                 child: Center(child: SearchField()), // Add SearchField
-//               ),
-//               Categories(),
-//               SpecialOffers(),
-//               SizedBox(height: 20),
-//               PopularProducts(),
-//               SizedBox(height: 20),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 class HomeScreen extends StatefulWidget {
   static String routeName = "/home";
 
@@ -101,44 +67,52 @@ class _HomeScreenState extends State<HomeScreen> {
     return Consumer(
       builder: (context, ThemeModel themeNotifier, child) {
         return Scaffold(
-        appBar: AppBar(
-        title: Text('BeautyBlendr', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
-        actions: [
-          IconButton(
-              onPressed: () {
-                themeNotifier.isDark 
-                  ? themeNotifier.isDark = false 
-                  : themeNotifier.isDark = true;
-              },
-              icon: Icon(
-                themeNotifier.isDark 
-                  ? Icons.wb_sunny : Icons.nightlight_round
-                )
-            )
-          ],
-        ),
-        drawer: const HomeDrawer(),
-        body: const SafeArea(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            child: Column(
-              children: [
-                HomeHeader(),
-                DiscountBanner(),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Center(child: SearchField()), // Add SearchField
+          appBar: AppBar(
+            title: Text('BeautyBlendr', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
+            actions: [
+              Container(
+                margin: EdgeInsets.only(right: 16),
+                child: IconButton(
+                  onPressed: () {
+                    themeNotifier.isDark 
+                      ? themeNotifier.isDark = false 
+                      : themeNotifier.isDark = true;
+                  },
+                  icon: Icon(
+                    themeNotifier.isDark ? Icons.wb_sunny_rounded : Icons.nightlight_round,
+                    color: Colors.white,
+                  ),
                 ),
-                Categories(),
-                SpecialOffers(),
-                SizedBox(height: 20),
-                PopularProducts(),
-                SizedBox(height: 20),
-              ],
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: themeNotifier.isDark ? Colors.black54 : Color(0xFF60C6A2),
+                ),
+              ),
+            ],
+          ),
+          drawer: const HomeDrawer(),
+          body: const SafeArea(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(vertical: 16),
+              child: Column(
+                children: [
+                  //HomeHeader(),
+                  DiscountBanner(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Center(child: SearchField()), // Add SearchField
+                  ),
+                  Categories(),
+                  SpecialOffers(),
+                  SizedBox(height: 20),
+                  PopularProducts(),
+                  SizedBox(height: 20),
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    });  
+        );
+      },
+    );
   }
 }

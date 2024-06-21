@@ -140,9 +140,17 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\plugins\cloud_firestore\cloud_firestore_plugin.vcxproj">
+      <Project>{434BC314-69EF-311A-8BD9-749A11CB217B}</Project>
+      <Name>cloud_firestore_plugin</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\runner\demodemo.vcxproj">
       <Project>{0C8AD671-A105-35F6-AB29-95499C43D295}</Project>
       <Name>demodemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\plugins\firebase_core\firebase_core_plugin.vcxproj">
+      <Project>{E1D64CFC-A9B3-304F-8EEE-D6A740DC5AD9}</Project>
+      <Name>firebase_core_plugin</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\flutter\flutter_wrapper_app.vcxproj">
       <Project>{413DBF40-FD62-335E-AF91-743E885A8E8B}</Project>

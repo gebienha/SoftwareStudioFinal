@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/screens/category/category_screen.dart';
+import 'package:shop_app/screens/favorite/favorite_screen.dart';
 import 'package:shop_app/screens/products/categorized_product_screen.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
 import 'package:shop_app/screens/details/details_screen.dart';
@@ -51,7 +52,7 @@ final Map<String, WidgetBuilder> routes = {
   PopularBrandsScreen.routeName: (context) => const PopularBrandsScreen(),
   CheapBrandsScreen.routeName: (context) => const CheapBrandsScreen(),
   //Conds.routeName: (context) => const Conds(),
-  //AddTracker.routeName: (context) => const AddTracker(),
+  FavoriteScreen.routeName: (context) => const FavoriteScreen(),
   SkinTracker.routeName: (context) =>  SkinTracker(),
   TutorialPage.routeName: (context) => TutorialPage(),
   //AddAvatarPage.routeName: (context) => const AddAvatarPage(),
