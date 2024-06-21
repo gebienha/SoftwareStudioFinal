@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
 import 'package:shop_app/screens/skintracker/add_tracker.dart';
+import 'info.dart';
 
 class SkinTracker extends StatefulWidget {
   static const routeName = '/skin-tracker';
@@ -24,31 +25,44 @@ class _SkinTrackerState extends State<SkinTracker>
 
   // Define a map of conditions to colors
   final Map<String, Color> conditionColors = {
-  'Breakouts': Color(0xFF8AD6B7), // Change hexadecimal to Color object
-  'Acne': Color(0xFFCEE9DB), // Change hexadecimal to Color object
-  'Flaring': Color(0xFF1A6B52), // Change hexadecimal to Color object
-  'Redness': Color(0xFFC6E7FF), // Change hexadecimal to Color object
-  'Dryness': Color(0xFF4C6359), // Change hexadecimal to Color object
-  'Oiliness': Color(0xFF0D6B58), // Change hexadecimal to Color object
-};
+    'Breakouts': Color(0xFF8AD6B7),
+    'Acne': Color(0xFFC0DEA9),
+    'Flaring': Color(0xFFA3CB8F),
+    'Redness': Color(0xFFB3816E),
+    'Dryness': Color(0xFFC7A26B),
+    'Oiliness': Color(0xFFDED2AA),
+  };
 
   @override
   void initState() {
     super.initState();
 
-    _createAnimationIntervals();
-
     _staggeredController = AnimationController(
       vsync: this,
       duration: _calculateAnimationDuration(),
     );
-    _staggeredController.forward();
+
+    // Start animation immediately when the widget is built
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      _staggeredController.forward();
+    });
+
+    _createAnimationIntervals();
   }
 
   @override
   void dispose() {
     _staggeredController.dispose();
     super.dispose();
+  }
+
+  void _openInfoOverlay() {
+    showModalBottomSheet(
+      useSafeArea: true,
+      isScrollControlled: true,
+      context: context,
+      builder: (ctx) => TutorialPage(),
+    );
   }
 
   void _createAnimationIntervals() {
@@ -99,6 +113,16 @@ class _SkinTrackerState extends State<SkinTracker>
       appBar: AppBar(
         title: Text('Skin Condition Tracker'),
         actions: [
+          IconButton(
+          onPressed: _openInfoOverlay,
+          //() {
+          //   Navigator.pushNamed(
+          //         context,
+          //         TutorialPage.routeName,
+          //       );
+          // },
+          icon: const Icon(Icons.info_rounded),
+        ),
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
@@ -161,7 +185,6 @@ class _SkinTrackerState extends State<SkinTracker>
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
                       borderRadius: BorderRadius.circular(10),
                       color: backgroundColor ?? Colors.white, // Default to white if color not found
                     ),
