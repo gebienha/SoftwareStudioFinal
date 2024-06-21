@@ -50,7 +50,7 @@ class _CategoriesScreenState extends State<CategoriesScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categories'),
+        title: Text('Categories', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),

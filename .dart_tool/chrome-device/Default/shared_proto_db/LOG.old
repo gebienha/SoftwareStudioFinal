@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 2024/06/20-16:39:10.267 1b3c Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.a5cdb5b3\flutter_tools_chrome_device.46f4b67c\Default\shared_proto_db/MANIFEST-000001
 2024/06/20-16:39:10.268 1b3c Recovering log #6
 2024/06/20-16:39:10.269 1b3c Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.a5cdb5b3\flutter_tools_chrome_device.46f4b67c\Default\shared_proto_db/000006.log 
@@ -13,3 +14,17 @@
 2024/06/20-18:01:45.963 ce4 Delete type=0 #4
 2024/06/20-18:01:45.964 ce4 Delete type=2 #5
 >>>>>>> 8e79b9a49bf7934625532c5ea59e8e8fc9e99f14
+=======
+2024/06/21-01:53:25.817 6e64 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.73f74361\flutter_tools_chrome_device.53708a68\Default\shared_proto_db/MANIFEST-000001
+2024/06/21-01:53:25.817 6e64 Recovering log #16
+2024/06/21-01:53:25.820 6e64 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.73f74361\flutter_tools_chrome_device.53708a68\Default\shared_proto_db/000016.log 
+2024/06/21-01:53:25.820 6e64 Delete type=2 #3
+2024/06/21-01:53:25.821 6e64 Delete type=0 #3
+2024/06/21-01:53:25.821 6e64 Delete type=0 #4
+2024/06/21-01:53:25.821 6e64 Delete type=2 #5
+2024/06/21-01:53:25.821 6e64 Delete type=0 #6
+2024/06/21-01:53:25.821 6e64 Delete type=2 #7
+2024/06/21-01:53:25.821 6e64 Delete type=0 #9
+2024/06/21-01:53:25.821 6e64 Delete type=2 #10
+2024/06/21-01:53:25.821 6e64 Delete type=0 #12
+>>>>>>> a64ac6919013632faa620181d9674c973fa0ac40

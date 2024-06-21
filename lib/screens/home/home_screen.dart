@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BeautyBlendr'),
+        title: Text('BeautyBlendr', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       drawer: HomeDrawer(),
       body: SafeArea(

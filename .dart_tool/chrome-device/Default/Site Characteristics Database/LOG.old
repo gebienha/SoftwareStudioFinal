@@ -1,23 +1,23 @@
 <<<<<<< HEAD
-2024/06/20-17:42:57.913 84b4 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.595eb59e\flutter_tools_chrome_device.68d4cc39\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/20-17:42:57.915 84b4 Recovering log #17
-2024/06/20-17:42:57.915 84b4 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.595eb59e\flutter_tools_chrome_device.68d4cc39\Default\Site Characteristics Database/000017.log 
-2024/06/20-17:42:57.916 84b4 Delete type=0 #3
-2024/06/20-17:42:57.916 84b4 Delete type=2 #4
-2024/06/20-17:42:57.916 84b4 Delete type=0 #6
-2024/06/20-17:42:57.916 84b4 Delete type=2 #7
-2024/06/20-17:42:57.916 84b4 Delete type=2 #8
-2024/06/20-17:42:57.916 84b4 Delete type=0 #10
-2024/06/20-17:42:57.916 84b4 Delete type=2 #12
+2024/06/20-23:39:55.864 71ac Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.4951f4c\flutter_tools_chrome_device.c0fb0b6c\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/20-23:39:55.866 71ac Recovering log #17
+2024/06/20-23:39:55.867 71ac Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.4951f4c\flutter_tools_chrome_device.c0fb0b6c\Default\Site Characteristics Database/000017.log 
+2024/06/20-23:39:55.868 71ac Delete type=0 #3
+2024/06/20-23:39:55.868 71ac Delete type=2 #4
+2024/06/20-23:39:55.868 71ac Delete type=0 #6
+2024/06/20-23:39:55.869 71ac Delete type=2 #7
+2024/06/20-23:39:55.869 71ac Delete type=2 #8
+2024/06/20-23:39:55.869 71ac Delete type=0 #10
+2024/06/20-23:39:55.869 71ac Delete type=2 #12
 =======
-2024/06/20-18:06:07.965 7594 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/20-18:06:07.966 7594 Recovering log #17
-2024/06/20-18:06:07.967 7594 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\Site Characteristics Database/000017.log 
-2024/06/20-18:06:07.967 7594 Delete type=0 #3
-2024/06/20-18:06:07.968 7594 Delete type=2 #4
-2024/06/20-18:06:07.968 7594 Delete type=0 #6
-2024/06/20-18:06:07.968 7594 Delete type=2 #7
-2024/06/20-18:06:07.968 7594 Delete type=2 #8
-2024/06/20-18:06:07.968 7594 Delete type=0 #10
-2024/06/20-18:06:07.968 7594 Delete type=2 #12
->>>>>>> 8e79b9a49bf7934625532c5ea59e8e8fc9e99f14
+2024/06/21-01:56:38.209 6b2c Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.ffded53c\flutter_tools_chrome_device.6af026bd\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/21-01:56:38.209 6b2c Recovering log #17
+2024/06/21-01:56:38.210 6b2c Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.ffded53c\flutter_tools_chrome_device.6af026bd\Default\Site Characteristics Database/000017.log 
+2024/06/21-01:56:38.210 6b2c Delete type=0 #3
+2024/06/21-01:56:38.211 6b2c Delete type=2 #4
+2024/06/21-01:56:38.211 6b2c Delete type=0 #6
+2024/06/21-01:56:38.211 6b2c Delete type=2 #7
+2024/06/21-01:56:38.211 6b2c Delete type=2 #8
+2024/06/21-01:56:38.211 6b2c Delete type=0 #10
+2024/06/21-01:56:38.211 6b2c Delete type=2 #12
+>>>>>>> a64ac6919013632faa620181d9674c973fa0ac40

@@ -18,7 +18,7 @@ class AIChatScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       backgroundColor: const Color(0xFFF5F6F9),
       appBar: AppBar(
-        title: const Text('Chat'),
+        title: const Text('Chat', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(

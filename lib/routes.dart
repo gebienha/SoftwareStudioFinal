@@ -21,6 +21,8 @@ import 'package:shop_app/screens/AIChat/AIChatScreen.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/models/Review.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/products/popular_brands.dart';
+import 'package:shop_app/screens/products/cheap_brands.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -44,6 +46,8 @@ final Map<String, WidgetBuilder> routes = {
   Quiz.routeName: (context) => const Quiz(),
   CategoriesScreen.routeName: (context) => const CategoriesScreen(),
   ProductsScreen.routeName: (context) => const ProductsScreen(),
+  PopularBrandsScreen.routeName: (context) => const PopularBrandsScreen(),
+  CheapBrandsScreen.routeName: (context) => const CheapBrandsScreen(),
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {

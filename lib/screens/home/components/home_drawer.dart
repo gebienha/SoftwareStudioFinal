@@ -23,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               gradient: kPrimaryGradientColor,
@@ -35,23 +35,24 @@ class HomeDrawer extends StatelessWidget {
                   size: 32,
                   color: Color.fromRGBO(57, 55, 55, 1),
                 ),
-                const SizedBox(width: 18),
+                SizedBox(width: 18),
                 Text(
                   'BeautyBlendr',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Color.fromRGBO(57, 55, 55, 1),
+                   style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 24,
                   ),
                 ),
               ],
             ),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.home,
               size: 26,
               color: kTextColor,
             ),
-            title: Text(
+            title: const Text(
               'Home',
               style: TextStyle(
                 color: kTextColor,
@@ -63,12 +64,12 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.category,
               size: 26,
               color: kTextColor,
             ),
-            title: Text(
+            title: const Text(
               'Categories',
               style: TextStyle(
                 color: kTextColor,
@@ -79,7 +80,6 @@ class HomeDrawer extends StatelessWidget {
               Navigator.pop(context); // Close the drawer
               Navigator.pushNamed(
                 context,
-                // CategoriesScreen.routeName);// Navigate to the Categories screen
                 CategoriesScreen.routeName,
               ); // Navigate to the Categories screen
             },

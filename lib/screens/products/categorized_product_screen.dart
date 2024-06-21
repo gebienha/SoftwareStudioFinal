@@ -23,7 +23,7 @@ class CategorizedProductsScreen extends StatelessWidget {
         .toList();
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.title), // Use category name as the title
+        title: Text(category.title, style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)), // Use category name as the title
       ),
       body: SafeArea(
         child: Padding(
