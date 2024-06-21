@@ -14,6 +14,7 @@ import 'package:shop_app/screens/otp/otp_screen.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/screens/sign_up/sign_up_screen.dart';
+import 'package:shop_app/screens/skintracker/info.dart';
 import 'package:shop_app/screens/skintracker/skin_tracker.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
 import 'package:shop_app/screens/details/add_review_page.dart';
@@ -52,6 +53,7 @@ final Map<String, WidgetBuilder> routes = {
   //Conds.routeName: (context) => const Conds(),
   //AddTracker.routeName: (context) => const AddTracker(),
   SkinTracker.routeName: (context) =>  SkinTracker(),
+  TutorialPage.routeName: (context) => TutorialPage(),
   //AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
+import '../../screens/skintracker/skin_tracker.dart';
 
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
@@ -38,9 +39,14 @@ class ProfileScreen extends StatelessWidget {
               press: () {},
             ),
             ProfileMenu(
-              text: "Help Center",
+              text: "Skin Tracker",
               icon: "assets/icons/Question mark.svg",
-              press: () {},
+              press: () {
+                Navigator.pushNamed(
+                  context,
+                  SkinTracker.routeName,
+                );
+              },
             ),
             ProfileMenu(
               text: "Log Out",
