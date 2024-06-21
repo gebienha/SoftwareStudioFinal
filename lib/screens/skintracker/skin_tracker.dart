@@ -13,17 +13,16 @@ class SkinTracker extends StatefulWidget {
 
 class _SkinTrackerState extends State<SkinTracker>
     with TickerProviderStateMixin {
-  static const _initialDelayTime = Duration(milliseconds: 200); // Adjusted initial delay
-  static const _itemSlideTime = Duration(milliseconds: 800); // Adjusted item slide time
-  static const _staggerTime = Duration(milliseconds: 200); // Adjusted stagger time
-  static const _buttonDelayTime = Duration(milliseconds: 400); // Adjusted button delay
-  static const _buttonTime = Duration(milliseconds: 1200); // Adjusted button time
+  static const _initialDelayTime = Duration(milliseconds: 200);
+  static const _itemSlideTime = Duration(milliseconds: 800);
+  static const _staggerTime = Duration(milliseconds: 200);
+  static const _buttonDelayTime = Duration(milliseconds: 400);
+  static const _buttonTime = Duration(milliseconds: 1200);
 
   late AnimationController _staggeredController;
   late List<Interval> _itemSlideIntervals;
   late Interval _buttonInterval;
 
-  // Define a map of conditions to colors
   final Map<String, Color> conditionColors = {
     'Breakouts': Color(0xFF8AD6B7),
     'Acne': Color(0xFFC0DEA9),
@@ -31,6 +30,15 @@ class _SkinTrackerState extends State<SkinTracker>
     'Redness': Color(0xFFB3816E),
     'Dryness': Color(0xFFC7A26B),
     'Oiliness': Color(0xFFDED2AA),
+  };
+
+  final Map<String, IconData> conditionIcons = {
+    'Breakouts': Icons.face,
+    'Acne': Icons.warning,
+    'Flaring': Icons.local_fire_department,
+    'Redness': Icons.color_lens,
+    'Dryness': Icons.opacity,
+    'Oiliness': Icons.oil_barrel,
   };
 
   @override
@@ -42,7 +50,6 @@ class _SkinTrackerState extends State<SkinTracker>
       duration: _calculateAnimationDuration(),
     );
 
-    // Start animation immediately when the widget is built
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       _staggeredController.forward();
     });
@@ -114,15 +121,9 @@ class _SkinTrackerState extends State<SkinTracker>
         title: Text('Skin Condition Tracker'),
         actions: [
           IconButton(
-          onPressed: _openInfoOverlay,
-          //() {
-          //   Navigator.pushNamed(
-          //         context,
-          //         TutorialPage.routeName,
-          //       );
-          // },
-          icon: const Icon(Icons.info_rounded),
-        ),
+            onPressed: _openInfoOverlay,
+            icon: const Icon(Icons.info_rounded),
+          ),
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
@@ -161,13 +162,12 @@ class _SkinTrackerState extends State<SkinTracker>
               final data = skinData[index];
               final date = (data['date'] as Timestamp).toDate();
               final condition = data['condition'];
-              final description = data['description']; // Retrieve description
+              final description = data['description'];
               final id = data.id;
 
-              // Determine background color based on condition
               Color? backgroundColor = conditionColors[condition];
+              IconData? conditionIcon = conditionIcons[condition];
 
-              // Delay animation for each item
               final itemAnimation = Tween(begin: 0.0, end: 1.0).animate(
                 CurvedAnimation(
                   parent: _staggeredController,
@@ -183,11 +183,12 @@ class _SkinTrackerState extends State<SkinTracker>
                 sizeFactor: itemAnimation,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    decoration: BoxDecoration(
+                  child: Card(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                      color: backgroundColor ?? Colors.white, // Default to white if color not found
                     ),
+                    color: Colors.grey[200], // Set card background to light gray
                     child: Dismissible(
                       key: ValueKey(id),
                       background: Container(color: Colors.red),
@@ -195,11 +196,15 @@ class _SkinTrackerState extends State<SkinTracker>
                         _deleteRecord(context, id);
                       },
                       child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: backgroundColor,
+                          child: Icon(conditionIcon, color: Colors.white),
+                        ),
                         title: Text(
                           condition,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black, // Adjust text color if needed
+                            color: Colors.black,
                           ),
                         ),
                         subtitle: Column(
@@ -207,7 +212,7 @@ class _SkinTrackerState extends State<SkinTracker>
                           children: [
                             Text(DateFormat.yMd().format(date)),
                             SizedBox(height: 5),
-                            Text(description), // Display description
+                            Text(description),
                           ],
                         ),
                         trailing: IconButton(
