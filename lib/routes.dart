@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:shop_app/screens/category/category_screen.dart';
 import 'package:shop_app/screens/products/categorized_product_screen.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
-
 import 'package:shop_app/screens/details/details_screen.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 import 'package:shop_app/screens/complete_profile/complete_profile_screen.dart';
@@ -21,8 +20,7 @@ import 'package:shop_app/screens/moredetail/seemoredetail.dart';
 import 'package:shop_app/screens/AIChat/AIChatScreen.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/models/Review.dart';
-import 'package:shop_app/models/Product.dart'; // Ensure Product model is imported
-
+import 'package:shop_app/models/Product.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),

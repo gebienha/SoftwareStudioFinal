@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 2024/06/20-16:42:34.781 7dec Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.d16b868\flutter_tools_chrome_device.adeb50eb\Default\shared_proto_db/MANIFEST-000001
 2024/06/20-16:42:34.782 7dec Recovering log #6
 2024/06/20-16:42:34.783 7dec Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.d16b868\flutter_tools_chrome_device.adeb50eb\Default\shared_proto_db/000006.log 
 2024/06/20-16:42:34.784 7dec Delete type=0 #3
 2024/06/20-16:42:34.784 7dec Delete type=0 #4
 2024/06/20-16:42:34.784 7dec Delete type=2 #5
+=======
+2024/06/20-18:06:08.179 fac Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/MANIFEST-000001
+2024/06/20-18:06:08.180 fac Recovering log #6
+2024/06/20-18:06:08.181 fac Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/000006.log 
+2024/06/20-18:06:08.183 fac Delete type=0 #3
+2024/06/20-18:06:08.183 fac Delete type=0 #4
+2024/06/20-18:06:08.183 fac Delete type=2 #5
+>>>>>>> 8e79b9a49bf7934625532c5ea59e8e8fc9e99f14
