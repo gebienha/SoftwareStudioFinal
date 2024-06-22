@@ -43,7 +43,10 @@ final Map<String, WidgetBuilder> routes = {
   ),
   CartScreen.routeName: (context) => const CartScreen(),
   ProfileScreen.routeName: (context) => const ProfileScreen(),
-  AddReviewScreen.routeName: (context) => const AddReviewScreen(),
+  AddReviewScreen.routeName: (context) {
+    final productId = ModalRoute.of(context)?.settings.arguments as String;
+    return AddReviewScreen(productId: productId);
+  },
   SeeMoreDetailScreen.routeName: (context) => const SeeMoreDetailScreen(),
   AIChatScreen.routeName: (context) => const AIChatScreen(),
   Quiz.routeName: (context) => const Quiz(),
@@ -52,10 +55,9 @@ final Map<String, WidgetBuilder> routes = {
   PopularBrandsScreen.routeName: (context) => const PopularBrandsScreen(),
   CheapBrandsScreen.routeName: (context) => const CheapBrandsScreen(),
   FavoriteScreen.routeName: (context) => const FavoriteScreen(),
-  SkinTracker.routeName: (context) =>  SkinTracker(),
+  SkinTracker.routeName: (context) => SkinTracker(),
   TutorialPage.routeName: (context) => TutorialPage(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
-  //AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {
