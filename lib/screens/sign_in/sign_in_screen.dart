@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart'; // Import Google Sign-In
+import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import '../../components/no_account_text.dart';
 import '../../components/socal_card.dart';
 import '../home/home_screen.dart'; // Import the home screen after sign-in
@@ -31,8 +32,8 @@ class SignInScreen extends StatelessWidget {
       );
 
       await FirebaseAuth.instance.signInWithCredential(credential);
-      print('Signed in with Google, navigating to HomeScreen');
-      Navigator.pushNamed(context, HomeScreen.routeName);
+      print('Signed in with Google, navigating to LoginSuccessScreen');
+      Navigator.pushNamed(context, LoginSuccessScreen.routeName);
     } catch (error) {
       print('Error during Google sign-in: $error');
       // Handle error
