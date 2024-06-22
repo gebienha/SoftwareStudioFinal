@@ -1,28 +1,26 @@
-2024/06/22-21:18:49.665 40a8 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.3f129984\flutter_tools_chrome_device.56b19f3d\Default\shared_proto_db/MANIFEST-000001
-2024/06/22-21:18:49.666 40a8 Recovering log #35
-2024/06/22-21:18:49.671 40a8 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.3f129984\flutter_tools_chrome_device.56b19f3d\Default\shared_proto_db/000035.log 
-2024/06/22-21:18:49.673 40a8 Delete type=2 #3
-2024/06/22-21:18:49.674 40a8 Delete type=0 #3
-2024/06/22-21:18:49.675 40a8 Delete type=0 #4
-2024/06/22-21:18:49.675 40a8 Delete type=2 #5
-2024/06/22-21:18:49.675 40a8 Delete type=0 #6
-2024/06/22-21:18:49.675 40a8 Delete type=2 #7
-2024/06/22-21:18:49.675 40a8 Delete type=0 #9
-2024/06/22-21:18:49.675 40a8 Delete type=2 #10
-2024/06/22-21:18:49.675 40a8 Delete type=0 #12
-2024/06/22-21:18:49.675 40a8 Delete type=2 #14
-2024/06/22-21:18:49.676 40a8 Delete type=0 #16
-2024/06/22-21:18:49.676 40a8 Delete type=2 #17
-2024/06/22-21:18:49.676 40a8 Delete type=0 #19
-2024/06/22-21:18:49.676 40a8 Delete type=2 #20
-2024/06/22-21:18:49.676 40a8 Delete type=0 #22
-2024/06/22-21:18:49.676 40a8 Delete type=2 #23
-2024/06/22-21:18:49.676 40a8 Delete type=0 #25
-2024/06/22-21:18:49.676 40a8 Delete type=2 #27
-2024/06/22-21:18:49.676 40a8 Delete type=0 #29
-2024/06/22-21:18:49.676 40a8 Delete type=2 #30
-2024/06/22-21:18:49.676 40a8 Delete type=0 #32
-2024/06/22-21:18:49.676 40a8 Delete type=2 #33
-2024/06/22-21:19:04.680 40a8 Level-0 table #39: started
-2024/06/22-21:19:04.688 40a8 Level-0 table #39: 134607 bytes OK
-2024/06/22-21:19:04.690 40a8 Delete type=0 #35
+2024/06/22-21:57:42.190 7f64 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\shared_proto_db/MANIFEST-000001
+2024/06/22-21:57:42.191 7f64 Recovering log #38
+2024/06/22-21:57:42.192 7f64 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\shared_proto_db/000038.log 
+2024/06/22-21:57:42.193 7f64 Delete type=2 #3
+2024/06/22-21:57:42.193 7f64 Delete type=0 #3
+2024/06/22-21:57:42.193 7f64 Delete type=0 #4
+2024/06/22-21:57:42.193 7f64 Delete type=2 #5
+2024/06/22-21:57:42.193 7f64 Delete type=0 #6
+2024/06/22-21:57:42.193 7f64 Delete type=2 #7
+2024/06/22-21:57:42.193 7f64 Delete type=0 #9
+2024/06/22-21:57:42.194 7f64 Delete type=2 #10
+2024/06/22-21:57:42.194 7f64 Delete type=0 #12
+2024/06/22-21:57:42.194 7f64 Delete type=2 #14
+2024/06/22-21:57:42.194 7f64 Delete type=0 #16
+2024/06/22-21:57:42.194 7f64 Delete type=2 #17
+2024/06/22-21:57:42.194 7f64 Delete type=0 #19
+2024/06/22-21:57:42.194 7f64 Delete type=2 #20
+2024/06/22-21:57:42.194 7f64 Delete type=0 #22
+2024/06/22-21:57:42.194 7f64 Delete type=2 #23
+2024/06/22-21:57:42.194 7f64 Delete type=0 #25
+2024/06/22-21:57:42.194 7f64 Delete type=2 #27
+2024/06/22-21:57:42.194 7f64 Delete type=0 #29
+2024/06/22-21:57:42.194 7f64 Delete type=2 #30
+2024/06/22-21:57:42.194 7f64 Delete type=0 #32
+2024/06/22-21:57:42.194 7f64 Delete type=2 #33
+2024/06/22-21:57:42.195 7f64 Delete type=0 #35

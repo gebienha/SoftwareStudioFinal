@@ -3,7 +3,6 @@ import 'package:shop_app/components/favorites_card.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/favorite/service/firestore.dart';
 import 'package:shop_app/screens/init_screen.dart';
-
 import '../details/details_screen.dart';
 
 class FavoriteScreen extends StatefulWidget {
@@ -28,7 +27,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   Future<List<Product>> _fetchFavoriteProducts() async {
     // Fetch favorite products from Firestore
     List<int> favoriteIds = await _firestoreService.getFavoriteIds();
-    // Assuming demoProducts is a list of all available products
     List<Product> favoriteProducts = demoProducts
         .where((product) => favoriteIds.contains(product.id))
         .toList();

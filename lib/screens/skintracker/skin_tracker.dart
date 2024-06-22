@@ -155,36 +155,76 @@ class _SkinTrackerState extends State<SkinTracker> with TickerProviderStateMixin
           if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
             return Center(child: Text('No skin conditions added yet.'));
           }
-          final documents = snapshot.data!.docs;
-          return ListView.builder(
-            itemCount: documents.length,
-            itemBuilder: (ctx, index) {
-              var doc = documents[index];
-              var condition = doc['condition'] as String?;
-              var description = doc['description'] as String?;
-              var date = (doc['date'] as Timestamp?)?.toDate();
+          
+          final skinData = snapshot.data!.docs;
 
-              if (condition == null || description == null || date == null) {
-                return ListTile(
-                  title: Text('Invalid data'),
-                  subtitle: Text('Please check the database.'),
-                );
-              }
+          return AnimatedList(
+            key: GlobalKey<AnimatedListState>(),
+            initialItemCount: skinData.length,
+            itemBuilder: (ctx, index, animation) {
+              final data = skinData[index];
+              final date = (data['date'] as Timestamp).toDate();
+              final condition = data['condition'];
+              final description = data['description'];
+              final id = data.id;
 
-              return ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: conditionColors[condition] ?? Colors.grey,
-                  child: Icon(
-                    conditionIcons[condition] ?? Icons.help,
-                    color: Colors.white,
+              Color? backgroundColor = conditionColors[condition];
+              IconData? conditionIcon = conditionIcons[condition];
+
+              final itemAnimation = Tween(begin: 0.0, end: 1.0).animate(
+                CurvedAnimation(
+                  parent: _staggeredController,
+                  curve: Interval(
+                    _itemSlideIntervals[index].begin,
+                    _itemSlideIntervals[index].end,
+                    curve: Curves.easeInOut,
                   ),
                 ),
-                title: Text(condition),
-                subtitle: Text('${DateFormat.yMd().format(date)}\n$description'),
-                isThreeLine: true,
-                trailing: IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () => _deleteRecord(context, doc.id),
+              );
+
+              return SizeTransition(
+                sizeFactor: itemAnimation,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.grey[200], // Set card background to light gray
+                    child: Dismissible(
+                      key: ValueKey(id),
+                      background: Container(color: Colors.red),
+                      onDismissed: (direction) {
+                        _deleteRecord(context, id);
+                      },
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: backgroundColor,
+                          child: Icon(conditionIcon, color: Colors.white),
+                        ),
+                        title: Text(
+                          condition,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                        subtitle: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(DateFormat.yMd().format(date)),
+                            SizedBox(height: 5),
+                            Text(description),
+                          ],
+                        ),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () => _deleteRecord(context, id),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               );
             },
