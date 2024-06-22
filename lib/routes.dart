@@ -25,7 +25,7 @@ import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/models/Review.dart';
 import 'package:shop_app/screens/products/popular_brands.dart';
 import 'package:shop_app/screens/products/cheap_brands.dart';
-
+import 'package:shop_app/screens/sign_up/sign_up_success.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -51,10 +51,10 @@ final Map<String, WidgetBuilder> routes = {
   ProductsScreen.routeName: (context) => const ProductsScreen(),
   PopularBrandsScreen.routeName: (context) => const PopularBrandsScreen(),
   CheapBrandsScreen.routeName: (context) => const CheapBrandsScreen(),
-  //Conds.routeName: (context) => const Conds(),
   FavoriteScreen.routeName: (context) => const FavoriteScreen(),
   SkinTracker.routeName: (context) =>  SkinTracker(),
   TutorialPage.routeName: (context) => TutorialPage(),
+  SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
   //AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 
