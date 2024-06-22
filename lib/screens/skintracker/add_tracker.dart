@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AddTracker extends StatefulWidget {
   @override
@@ -27,11 +28,18 @@ class _AddTrackerState extends State<AddTracker> {
     }
     _formKey.currentState!.save();
 
+    // Get current user
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      return;
+    }
+
     // Save to Firebase
     await FirebaseFirestore.instance.collection('skin_tracker').add({
       'date': _selectedDate,
       'condition': _selectedCondition,
       'description': _descController.text,
+      'userId': user.uid, // Include the userId field
       'timestamp': FieldValue.serverTimestamp(),
     });
 

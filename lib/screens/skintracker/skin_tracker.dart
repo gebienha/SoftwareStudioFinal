@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
-import 'package:shop_app/screens/skintracker/add_tracker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'add_tracker.dart';
 import 'info.dart';
 
 class SkinTracker extends StatefulWidget {
@@ -11,8 +12,7 @@ class SkinTracker extends StatefulWidget {
   _SkinTrackerState createState() => _SkinTrackerState();
 }
 
-class _SkinTrackerState extends State<SkinTracker>
-    with TickerProviderStateMixin {
+class _SkinTrackerState extends State<SkinTracker> with TickerProviderStateMixin {
   static const _initialDelayTime = Duration(milliseconds: 200);
   static const _itemSlideTime = Duration(milliseconds: 800);
   static const _staggerTime = Duration(milliseconds: 200);
@@ -50,7 +50,7 @@ class _SkinTrackerState extends State<SkinTracker>
       duration: _calculateAnimationDuration(),
     );
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _staggeredController.forward();
     });
 
@@ -116,6 +116,11 @@ class _SkinTrackerState extends State<SkinTracker>
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      return Center(child: Text('Please sign in to view your skin conditions.'));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Skin Condition Tracker'),
@@ -137,91 +142,49 @@ class _SkinTrackerState extends State<SkinTracker>
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('skin_tracker')
+            .where('userId', isEqualTo: user.uid)
             .orderBy('date', descending: true)
             .snapshots(),
         builder: (ctx, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           }
-
-          final skinData = snapshot.data!.docs;
-
-          if (skinData.isEmpty) {
-            return Center(
-              child: Text(
-                'No skin condition records found.',
-                style: TextStyle(fontSize: 18),
-              ),
-            );
+          if (snapshot.hasError) {
+            return Center(child: Text('An error occurred: ${snapshot.error}'));
           }
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Center(child: Text('No skin conditions added yet.'));
+          }
+          final documents = snapshot.data!.docs;
+          return ListView.builder(
+            itemCount: documents.length,
+            itemBuilder: (ctx, index) {
+              var doc = documents[index];
+              var condition = doc['condition'] as String?;
+              var description = doc['description'] as String?;
+              var date = (doc['date'] as Timestamp?)?.toDate();
 
-          return AnimatedList(
-            key: GlobalKey<AnimatedListState>(),
-            initialItemCount: skinData.length,
-            itemBuilder: (ctx, index, animation) {
-              final data = skinData[index];
-              final date = (data['date'] as Timestamp).toDate();
-              final condition = data['condition'];
-              final description = data['description'];
-              final id = data.id;
+              if (condition == null || description == null || date == null) {
+                return ListTile(
+                  title: Text('Invalid data'),
+                  subtitle: Text('Please check the database.'),
+                );
+              }
 
-              Color? backgroundColor = conditionColors[condition];
-              IconData? conditionIcon = conditionIcons[condition];
-
-              final itemAnimation = Tween(begin: 0.0, end: 1.0).animate(
-                CurvedAnimation(
-                  parent: _staggeredController,
-                  curve: Interval(
-                    _itemSlideIntervals[index].begin,
-                    _itemSlideIntervals[index].end,
-                    curve: Curves.easeInOut,
+              return ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: conditionColors[condition] ?? Colors.grey,
+                  child: Icon(
+                    conditionIcons[condition] ?? Icons.help,
+                    color: Colors.white,
                   ),
                 ),
-              );
-
-              return SizeTransition(
-                sizeFactor: itemAnimation,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Card(
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    color: Colors.grey[200], // Set card background to light gray
-                    child: Dismissible(
-                      key: ValueKey(id),
-                      background: Container(color: Colors.red),
-                      onDismissed: (direction) {
-                        _deleteRecord(context, id);
-                      },
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: backgroundColor,
-                          child: Icon(conditionIcon, color: Colors.white),
-                        ),
-                        title: Text(
-                          condition,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(DateFormat.yMd().format(date)),
-                            SizedBox(height: 5),
-                            Text(description),
-                          ],
-                        ),
-                        trailing: IconButton(
-                          icon: Icon(Icons.delete),
-                          onPressed: () => _deleteRecord(context, id),
-                        ),
-                      ),
-                    ),
-                  ),
+                title: Text(condition),
+                subtitle: Text('${DateFormat.yMd().format(date)}\n$description'),
+                isThreeLine: true,
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () => _deleteRecord(context, doc.id),
                 ),
               );
             },
