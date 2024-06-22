@@ -1,35 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/screens/favorite/favorite_screen.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  const Categories({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/Flash Icon.svg", "text": "Flash Deal"},
-      {"icon": "assets/icons/Bill Icon.svg", "text": "Bill"},
-      {"icon": "assets/icons/Game Icon.svg", "text": "Game"},
-      {"icon": "assets/icons/Gift Icon.svg", "text": "Daily Gift"},
+      {"icon": "assets/icons/calendar.svg", "text": "Skin Tracker"},
+      {"icon": "assets/icons/category.svg", "text": "Category"},
+      {"icon": "assets/icons/Heart Icon.svg", "text": "Favorites"},
+      {"icon": "assets/icons/Question mark.svg", "text": "Info"},
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
+
+    void onPressCategory(String categoryText) {
+      // Implement navigation logic here, for example:
+      if (categoryText == "Skin Tracker") {
+        Navigator.pushNamed(
+          context,
+          '/skin-tracker',
+        );
+      } else if (categoryText == "Category") {
+        Navigator.pushNamed(context, "/categories");
+      }
+      else if (categoryText == "Favorites") {
+        Navigator.pop(context);
+        Navigator.pushNamed(context, "/favorite");
+      }
+      else if (categoryText == "More") {
+        Navigator.pushNamed(
+          context,
+          '/categorizedproducts',
+          arguments: 'all', // Pass the categoryId as argument
+        );
+      }
+    }
+
     return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: List.generate(
-          categories.length,
-          (index) => CategoryCard(
-            icon: categories[index]["icon"],
-            text: categories[index]["text"],
-            press: () {},
+      padding: const EdgeInsets.symmetric(vertical: 20), // Maintain original top and bottom margin
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            categories.length,
+            (index) => Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10), // Consistent horizontal padding for all items
+              child: CategoryCard(
+                icon: categories[index]["icon"],
+                text: categories[index]["text"],
+                press: () => onPressCategory(categories[index]["text"]),
+              ),
+            ),
           ),
         ),
       ),
     );
   }
 }
+
+
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
@@ -53,13 +85,16 @@ class CategoryCard extends StatelessWidget {
             height: 56,
             width: 56,
             decoration: BoxDecoration(
-              color: const Color(0xFFFFECDF),
+              color: const Color(0xFF60C6A2), // Green background
               borderRadius: BorderRadius.circular(10),
             ),
-            child: SvgPicture.asset(icon),
+            child: SvgPicture.asset(
+              icon,
+              color: Colors.white, // White icon
+            ),
           ),
           const SizedBox(height: 4),
-          Text(text, textAlign: TextAlign.center)
+          Text(text, textAlign: TextAlign.center),
         ],
       ),
     );

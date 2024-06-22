@@ -54,17 +54,18 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               ),
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.answers.map((answer) {
+            ...List.generate(currentQuestion.answers.length, (index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4.0),
                 child: AnswerButton(
-                  answerText: answer,
+                  answerText: currentQuestion.answers[index],
                   onTap: () {
-                    _answerQuestion(answer);
+                    final answerLetter = String.fromCharCode(65 + index); // Convert index to letter
+                    _answerQuestion(answerLetter);
                   },
                 ),
               );
-            })
+            }),
           ],
         ),
       ),

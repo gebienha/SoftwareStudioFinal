@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/screens/moredetail/seemoredetail.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../constants.dart';
 import '../../../models/Product.dart';
+import 'package:shop_app/screens/favorite/service/firestore.dart';
 
 class ProductDescription extends StatefulWidget {
   const ProductDescription({
@@ -21,6 +23,7 @@ class ProductDescription extends StatefulWidget {
 
 class _ProductDescriptionState extends State<ProductDescription> {
   late bool isFavourite;
+  final FirestoreService _firestoreService = FirestoreService();
 
   @override
   void initState() {
@@ -28,11 +31,17 @@ class _ProductDescriptionState extends State<ProductDescription> {
     isFavourite = widget.product.isFavourite;
   }
 
-  void toggleFavourite() {
+  void toggleFavourite() async {
     setState(() {
       isFavourite = !isFavourite;
       widget.product.isFavourite = isFavourite; // Update the product's isFavourite status
     });
+
+    if (isFavourite) {
+      await _firestoreService.addFavorite(widget.product.id);
+    } else {
+      await _firestoreService.removeFavorite(widget.product.id);
+    }
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../components/product_card.dart';
 import '../../../models/Product.dart';
 import '../../details/details_screen.dart';
@@ -16,7 +15,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SectionTitle(
-            title: "Popular Products",
+            title: "All Products",
             press: () {
               Navigator.pushNamed(context, ProductsScreen.routeName);
             },
@@ -44,8 +43,7 @@ class PopularProducts extends StatelessWidget {
                     );
                   }
 
-                  return const SizedBox
-                      .shrink(); // here by default width and height is 0
+                  return const SizedBox.shrink();
                 },
               ),
               const SizedBox(width: 20),

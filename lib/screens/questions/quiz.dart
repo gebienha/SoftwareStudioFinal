@@ -5,6 +5,44 @@ import 'quiz_question.dart';
 import 'results_screen.dart';
 import '../AIChat/AIChatScreen.dart';
 import '../../../constants.dart';
+import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class FirestoreService {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  Future<void> saveBendera(int value) async {
+    await _db.collection('bendera').doc('currentBendera').set({'value': value});
+  }
+
+  Future<int> fetchBendera() async {
+    DocumentSnapshot doc = await _db.collection('bendera').doc('currentBendera').get();
+    return doc.exists ? doc['value'] as int : 0;
+  }
+}
+
+
+class BenderaProvider with ChangeNotifier {
+  int _bendera = 0;
+  final FirestoreService _firestoreService = FirestoreService(); // Initialize the Firestore service
+  
+  BenderaProvider() {
+    fetchBendera();
+  }
+
+  int get bendera => _bendera;
+
+  set bendera(int value) {
+    _bendera = value;
+    notifyListeners();
+    _firestoreService.saveBendera(value); // Save the value to Firestore
+  }
+
+  Future<void> fetchBendera() async {
+    _bendera = await _firestoreService.fetchBendera();
+    notifyListeners();
+  }
+}
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -63,16 +101,16 @@ class _QuizState extends State<Quiz> {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            gradient: kPrimaryGradientColor,
-            // LinearGradient(
-            //   colors: [
+            gradient: 
+            LinearGradient(
+              colors: [
 
-            //     // Color.fromARGB(255, 150, 201, 191),
-            //     // Color.fromARGB(255, 0, 0, 0),
-            //   ],
-            //   begin: Alignment.topLeft,
-            //   end: Alignment.bottomRight,
-            // ),
+                Color.fromARGB(255, 197, 237, 224),
+                Color.fromARGB(255, 255, 255, 255),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
           child: screenWidget,
         ),

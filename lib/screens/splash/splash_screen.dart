@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'components/splash_content.dart';
 import '../../constants.dart';
 import '../sign_in/sign_in_screen.dart';
-import 'components/splash_content.dart';
-import '../home/home_screen.dart';
-import '../questions/quiz.dart';
 
 class SplashScreen extends StatefulWidget {
   static String routeName = "/splash";
@@ -19,29 +16,35 @@ class _SplashScreenState extends State<SplashScreen> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Welcome to Beauty, Let’s shop!",
+      "text": "Find skincares\nyou’ll love.",
       "image": "assets/images/splash_1.png"
     },
     {
-      "text":
-          "We help people conect with store \naround United State of America",
+      "text": "We help people connect with the best\nskincare products around the world.",
       "image": "assets/images/splash_2.png"
     },
     {
-      "text": "We show the easy way to shop. \nJust stay at home with us",
+      "text": "Discover and review skincare easily.\nStay informed with BeautyBlendr.",
       "image": "assets/images/splash_3.png"
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.center,
+              colors: [Color(0xFFC3FDDF), Colors.white],
+            ),
+          ),
           child: Column(
-            children: <Widget>[
+            children: [
               Expanded(
-                flex: 3,
+                flex: 4,
                 child: PageView.builder(
                   onPageChanged: (value) {
                     setState(() {
@@ -61,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
                     children: <Widget>[
-                      const Spacer(),
+                      Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: List.generate(
@@ -73,21 +76,29 @@ class _SplashScreenState extends State<SplashScreen> {
                             width: currentPage == index ? 20 : 6,
                             decoration: BoxDecoration(
                               color: currentPage == index
-                                  ? kPrimaryColor
+                                  ? Color(0xFF60C6A2) // Changed to green
                                   : const Color(0xFFD8D8D8),
                               borderRadius: BorderRadius.circular(3),
                             ),
                           ),
                         ),
                       ),
-                      const Spacer(flex: 3),
+                      Spacer(flex: 2),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, Quiz.routeName);//SignInScreen.routeName);
+                          Navigator.pushNamed(context, SignInScreen.routeName);
                         },
-                        child: const Text("Continue"),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color(0xFF60C6A2), // Green color for the button
+                          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                          minimumSize: Size(60, 60), // Make the button smaller
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30), // Rounded button
+                          ),
+                        ),
+                        child: Icon(Icons.arrow_forward, color: Colors.white), // Arrow icon for the button
                       ),
-                      const Spacer(),
+                      Spacer(),
                     ],
                   ),
                 ),

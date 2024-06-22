@@ -65,6 +65,15 @@ class Reviews extends StatelessWidget {
                           fontSize: 14,
                         ),
                       ),
+                      const SizedBox(height: 5),
+                      Text(
+                        "Usage Period: ${reviews[index]['usagePeriod']}",
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.grey,
+                        ),
+                      ),
                       const Divider(),
                     ],
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
+import '../../screens/skintracker/skin_tracker.dart';
 
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
@@ -11,7 +11,11 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profile"),
+        title: null,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
+        leading: const SizedBox(), // This removes the back arrow
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),
@@ -35,9 +39,14 @@ class ProfileScreen extends StatelessWidget {
               press: () {},
             ),
             ProfileMenu(
-              text: "Help Center",
+              text: "Skin Tracker",
               icon: "assets/icons/Question mark.svg",
-              press: () {},
+              press: () {
+                Navigator.pushNamed(
+                  context,
+                  SkinTracker.routeName,
+                );
+              },
             ),
             ProfileMenu(
               text: "Log Out",

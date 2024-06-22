@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
+import 'package:shop_app/screens/products/popular_brands.dart';
+import 'package:shop_app/screens/products/cheap_brands.dart';
 
 import 'section_title.dart';
 
@@ -25,18 +27,18 @@ class SpecialOffers extends StatelessWidget {
             children: [
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
-                category: "Smartphone",
-                numOfBrands: 18,
+                category: "Popular in 2024",
+                numOfBrands: 5,
                 press: () {
-                  Navigator.pushNamed(context, ProductsScreen.routeName);
+                  Navigator.pushNamed(context, PopularBrandsScreen.routeName);
                 },
               ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 3.png",
-                category: "Fashion",
-                numOfBrands: 24,
+                category: "Affordable Brands",
+                numOfBrands: 5,
                 press: () {
-                  Navigator.pushNamed(context, ProductsScreen.routeName);
+                  Navigator.pushNamed(context, CheapBrandsScreen.routeName);
                 },
               ),
               const SizedBox(width: 20),

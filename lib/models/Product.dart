@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/constants.dart';
+import 'category.dart';
 
 class Product {
   final int id;
@@ -7,6 +9,8 @@ class Product {
   final List<Color> colors;
   final double rating, price;
   final bool  isPopular;
+  final List<String> categories;
+
   bool isFavourite;
   Product({
     required this.id,
@@ -22,16 +26,81 @@ class Product {
     required this.recommend,
     required this.benefit,
     required this.ingredient,
-    required this.howto
-
+    required this.howto,
+    required this.categories,
   });
 }
+
+const dummyCategories = {
+  'all': Category(
+    id: 'all',
+    title: 'All Products',
+    color: kPrimaryColor,
+    imageUrl: 'https://www.shutterstock.com/image-photo/black-woman-smile-face-beauty-600nw-2248535449.jpg',
+  ),
+  'moist': Category(
+    id: 'moist',
+    title: 'Moisturizer',
+    color: kPrimaryColor,
+    imageUrl: "https://www.shutterstock.com/image-photo/happy-woman-face-cream-beauty-600nw-2227464229.jpg",
+  ),
+  'serum': Category(
+    id: 'serum',
+    title: 'Serum',
+    color: kPrimaryColor,
+    imageUrl: "https://cdn-cf.ipsy.com/contentAsset/image/161b47a8-8fe4-48f1-a77f-9d8274ab3132/fileAsset?byInode=1",
+  ),
+  'mask': Category(
+    id: 'mask',
+    title: 'Mask',
+    color: kPrimaryColor,
+    imageUrl: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/08/skin-care-face-mask-1296x728-header.jpg?w=1155&h=1528",
+  ),
+  'facial': Category(
+    id: 'facial',
+    title: 'Facial Wash',
+    color: kPrimaryColor,
+    imageUrl: "https://d2rd7etdn93tqb.cloudfront.net/wp-content/uploads/2020/10/shutterstock-girl-doing-skincare-routine-for-skincare-article-10252020.jpg",
+  ),
+   'essence': Category(
+    id: 'essence',
+    title: 'Essence',
+    color: kPrimaryColor,
+    imageUrl: "https://miro.medium.com/v2/resize:fit:1400/1*8X8oHVOj4M6ROaqUQypVuA.jpeg",
+  ),
+  'normal': Category(
+    id: 'normal',
+    title: 'Normal Skin Type',
+    color: kPrimaryColor,
+    imageUrl: "https://images.herzindagi.info/image/2019/May/dry-skin-products.jpg",
+  ),
+  'oily': Category(
+    id: 'oily',
+    title: 'Oily Skin Type',
+    color: kPrimaryColor,
+    imageUrl: "https://virtualaestheticclinic.com/cdn/shop/articles/Oily_Skin_Virtual_Aesthetic_345x345@2x.png?v=1640169023",
+  ),
+  'dry': Category(
+    id: 'dry',
+    title: 'Dry Skin Type',
+    color: kPrimaryColor,
+    imageUrl: "https://static.punjabkesari.in/multimedia/2024_4image_10_47_047304693dry-skin-1703835334.jpg",
+  ),
+  'combi': Category(
+    id: 'combi',
+    title: 'Combination Skin Type',
+    color: kPrimaryColor,
+    imageUrl: "https://images.pexels.com/photos/4972913/pexels-photo-4972913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  ),
+};
 
 // Our demo Products
 
 List<Product> demoProducts = [
   Product(
     id: 1,
+    categories: ['moist', 'all', 'normal','oily','combi'],
+
     images: [
       "assets/images/moisturizer.png",
       "assets/images/moisturizer1.png",
@@ -58,6 +127,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 2,
+    categories: ['serum', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/pixi.png",
       "assets/images/pixi2.png",
@@ -82,6 +152,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 3,
+    categories: ['serum', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/dalba.png",
       "assets/images/dalba2.png",
@@ -107,6 +178,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 4,
+    categories: ['moist', 'all', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/clinique1.png",
       "assets/images/cliniques-moist1.png",
@@ -130,6 +202,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 5,
+    categories: ['serum', 'all', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/clinique2.png",
       "assets/images/detail_clinique1.png",
@@ -155,6 +228,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 6,
+    categories: ['essence', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/cosrx1.png",
       "assets/images/cosrx2.png",
@@ -180,6 +254,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 7,
+    categories: ['mask', 'all', 'normal',  'dry'],
     images: [
       "assets/images/laneige1.png",
       "assets/images/laneige2.png",
@@ -205,6 +280,7 @@ List<Product> demoProducts = [
   ),
   Product(
     id: 8,
+    categories: ['facial', 'all', 'normal', 'oily', 'dry', 'combi'],
     images: [
       "assets/images/cetaphil1.png",
       "assets/images/cetaphil2.png",
@@ -263,7 +339,7 @@ const String recommend2 = "Skin Type: All";
 const String recommend3 = "Skin Type: All";
 const String recommend4 = "Skin Concern: Dry skin \nSkin Type: Very Dry to Dry, Dry Combination, Combination Oily, Oily";
 const String recommend5 = "Skin Concern: Anti-Aging\nSkin Type: Very Dry to Dry, Dry Combination, Combination Oily, Oily";
-const String recommend6 = "Skin Concern: Dull & rough skin, Dasrk spots & scars\nSkin Type: All";
+const String recommend6 = "Skin Concern: Dull & rough skin, Dark spots & scars\nSkin Type: All";
 const String recommend7 = "Skin Type: Normal, Dry";
 const String recommend8 = "Skin Concern: Dull and uneven skin tone\nSkin Type: All";
 

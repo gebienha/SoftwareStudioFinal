@@ -1,48 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/screens/cart/cart_screen.dart';
-import 'add_review_page.dart'; 
+import 'package:provider/provider.dart';
+import '../cart/cart_screen.dart';
+import 'add_review_page.dart';
+import 'package:shop_app/models/Review.dart';
 import '../../models/Product.dart';
 import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
 
-class DetailsScreen extends StatefulWidget {
+class DetailsScreen extends StatelessWidget {
   static String routeName = "/details";
 
   const DetailsScreen({Key? key}) : super(key: key);
-
-  @override
-  _DetailsScreenState createState() => _DetailsScreenState();
-}
-
-class _DetailsScreenState extends State<DetailsScreen> {
-  List<Map<String, dynamic>> reviews = [
-    {
-      'rating': 5,
-      'comment': 'Great product! Highly recommend.',
-      'image': 'assets/images/user-1.png',
-      'name': 'Kim Seokjin',
-    },
-    {
-      'rating': 4,
-      'comment': 'Good quality, but a bit expensive.',
-      'image': 'assets/images/user-2.jpeg',
-      'name': 'Cha Eunwoo',
-    },
-    {
-      'rating': 3,
-      'comment': 'Average product, not bad but not great either.',
-      'image': 'assets/images/user-3.jpg',
-      'name': 'Jang Wonyoung',
-    },
-  ];
-
-  void _addReview(Map<String, dynamic> review) {
-    setState(() {
-      reviews.add(review);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,15 +20,16 @@ class _DetailsScreenState extends State<DetailsScreen> {
     if (args == null || args is! ProductDetailsArguments) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Product Details"),
+          title: const Text("Product Details", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
         body: const Center(
-          child: Text("No product details available."),
+          child: Text("No product details available.", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
       );
     }
 
     final product = args.product;
+    final reviewsProvider = Provider.of<ReviewsProvider>(context);
 
     return Scaffold(
       extendBody: true,
@@ -102,18 +73,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   color: const Color(0xFFF6F7F9),
                   child: Column(
                     children: [
-                      Reviews(reviews: reviews),
+                      Reviews(reviews: reviewsProvider.reviews),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         child: ElevatedButton(
                           onPressed: () async {
                             final newReview = await Navigator.pushNamed(
-                              context, 
-                              AddReviewScreen.routeName
+                              context,
+                              AddReviewScreen.routeName,
                             );
 
                             if (newReview != null && newReview is Map<String, dynamic>) {
-                              _addReview(newReview);
+                              await reviewsProvider.addReview(newReview);
                             }
                           },
                           child: const Text("Add Your Review"),
@@ -126,20 +97,6 @@ class _DetailsScreenState extends State<DetailsScreen> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: TopRoundedContainer(
-        color: Colors.white,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              child: const Text("Add To Wishlist"),
-            ),
-          ),
-        ),
       ),
     );
   }
