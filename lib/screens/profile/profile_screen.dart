@@ -1,9 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'components/profile_menu.dart';
 import 'components/profile_pic.dart';
+import '../../screens/skintracker/skin_tracker.dart';
+import 'package:shop_app/screens/init_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   static String routeName = "/profile";
+
+  void signUserOut(BuildContext context) {
+    FirebaseAuth.instance.signOut().then((_) {
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        SignInScreen.routeName,
+        (route) => false,
+      );
+    });
+  }
 
   const ProfileScreen({super.key});
   @override
@@ -38,14 +52,19 @@ class ProfileScreen extends StatelessWidget {
               press: () {},
             ),
             ProfileMenu(
-              text: "Help Center",
+              text: "Skin Tracker",
               icon: "assets/icons/Question mark.svg",
-              press: () {},
+              press: () {
+                Navigator.pushNamed(
+                  context,
+                  SkinTracker.routeName,
+                );
+              },
             ),
             ProfileMenu(
               text: "Log Out",
               icon: "assets/icons/Log out.svg",
-              press: () {},
+              press: () => signUserOut(context),
             ),
           ],
         ),

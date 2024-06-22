@@ -3,7 +3,7 @@ import 'package:shop_app/constants.dart';
 import 'quiz_question.dart';
 import '../login_success/login_success_screen.dart';
 import 'package:provider/provider.dart';
-//import 'components/questions_form.dart';
+// import 'components/questions_form.dart';
 
 class QuizSummaryProvider with ChangeNotifier {
   List<Map<String, Object>> _summaryData = [];
@@ -72,7 +72,7 @@ class ResultsScreen extends StatelessWidget {
                   backgroundColor: kPrimaryColor,
                   foregroundColor: const Color.fromARGB(255, 0, 0, 0),
                 ),
-                //icon: const Icon(Icons.arrow_forward_ios),
+                icon: const Icon(Icons.arrow_forward_ios),
                 label: const Text(
                   'Proceed to Chat', 
                 style: TextStyle(

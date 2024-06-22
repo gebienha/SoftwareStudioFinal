@@ -1,2 +1,24 @@
-2024/06/15-22:16:49.466 5950 Creating DB C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.c2d4146\flutter_tools_chrome_device.60690ace\Default\shared_proto_db since it was missing.
-2024/06/15-22:16:49.488 5950 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.c2d4146\flutter_tools_chrome_device.60690ace\Default\shared_proto_db/MANIFEST-000001
+2024/06/21-23:37:03.007 6360 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6888a034\flutter_tools_chrome_device.ad03a811\Default\shared_proto_db/MANIFEST-000001
+2024/06/21-23:37:03.007 6360 Recovering log #32
+2024/06/21-23:37:03.008 6360 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6888a034\flutter_tools_chrome_device.ad03a811\Default\shared_proto_db/000032.log 
+2024/06/21-23:37:03.009 6360 Delete type=2 #3
+2024/06/21-23:37:03.009 6360 Delete type=0 #3
+2024/06/21-23:37:03.009 6360 Delete type=0 #4
+2024/06/21-23:37:03.009 6360 Delete type=2 #5
+2024/06/21-23:37:03.009 6360 Delete type=0 #6
+2024/06/21-23:37:03.009 6360 Delete type=2 #7
+2024/06/21-23:37:03.009 6360 Delete type=0 #9
+2024/06/21-23:37:03.009 6360 Delete type=2 #10
+2024/06/21-23:37:03.009 6360 Delete type=0 #12
+2024/06/21-23:37:03.009 6360 Delete type=2 #14
+2024/06/21-23:37:03.009 6360 Delete type=0 #16
+2024/06/21-23:37:03.009 6360 Delete type=2 #17
+2024/06/21-23:37:03.009 6360 Delete type=0 #19
+2024/06/21-23:37:03.009 6360 Delete type=2 #20
+2024/06/21-23:37:03.009 6360 Delete type=0 #22
+2024/06/21-23:37:03.009 6360 Delete type=2 #23
+2024/06/21-23:37:03.009 6360 Delete type=0 #25
+2024/06/21-23:37:03.009 6360 Delete type=0 #29
+2024/06/21-23:37:13.457 1fe0 Level-0 table #36: started
+2024/06/21-23:37:13.462 1fe0 Level-0 table #36: 133484 bytes OK
+2024/06/21-23:37:13.465 1fe0 Delete type=0 #32

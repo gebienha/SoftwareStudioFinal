@@ -13,7 +13,7 @@ class ProductsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Products"),
+        title: const Text("Products", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       body: SafeArea(
         child: Padding(
@@ -41,3 +41,4 @@ class ProductsScreen extends StatelessWidget {
     );
   }
 }
+

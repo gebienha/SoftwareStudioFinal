@@ -33,6 +33,15 @@ class _FavoriteCardState extends State<FavoriteCard> {
   void initState() {
     super.initState();
     isFavourite = widget.product.isFavourite;
+    _fetchFavoriteStatus();
+  }
+
+  void _fetchFavoriteStatus() async {
+    bool favoriteStatus = await _firestoreService.isFavorite(widget.product.id);
+    setState(() {
+      isFavourite = favoriteStatus;
+      widget.product.isFavourite = favoriteStatus; // Update the product's isFavourite status
+    });
   }
 
   void toggleFavourite() async {

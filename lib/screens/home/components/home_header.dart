@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/skintracker/skin_tracker.dart';
 import 'icon_btn_with_counter.dart';
+
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -10,22 +12,8 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: [
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Settings.svg",
-            press: () {
-              // Add your navigation or action for settings here
-            },
-            color: Colors.white, // White icon color
-            backgroundColor: const Color(0xFFE0E0E0), // Lighter gray background
-          ),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/Bell.svg",
-            numOfitem: 3,
-            press: () {},
-          ),
         ],
       ),
     );
