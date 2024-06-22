@@ -53,7 +53,11 @@ class _ProductDescriptionState extends State<ProductDescription> {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0), // Adjust top padding for title
           child: Text(
             widget.product.title,
-            style: Theme.of(context).textTheme.titleLarge,
+            style: TextStyle(
+                  color: kPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
           ),
         ),
         Padding(
