@@ -1,18 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shop_app/screens/favorite/favorite_screen.dart';
 
 class Categories extends StatelessWidget {
-  const Categories({super.key});
+  const Categories({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/Flash Icon.svg", "text": "New"},
-      {"icon": "assets/icons/Bill Icon.svg", "text": "Top Rated"},
-      {"icon": "assets/icons/Game Icon.svg", "text": "Game"},
-      {"icon": "assets/icons/Gift Icon.svg", "text": "Daily Gift"},
+      {"icon": "assets/icons/calendar.svg", "text": "Skin Tracker"},
+      {"icon": "assets/icons/category.svg", "text": "Category"},
+      {"icon": "assets/icons/Heart Icon.svg", "text": "Favorites"},
+      {"icon": "assets/icons/Question mark.svg", "text": "Info"},
       {"icon": "assets/icons/Discover.svg", "text": "More"},
     ];
+
+    void onPressCategory(String categoryText) {
+      // Implement navigation logic here, for example:
+      if (categoryText == "Skin Tracker") {
+        Navigator.pushNamed(
+          context,
+          '/skin-tracker',
+        );
+      } else if (categoryText == "Category") {
+        Navigator.pushNamed(context, "/categories");
+      }
+      else if (categoryText == "Favorites") {
+        Navigator.pop(context);
+        Navigator.pushNamed(context, "/favorite");
+      }
+      else if (categoryText == "More") {
+        Navigator.pushNamed(
+          context,
+          '/categorizedproducts',
+          arguments: 'all', // Pass the categoryId as argument
+        );
+      }
+    }
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20), // Maintain original top and bottom margin
@@ -27,7 +51,7 @@ class Categories extends StatelessWidget {
               child: CategoryCard(
                 icon: categories[index]["icon"],
                 text: categories[index]["text"],
-                press: () {},
+                press: () => onPressCategory(categories[index]["text"]),
               ),
             ),
           ),
@@ -36,6 +60,8 @@ class Categories extends StatelessWidget {
     );
   }
 }
+
+
 
 class CategoryCard extends StatelessWidget {
   const CategoryCard({

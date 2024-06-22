@@ -72,7 +72,7 @@ const dummyCategories = {
     id: 'normal',
     title: 'Normal Skin Type',
     color: kPrimaryColor,
-    imageUrl: "https://miro.medium.com/v2/resize:fit:1400/1*8X8oHVOj4M6ROaqUQypVuA.jpeg",
+    imageUrl: "https://images.herzindagi.info/image/2019/May/dry-skin-products.jpg",
   ),
   'oily': Category(
     id: 'oily',

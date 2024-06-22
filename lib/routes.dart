@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/screens/category/category_screen.dart';
+import 'package:shop_app/screens/favorite/favorite_screen.dart';
 import 'package:shop_app/screens/products/categorized_product_screen.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
 import 'package:shop_app/screens/details/details_screen.dart';
@@ -14,6 +15,7 @@ import 'package:shop_app/screens/otp/otp_screen.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/screens/sign_up/sign_up_screen.dart';
+import 'package:shop_app/screens/skintracker/info.dart';
 import 'package:shop_app/screens/skintracker/skin_tracker.dart';
 import 'package:shop_app/screens/splash/splash_screen.dart';
 import 'package:shop_app/screens/details/add_review_page.dart';
@@ -21,10 +23,9 @@ import 'package:shop_app/screens/moredetail/seemoredetail.dart';
 import 'package:shop_app/screens/AIChat/AIChatScreen.dart';
 import 'package:shop_app/screens/questions/quiz.dart';
 import 'package:shop_app/models/Review.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/products/popular_brands.dart';
 import 'package:shop_app/screens/products/cheap_brands.dart';
-
+import 'package:shop_app/screens/sign_up/sign_up_success.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -50,7 +51,11 @@ final Map<String, WidgetBuilder> routes = {
   ProductsScreen.routeName: (context) => const ProductsScreen(),
   PopularBrandsScreen.routeName: (context) => const PopularBrandsScreen(),
   CheapBrandsScreen.routeName: (context) => const CheapBrandsScreen(),
+  FavoriteScreen.routeName: (context) => const FavoriteScreen(),
   SkinTracker.routeName: (context) =>  SkinTracker(),
+  TutorialPage.routeName: (context) => TutorialPage(),
+  SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
+  //AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {

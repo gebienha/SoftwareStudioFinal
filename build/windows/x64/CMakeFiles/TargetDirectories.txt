@@ -8,3 +8,10 @@ C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/fl
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/CMakeFiles/demodemo.dir
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/CMakeFiles/INSTALL.dir
 C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/cloud_firestore/CMakeFiles/cloud_firestore_plugin.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/cloud_firestore/CMakeFiles/INSTALL.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/cloud_firestore/CMakeFiles/ALL_BUILD.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_core/CMakeFiles/firebase_core_plugin.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_core/CMakeFiles/INSTALL.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_core/CMakeFiles/ALL_BUILD.dir
+C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_core/bin/CMakeFiles/INSTALL.dir

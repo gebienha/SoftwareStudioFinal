@@ -18,17 +18,20 @@ class CategoryGridItem extends StatelessWidget {
     return InkWell(
       onTap: onSelectCategory,
       splashColor: kPrimaryColor,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(16), // Adjust the border radius here
       child: Stack(
         children: [
           Hero(
             tag: category.id, // Should match the tag in MealDetailsPage
-            child: FadeInImage(
-              placeholder: MemoryImage(kTransparentImage),
-              image: NetworkImage(category.imageUrl),
-              fit: BoxFit.cover,
-              height: 200,
-              width: double.infinity,
+            child: ClipRRect( // ClipRRect to clip the image with rounded corners
+              borderRadius: BorderRadius.circular(16), // Adjust the border radius here
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: category.imageUrl,
+                fit: BoxFit.cover,
+                height: 200,
+                width: double.infinity,
+              ),
             ),
           ),
           Positioned.fill(
@@ -37,6 +40,7 @@ class CategoryGridItem extends StatelessWidget {
             right: 0,
             child: Container(
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16), // Adjust the border radius here
                 gradient: LinearGradient(
                   colors: [
                     Colors.transparent,
@@ -54,7 +58,7 @@ class CategoryGridItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                   softWrap: true,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: Colors.white,
                   ),
                 ),
