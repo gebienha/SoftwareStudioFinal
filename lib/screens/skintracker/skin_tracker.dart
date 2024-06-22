@@ -118,7 +118,7 @@ class _SkinTrackerState extends State<SkinTracker>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Skin Condition Tracker'),
+        title: Text('Skin Condition Tracker', style: TextStyle(color: Theme.of(context).colorScheme.onBackground)),
         actions: [
           IconButton(
             onPressed: _openInfoOverlay,

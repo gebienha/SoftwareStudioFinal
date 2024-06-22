@@ -48,15 +48,15 @@ class HomeDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.home,
               size: 26,
-              color: kTextColor,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: const Text(
+            title: Text(
               'Home',
               style: TextStyle(
-                color: kTextColor,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24,
               ),
             ),
@@ -65,15 +65,15 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.shopping_cart,
               size: 26,
-              color: kTextColor,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: const Text(
+            title: Text(
               'Products',
               style: TextStyle(
-                color: kTextColor,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24,
               ),
             ),
@@ -87,15 +87,15 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.category,
               size: 26,
-              color: kTextColor,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: const Text(
+            title: Text(
               'Categories',
               style: TextStyle(
-                color: kTextColor,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24,
               ),
             ),
@@ -108,15 +108,15 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.monitor_heart,
               size: 26,
-              color: kTextColor,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: const Text(
+            title: Text(
               'Favorite',
               style: TextStyle(
-                color: kTextColor,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24,
               ),
             ),
@@ -127,15 +127,15 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: const Icon(
+            leading: Icon(
               Icons.edit_calendar_outlined,
               size: 26,
-              color: kTextColor,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
-            title: const Text(
+            title: Text(
               'Skin Tracker',
               style: TextStyle(
-                color: kTextColor,
+                color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 24,
               ),
             ),
