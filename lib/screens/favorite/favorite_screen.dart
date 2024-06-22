@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_app/components/favorites_card.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/favorite/service/firestore.dart';
+import 'package:shop_app/screens/init_screen.dart';
 
 import '../details/details_screen.dart';
 
@@ -49,6 +50,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Navigate to the home screen
+            Navigator.pushNamed(context, InitScreen.routeName);
+          },
+        ),
         title: Text(
           "Favorites",
           style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18),
