@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shop_app/screens/sign_up/sign_up_success.dart';
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
-import '../../otp/otp_screen.dart';
 
 class CompleteProfileForm extends StatefulWidget {
   const CompleteProfileForm({super.key});
@@ -32,6 +34,22 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
       setState(() {
         errors.remove(error);
       });
+    }
+  }
+
+  Future<void> _saveProfile() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      User? user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+          'firstName': firstName,
+          'lastName': lastName,
+          'phoneNumber': phoneNumber,
+          'address': address,
+        });
+        Navigator.pushNamed(context, SignUpSuccessScreen.routeName);
+      }
     }
   }
 
@@ -123,11 +141,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
           FormError(errors: errors),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, OtpScreen.routeName);
-              }
-            },
+            onPressed: _saveProfile,
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF60C6A2),
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
