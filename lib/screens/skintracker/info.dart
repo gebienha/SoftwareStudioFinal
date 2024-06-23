@@ -129,7 +129,7 @@ class _TutorialPageState extends State<TutorialPage> {
           SmoothPageIndicator(
             controller: controller,  // PageController
             count: 2,
-            effect: WormEffect(
+            effect: ExpandingDotsEffect(
               dotHeight: 12,
               dotWidth: 12,
               activeDotColor: Colors.blue,
