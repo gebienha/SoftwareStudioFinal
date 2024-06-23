@@ -36,6 +36,12 @@ class Categories extends StatelessWidget {
           arguments: 'all', // Pass the categoryId as argument
         );
       }
+      else if (categoryText == "Info") {
+        Navigator.pushNamed(
+          context,
+          '/user_manual', // Pass the categoryId as argument
+        );
+      }
     }
 
     return Padding(
