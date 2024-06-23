@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/screens/home/components/skincare_routine.dart';
 import 'package:shop_app/screens/products/products_screen.dart';
 import 'package:shop_app/screens/products/popular_brands.dart';
 import 'package:shop_app/screens/products/cheap_brands.dart';
@@ -25,6 +26,15 @@ class SpecialOffers extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
+              SpecialOfferCard(
+                image: "assets/images/Image Banner 2.png",
+                category: "Skincare Routine",
+                numOfBrands: 5,
+                press: () {
+                  // Navigator.pushNamed(context, ProductsScreen.routeName);
+                  Navigator.pushNamed(context,SkincareRoutineScreen.routeName);
+                },
+              ),
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
                 category: "Popular in 2024",
