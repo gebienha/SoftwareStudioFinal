@@ -28,6 +28,7 @@ import 'package:shop_app/screens/products/cheap_brands.dart';
 import 'package:shop_app/screens/sign_up/sign_up_success.dart';
 import 'screens/home/components/skincare_routine.dart';
 import 'screens/home/components/routine_step.dart';
+import 'screens/home/components/routine_detail.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -62,6 +63,7 @@ final Map<String, WidgetBuilder> routes = {
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
   SkincareRoutineScreen.routeName: (context) => const SkincareRoutineScreen(),
   PersonalizedSkincareRoutineScreen.routeName: (context) => PersonalizedSkincareRoutineScreen(),
+  SkincareRoutineStepScreen.routeName: (context) => SkincareRoutineStepScreen(),
 
 };
 
