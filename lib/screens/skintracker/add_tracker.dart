@@ -50,7 +50,7 @@ class _AddTrackerState extends State<AddTracker> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Skin Condition'),
+        title: Text('Add Skin Condition', style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer)),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -114,17 +114,20 @@ class _AddTrackerState extends State<AddTracker> {
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: _submitData,
-                child: Text('Add Condition'),
-              ),
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.primaryContainer)),
+                child: Text('Add Condition',
+                  style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer)),
+                ),
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.grey),
+                  backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).colorScheme.secondaryContainer),
                 ),
-                child: Text('Cancel'),
+                child: Text('Cancel',
+                  style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer)),
               ),
             ],
           ),

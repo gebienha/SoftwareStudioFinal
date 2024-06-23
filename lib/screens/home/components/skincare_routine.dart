@@ -55,7 +55,7 @@ class _SkincareRoutineScreenState extends State<SkincareRoutineScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Skincare Routines', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
+        title: Text('Skincare Routines', style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer, fontSize: 18)),
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
@@ -138,10 +138,11 @@ class CategoryGridItem extends StatelessWidget {
     return GestureDetector(
       onTap: onSelectCategory,
       child: Container(
-        padding: const EdgeInsets.all(15),
+        padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: category.color.withOpacity(0.7),
+          // color: category.color.withOpacity(0.7),
+          color: Theme.of(context).colorScheme.background
         ),
         child: Center(
           child: Text(
