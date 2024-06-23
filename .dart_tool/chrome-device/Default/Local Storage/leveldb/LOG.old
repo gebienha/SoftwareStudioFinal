@@ -1,4 +1,6 @@
-2024/06/22-21:50:57.735 2ab8 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.3ffd14b6\flutter_tools_chrome_device.60244fcf\Default\Local Storage\leveldb/MANIFEST-000001
-2024/06/22-21:50:57.746 2ab8 Recovering log #4
-2024/06/22-21:50:57.748 2ab8 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.3ffd14b6\flutter_tools_chrome_device.60244fcf\Default\Local Storage\leveldb/000004.log 
-2024/06/22-21:50:57.749 2ab8 Delete type=0 #3
+2024/06/23-18:30:04.853 5030 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.4947e6f8\flutter_tools_chrome_device.3df2cff3\Default\Local Storage\leveldb/MANIFEST-000001
+2024/06/23-18:30:04.866 5030 Recovering log #10
+2024/06/23-18:30:04.868 5030 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.4947e6f8\flutter_tools_chrome_device.3df2cff3\Default\Local Storage\leveldb/000010.log 
+2024/06/23-18:30:04.869 5030 Delete type=0 #3
+2024/06/23-18:30:04.869 5030 Delete type=0 #4
+2024/06/23-18:30:04.869 5030 Delete type=0 #7

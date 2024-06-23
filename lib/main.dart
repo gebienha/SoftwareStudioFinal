@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:go_router/go_router.dart';
 import 'package:shop_app/theme_model.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';// Import the navigation service
@@ -12,10 +11,10 @@ import 'screens/questions/quiz.dart';
 import 'screens/questions/results_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'routes.dart';
+import 'screens/profile/components/avatar_provider.dart'; 
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Make sure you have your Firebase options configured
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -26,6 +25,7 @@ void main() async{
         ChangeNotifierProvider(create: (context) => ReviewsProvider()),
         ChangeNotifierProvider(create: (context) => BenderaProvider()),
         ChangeNotifierProvider(create: (context) => QuizSummaryProvider()),
+        ChangeNotifierProvider(create: (_) => AvatarNotifier()), // Add AvatarNotifier provider
         Provider<NavigationService>(create: (_) => NavigationService()),
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
         Provider<List<Product>>(create: (_) => demoProducts),
@@ -38,7 +38,6 @@ void main() async{
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -48,11 +47,12 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'BeautyBlendr',
-            theme: themeNotifier.isDark? AppTheme.darkTheme(context) : AppTheme.lightTheme(context),
+            theme: themeNotifier.isDark
+                ? AppTheme.darkTheme(context)
+                : AppTheme.lightTheme(context),
             initialRoute: SplashScreen.routeName,
             routes: routes,
             onGenerateRoute: generateRoute,
-
           );
         },
       ),

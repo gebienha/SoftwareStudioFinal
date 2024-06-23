@@ -146,6 +146,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "flutter_slidable",
+      "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_slidable-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.10+1",
       "packageUri": "lib/",
@@ -177,7 +183,7 @@
     },
     {
       "name": "go_router",
-      "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-13.2.5",
+      "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -392,6 +398,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "smooth_page_indicator",
+      "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
@@ -512,7 +524,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-06-22T09:16:40.984717Z",
+  "generated": "2024-06-23T10:40:02.807691Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }

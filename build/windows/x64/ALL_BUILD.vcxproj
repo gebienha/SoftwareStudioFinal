@@ -148,6 +148,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{0C8AD671-A105-35F6-AB29-95499C43D295}</Project>
       <Name>demodemo</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\plugins\firebase_auth\firebase_auth_plugin.vcxproj">
+      <Project>{DCBA0426-5BCA-34C5-B5E5-052456B6C61D}</Project>
+      <Name>firebase_auth_plugin</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\plugins\firebase_core\firebase_core_plugin.vcxproj">
       <Project>{E1D64CFC-A9B3-304F-8EEE-D6A740DC5AD9}</Project>
       <Name>firebase_core_plugin</Name>

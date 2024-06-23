@@ -90,6 +90,10 @@ flutter_lints
 2.19
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3/
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-2.0.3/lib/
+flutter_slidable
+2.17
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_slidable-3.1.0/
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_slidable-3.1.0/lib/
 flutter_svg
 2.19
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_svg-2.0.10+1/
@@ -104,8 +108,8 @@ file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6/
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6/lib/
 go_router
 3.2
-file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-13.2.5/
-file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-13.2.5/lib/
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.2.0/
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/go_router-14.2.0/lib/
 google_sign_in
 2.14
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/google_sign_in-5.4.4/
@@ -242,6 +246,10 @@ shared_preferences_windows
 2.19
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_windows-2.3.2/
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/shared_preferences_windows-2.3.2/lib/
+smooth_page_indicator
+2.12
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0/
+file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0/lib/
 source_span
 2.18
 file:///C:/Users/IdeaPad/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0/

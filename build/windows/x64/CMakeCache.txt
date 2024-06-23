@@ -213,6 +213,15 @@ demodemo_IS_TOP_LEVEL:STATIC=ON
 demodemo_SOURCE_DIR:STATIC=C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/windows
 
 //Value Computed by CMake
+firebase_auth_BINARY_DIR:STATIC=C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_auth
+
+//Value Computed by CMake
+firebase_auth_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+firebase_auth_SOURCE_DIR:STATIC=C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/windows/flutter/ephemeral/.plugin_symlinks/firebase_auth/windows
+
+//Value Computed by CMake
 firebase_core_BINARY_DIR:STATIC=C:/Users/IdeaPad/Documents/GitHub/SoftwareStudioFinalBranch/build/windows/x64/plugins/firebase_core
 
 //Value Computed by CMake
@@ -309,7 +318,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

@@ -12,6 +12,7 @@ import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/init_screen.dart';
 import 'package:shop_app/screens/login_success/login_success_screen.dart';
 import 'package:shop_app/screens/otp/otp_screen.dart';
+import 'package:shop_app/screens/profile/components/add_avatar_page.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 import 'package:shop_app/screens/sign_in/sign_in_screen.dart';
 import 'package:shop_app/screens/sign_up/sign_up_screen.dart';
@@ -58,6 +59,7 @@ final Map<String, WidgetBuilder> routes = {
   SkinTracker.routeName: (context) => SkinTracker(),
   TutorialPage.routeName: (context) => TutorialPage(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
+  AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {
