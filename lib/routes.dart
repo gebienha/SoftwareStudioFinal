@@ -26,6 +26,8 @@ import 'package:shop_app/models/Review.dart';
 import 'package:shop_app/screens/products/popular_brands.dart';
 import 'package:shop_app/screens/products/cheap_brands.dart';
 import 'package:shop_app/screens/sign_up/sign_up_success.dart';
+import 'screens/home/components/skincare_routine.dart';
+import 'screens/home/components/routine_step.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -58,6 +60,9 @@ final Map<String, WidgetBuilder> routes = {
   SkinTracker.routeName: (context) => SkinTracker(),
   TutorialPage.routeName: (context) => TutorialPage(),
   SignUpSuccessScreen.routeName: (context) => SignUpSuccessScreen(),
+  SkincareRoutineScreen.routeName: (context) => const SkincareRoutineScreen(),
+  PersonalizedSkincareRoutineScreen.routeName: (context) => PersonalizedSkincareRoutineScreen(),
+
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {
