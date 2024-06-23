@@ -10,13 +10,14 @@ class Reviews extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
+        Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Text(
             "Reviews",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.onSecondaryContainer
             ),
           ),
         ),
@@ -40,9 +41,10 @@ class Reviews extends StatelessWidget {
                         children: [
                           Text(
                             reviews[index]['name'],
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.onSecondaryContainer
                             ),
                           ),
                           const SizedBox(width: 10),
@@ -61,20 +63,22 @@ class Reviews extends StatelessWidget {
                       const SizedBox(height: 5),
                       Text(
                         reviews[index]['comment'],
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
+                          color: Theme.of(context).colorScheme.onSecondaryContainer
                         ),
                       ),
                       const SizedBox(height: 5),
                       Text(
                         "Usage Period: ${reviews[index]['usagePeriod']}",
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontStyle: FontStyle.italic,
-                          color: Colors.grey,
+                          // color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondaryContainer
                         ),
                       ),
-                      const Divider(),
+                      Divider(color: Theme.of(context).colorScheme.onSecondaryContainer),
                     ],
                   ),
                 ),

@@ -85,12 +85,12 @@ class CategoryCard extends StatelessWidget {
             height: 56,
             width: 56,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer, // Green background
+              color: Theme.of(context).colorScheme.primaryContainer, // Green background
               borderRadius: BorderRadius.circular(10),
             ),
             child: SvgPicture.asset(
               icon,
-              color: Theme.of(context).colorScheme.onBackground, // White icon
+              color: Theme.of(context).colorScheme.onPrimaryContainer, // White icon
             ),
           ),
           const SizedBox(height: 4),

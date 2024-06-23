@@ -53,7 +53,8 @@ class _ProductDescriptionState extends State<ProductDescription> {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0), // Adjust top padding for title
           child: Text(
             widget.product.title,
-            style: Theme.of(context).textTheme.titleLarge,
+            // style: Theme.of(context).textTheme.titleLarge,
+            style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)
           ),
         ),
         Padding(
@@ -64,7 +65,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
               Text(
                 '\$${widget.product.price.toStringAsFixed(2)}', // Displaying price with $ sign
                 style: TextStyle(
-                  color: kPrimaryColor,
+                  color: Theme.of(context).colorScheme.onTertiaryContainer,
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
@@ -102,6 +103,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
           child: Text(
             widget.product.description,
             textAlign: TextAlign.justify,
+            style: TextStyle(color: Theme.of(context).colorScheme. onSecondaryContainer),
           ),
         ),
         Padding(
@@ -120,14 +122,14 @@ class _ProductDescriptionState extends State<ProductDescription> {
                   "See More Detail",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: kPrimaryColor,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
                 SizedBox(width: 3),
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 12,
-                  color: kPrimaryColor,
+                  color: Theme.of(context).colorScheme.onSecondaryContainer,
                 ),
               ],
             ),

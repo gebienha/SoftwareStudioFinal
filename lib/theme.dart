@@ -57,7 +57,7 @@ class AppTheme {
       scaffoldBackgroundColor: Color(4278197010),
       //fontFamily: "Muli",
       appBarTheme: const AppBarTheme(
-        backgroundColor: Color(4278197010),
+        backgroundColor: Color(0xff0a0f0d),
         foregroundColor: Color(4278197010),
         elevation: 0,
         iconTheme: IconThemeData(color: Color(0xfff5fbf6)),

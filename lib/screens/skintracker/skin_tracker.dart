@@ -150,7 +150,7 @@ class _SkinTrackerState extends State<SkinTracker>
             return Center(
               child: Text(
                 'No skin condition records found.',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Theme.of(context).colorScheme.onPrimaryContainer),
               ),
             );
           }
@@ -188,7 +188,8 @@ class _SkinTrackerState extends State<SkinTracker>
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    color: Colors.grey[200], // Set card background to light gray
+                    // color: Colors.grey[200], // Set card background to light gray
+                    color: Theme.of(context).colorScheme.secondaryContainer,
                     child: Dismissible(
                       key: ValueKey(id),
                       background: Container(color: Colors.red),
@@ -198,25 +199,25 @@ class _SkinTrackerState extends State<SkinTracker>
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: backgroundColor,
-                          child: Icon(conditionIcon, color: Colors.white),
+                          child: Icon(conditionIcon, color: Theme.of(context).colorScheme.secondaryContainer),
                         ),
                         title: Text(
                           condition,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Theme.of(context).colorScheme.onSecondaryContainer,
                           ),
                         ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(DateFormat.yMd().format(date)),
+                            Text(DateFormat.yMd().format(date), style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)),
                             SizedBox(height: 5),
-                            Text(description),
+                            Text(description, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)),
                           ],
                         ),
                         trailing: IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: Icon(Icons.delete, color: Theme.of(context).colorScheme.onPrimaryContainer),
                           onPressed: () => _deleteRecord(context, id),
                         ),
                       ),

@@ -42,11 +42,12 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Add Your Review",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.onSecondaryContainer
               ),
             ),
             const SizedBox(height: 20),
