@@ -15,7 +15,7 @@ class DiscountBanner extends StatelessWidget {
         vertical: 16,
       ),
       decoration: BoxDecoration(
-        color: Colors.white, // Change background to white for better contrast
+        // color: Colors.white, // Change background to white for better contrast
         borderRadius: BorderRadius.circular(20),
       ),
       child: Center(
@@ -27,23 +27,25 @@ class DiscountBanner extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             children: [
-              const TextSpan(
+              TextSpan(
                 text: "Hello, User!\n",
                 style: TextStyle(
-                  fontSize: 16, // Smaller font size for the first line
+                  fontSize: 20, // Smaller font size for the first line
+                  color: Theme.of(context).colorScheme.onSecondaryContainer
                 ),
               ),
               TextSpan(
                 text: "Search for your perfect ",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 24, // Bigger font size for the second line
+                  color: Theme.of(context).colorScheme.onSecondaryContainer
                 ),
               ),
               TextSpan(
                 text: "skincare",
                 style: TextStyle(
                   fontSize: 24,
-                  color: const Color(0xFF60C6A2), // Use the specific green color
+                  color: Theme.of(context).colorScheme.onPrimaryContainer, // Use the specific green color
                   fontWeight: FontWeight.bold,
                 ),
               ),

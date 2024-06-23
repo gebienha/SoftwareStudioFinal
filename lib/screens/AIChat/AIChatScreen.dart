@@ -16,10 +16,10 @@ class AIChatScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
-      backgroundColor: const Color(0xFFF5F6F9),
+      // backgroundColor: const Color(0xFFF5F6F9),
       appBar: AppBar(
         title: const Text('Chat', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
-        backgroundColor: Colors.transparent,
+        // backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -38,17 +38,17 @@ class AIChatScreen extends StatelessWidget {
               shape: const CircleBorder(),
               padding: EdgeInsets.zero,
               elevation: 0,
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.transparent,
             ),
             child: const Icon(
               Icons.arrow_back_ios_new,
-              color: Colors.black,
+              // color: Colors.black,
               size: 20,
             ),
           ),
         ),
       ),
-      //body: AIChat(),
+      body: AIChat(),
     );
   }
 }

@@ -97,17 +97,17 @@ class _FavoriteCardState extends State<FavoriteCard> {
                       Expanded(
                         child: Text(
                           widget.product.title,
-                          style: Theme.of(context).textTheme.bodyMedium,
+                          style: TextStyle(color: Theme.of(context).colorScheme.onBackground, fontWeight: FontWeight.bold),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis, // To handle overflow
                         ),
                       ),
                       Text(
                         '${widget.product.rating}',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: Theme.of(context).colorScheme.onBackground,
                         ),
                       ),
                     ],
@@ -126,10 +126,10 @@ class _FavoriteCardState extends State<FavoriteCard> {
                           child: SingleChildScrollView(
                             child: Text(
                               widget.product.description,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromARGB(255, 59, 72, 65),
+                                color: Theme.of(context).colorScheme.onBackground,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),

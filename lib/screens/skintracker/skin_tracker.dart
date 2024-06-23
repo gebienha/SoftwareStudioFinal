@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
-import 'package:shop_app/screens/skintracker/add_tracker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'add_tracker.dart';
 import 'info.dart';
 
 class SkinTracker extends StatefulWidget {
@@ -11,8 +12,7 @@ class SkinTracker extends StatefulWidget {
   _SkinTrackerState createState() => _SkinTrackerState();
 }
 
-class _SkinTrackerState extends State<SkinTracker>
-    with TickerProviderStateMixin {
+class _SkinTrackerState extends State<SkinTracker> with TickerProviderStateMixin {
   static const _initialDelayTime = Duration(milliseconds: 200);
   static const _itemSlideTime = Duration(milliseconds: 800);
   static const _staggerTime = Duration(milliseconds: 200);
@@ -50,7 +50,7 @@ class _SkinTrackerState extends State<SkinTracker>
       duration: _calculateAnimationDuration(),
     );
 
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _staggeredController.forward();
     });
 
@@ -116,9 +116,14 @@ class _SkinTrackerState extends State<SkinTracker>
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user == null) {
+      return Center(child: Text('Please sign in to view your skin conditions.'));
+    }
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('Skin Condition Tracker'),
+        title: Text('Skin Condition Tracker', style: TextStyle(color: Theme.of(context).colorScheme.onBackground)),
         actions: [
           IconButton(
             onPressed: _openInfoOverlay,
@@ -137,23 +142,21 @@ class _SkinTrackerState extends State<SkinTracker>
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('skin_tracker')
+            .where('userId', isEqualTo: user.uid)
             .orderBy('date', descending: true)
             .snapshots(),
         builder: (ctx, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           }
-
-          final skinData = snapshot.data!.docs;
-
-          if (skinData.isEmpty) {
-            return Center(
-              child: Text(
-                'No skin condition records found.',
-                style: TextStyle(fontSize: 18),
-              ),
-            );
+          if (snapshot.hasError) {
+            return Center(child: Text('An error occurred: ${snapshot.error}', style: TextStyle(fontSize: 18, color: Theme.of(context).colorScheme.onPrimaryContainer)));
           }
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Center(child: Text('No skin conditions added yet.', style: TextStyle(fontSize: 18, color: Theme.of(context).colorScheme.onPrimaryContainer)));
+          }
+          
+          final skinData = snapshot.data!.docs;
 
           return AnimatedList(
             key: GlobalKey<AnimatedListState>(),
@@ -188,7 +191,8 @@ class _SkinTrackerState extends State<SkinTracker>
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    color: Colors.grey[200], // Set card background to light gray
+                    // color: Colors.grey[200], // Set card background to light gray
+                    color: Theme.of(context).colorScheme.secondaryContainer,
                     child: Dismissible(
                       key: ValueKey(id),
                       background: Container(color: Colors.red),
@@ -198,25 +202,25 @@ class _SkinTrackerState extends State<SkinTracker>
                       child: ListTile(
                         leading: CircleAvatar(
                           backgroundColor: backgroundColor,
-                          child: Icon(conditionIcon, color: Colors.white),
+                          child: Icon(conditionIcon, color: Theme.of(context).colorScheme.secondaryContainer),
                         ),
                         title: Text(
                           condition,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                            color: Theme.of(context).colorScheme.onSecondaryContainer,
                           ),
                         ),
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(DateFormat.yMd().format(date)),
+                            Text(DateFormat.yMd().format(date), style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)),
                             SizedBox(height: 5),
-                            Text(description),
+                            Text(description, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)),
                           ],
                         ),
                         trailing: IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: Icon(Icons.delete, color: Theme.of(context).colorScheme.onPrimaryContainer),
                           onPressed: () => _deleteRecord(context, id),
                         ),
                       ),

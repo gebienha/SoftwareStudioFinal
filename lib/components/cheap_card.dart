@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/models/Cheap.dart';
-import 'package:shop_app/components/cheap_card.dart';
-
 
 class CheapCard extends StatelessWidget {
   final Cheap cheap;

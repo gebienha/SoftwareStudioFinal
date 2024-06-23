@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/models/Popular.dart';
-import 'package:shop_app/components/brand_card.dart';
-
 
 class BrandCard extends StatelessWidget {
   final Popular popular;

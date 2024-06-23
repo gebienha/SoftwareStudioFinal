@@ -42,7 +42,7 @@ class _TutorialPageState extends State<TutorialPage> {
               Transform(
                 transform: Matrix4.translationValues(
                     (0 - _currentPageValue) * 0.7 * screenWidth, 0, 0),
-                child: Icon(Icons.add, size: 100.0, color: const Color.fromARGB(255, 0, 0, 0)),
+                child: Icon(Icons.add, size: 100.0, color: Theme.of(context).colorScheme.onBackground),
               ),
               SizedBox(height: 50),
               Transform(
@@ -53,7 +53,7 @@ class _TutorialPageState extends State<TutorialPage> {
                   child: Text(
                     "Press the add button at the upper right corner to track a new skin condition.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Theme.of(context).colorScheme.onBackground),
                   ),
                 ),
               ),
@@ -84,7 +84,7 @@ class _TutorialPageState extends State<TutorialPage> {
               Transform(
                 transform: Matrix4.translationValues(
                     (1 - _currentPageValue) * 1.5 * screenWidth, 0, 0),
-                child: Icon(Icons.swipe, size: 100.0, color: const Color.fromARGB(255, 0, 0, 0)),
+                child: Icon(Icons.swipe, size: 100.0, color: Theme.of(context).colorScheme.onBackground),
               ),
               SizedBox(height: 50),
               Transform(
@@ -95,7 +95,7 @@ class _TutorialPageState extends State<TutorialPage> {
                   child: Text(
                     "Swipe a tracked condition left or right to delete it.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Theme.of(context).colorScheme.onBackground),
                   ),
                 ),
               ),
