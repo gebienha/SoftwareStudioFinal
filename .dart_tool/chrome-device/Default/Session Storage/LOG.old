@@ -1,3 +1,9 @@
-2024/06/23-17:56:14.748 1488 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.bc4c8a5b\flutter_tools_chrome_device.8db8fd1e\Default\Session Storage/MANIFEST-000001
-2024/06/23-17:56:14.750 1488 Recovering log #3
-2024/06/23-17:56:14.755 1488 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.bc4c8a5b\flutter_tools_chrome_device.8db8fd1e\Default\Session Storage/000003.log 
+<<<<<<< HEAD
+2024/06/23-19:21:12.256 5d54 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.52bfd1f4\flutter_tools_chrome_device.98b15742\Default\Session Storage/MANIFEST-000001
+2024/06/23-19:21:12.257 5d54 Recovering log #3
+2024/06/23-19:21:12.260 5d54 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.52bfd1f4\flutter_tools_chrome_device.98b15742\Default\Session Storage/000003.log 
+=======
+2024/06/22-21:57:42.131 5494 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\Session Storage/MANIFEST-000001
+2024/06/22-21:57:42.133 5494 Recovering log #3
+2024/06/22-21:57:42.135 5494 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\Session Storage/000003.log 
+>>>>>>> 58384b387165a5a9f82668319891902fe5355f6d
