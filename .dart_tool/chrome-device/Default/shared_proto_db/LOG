@@ -1,60 +1,26 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-2024/06/20-16:42:34.781 7dec Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.d16b868\flutter_tools_chrome_device.adeb50eb\Default\shared_proto_db/MANIFEST-000001
-2024/06/20-16:42:34.782 7dec Recovering log #6
-2024/06/20-16:42:34.783 7dec Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.d16b868\flutter_tools_chrome_device.adeb50eb\Default\shared_proto_db/000006.log 
-2024/06/20-16:42:34.784 7dec Delete type=0 #3
-2024/06/20-16:42:34.784 7dec Delete type=0 #4
-2024/06/20-16:42:34.784 7dec Delete type=2 #5
-=======
-2024/06/20-18:06:08.179 fac Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/MANIFEST-000001
-2024/06/20-18:06:08.180 fac Recovering log #6
-2024/06/20-18:06:08.181 fac Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.46ef5f1d\flutter_tools_chrome_device.cff87c09\Default\shared_proto_db/000006.log 
-2024/06/20-18:06:08.183 fac Delete type=0 #3
-2024/06/20-18:06:08.183 fac Delete type=0 #4
-2024/06/20-18:06:08.183 fac Delete type=2 #5
->>>>>>> 8e79b9a49bf7934625532c5ea59e8e8fc9e99f14
-=======
-2024/06/21-01:56:38.551 41ec Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.ffded53c\flutter_tools_chrome_device.6af026bd\Default\shared_proto_db/MANIFEST-000001
-2024/06/21-01:56:38.552 41ec Recovering log #16
-2024/06/21-01:56:38.553 41ec Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.ffded53c\flutter_tools_chrome_device.6af026bd\Default\shared_proto_db/000016.log 
-2024/06/21-01:56:38.553 41ec Delete type=2 #3
-2024/06/21-01:56:38.553 41ec Delete type=0 #3
-2024/06/21-01:56:38.553 41ec Delete type=0 #4
-2024/06/21-01:56:38.553 41ec Delete type=2 #5
-2024/06/21-01:56:38.553 41ec Delete type=0 #6
-2024/06/21-01:56:38.553 41ec Delete type=2 #7
-2024/06/21-01:56:38.553 41ec Delete type=0 #9
-2024/06/21-01:56:38.553 41ec Delete type=2 #10
-2024/06/21-01:56:38.554 41ec Delete type=0 #12
-2024/06/21-01:56:38.773 41ec Level-0 table #20: started
-2024/06/21-01:56:38.780 41ec Level-0 table #20: 133586 bytes OK
-2024/06/21-01:56:38.782 41ec Delete type=0 #16
->>>>>>> a64ac6919013632faa620181d9674c973fa0ac40
-=======
-2024/06/21-23:37:03.007 6360 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6888a034\flutter_tools_chrome_device.ad03a811\Default\shared_proto_db/MANIFEST-000001
-2024/06/21-23:37:03.007 6360 Recovering log #32
-2024/06/21-23:37:03.008 6360 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6888a034\flutter_tools_chrome_device.ad03a811\Default\shared_proto_db/000032.log 
-2024/06/21-23:37:03.009 6360 Delete type=2 #3
-2024/06/21-23:37:03.009 6360 Delete type=0 #3
-2024/06/21-23:37:03.009 6360 Delete type=0 #4
-2024/06/21-23:37:03.009 6360 Delete type=2 #5
-2024/06/21-23:37:03.009 6360 Delete type=0 #6
-2024/06/21-23:37:03.009 6360 Delete type=2 #7
-2024/06/21-23:37:03.009 6360 Delete type=0 #9
-2024/06/21-23:37:03.009 6360 Delete type=2 #10
-2024/06/21-23:37:03.009 6360 Delete type=0 #12
-2024/06/21-23:37:03.009 6360 Delete type=2 #14
-2024/06/21-23:37:03.009 6360 Delete type=0 #16
-2024/06/21-23:37:03.009 6360 Delete type=2 #17
-2024/06/21-23:37:03.009 6360 Delete type=0 #19
-2024/06/21-23:37:03.009 6360 Delete type=2 #20
-2024/06/21-23:37:03.009 6360 Delete type=0 #22
-2024/06/21-23:37:03.009 6360 Delete type=2 #23
-2024/06/21-23:37:03.009 6360 Delete type=0 #25
-2024/06/21-23:37:03.009 6360 Delete type=0 #29
-2024/06/21-23:37:13.457 1fe0 Level-0 table #36: started
-2024/06/21-23:37:13.462 1fe0 Level-0 table #36: 133484 bytes OK
-2024/06/21-23:37:13.465 1fe0 Delete type=0 #32
->>>>>>> ef477dc3d5911bed0abb459241b83ce2972d5ebf
+2024/06/22-21:57:42.190 7f64 Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\shared_proto_db/MANIFEST-000001
+2024/06/22-21:57:42.191 7f64 Recovering log #38
+2024/06/22-21:57:42.192 7f64 Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.daaec5ca\flutter_tools_chrome_device.1d145dbb\Default\shared_proto_db/000038.log 
+2024/06/22-21:57:42.193 7f64 Delete type=2 #3
+2024/06/22-21:57:42.193 7f64 Delete type=0 #3
+2024/06/22-21:57:42.193 7f64 Delete type=0 #4
+2024/06/22-21:57:42.193 7f64 Delete type=2 #5
+2024/06/22-21:57:42.193 7f64 Delete type=0 #6
+2024/06/22-21:57:42.193 7f64 Delete type=2 #7
+2024/06/22-21:57:42.193 7f64 Delete type=0 #9
+2024/06/22-21:57:42.194 7f64 Delete type=2 #10
+2024/06/22-21:57:42.194 7f64 Delete type=0 #12
+2024/06/22-21:57:42.194 7f64 Delete type=2 #14
+2024/06/22-21:57:42.194 7f64 Delete type=0 #16
+2024/06/22-21:57:42.194 7f64 Delete type=2 #17
+2024/06/22-21:57:42.194 7f64 Delete type=0 #19
+2024/06/22-21:57:42.194 7f64 Delete type=2 #20
+2024/06/22-21:57:42.194 7f64 Delete type=0 #22
+2024/06/22-21:57:42.194 7f64 Delete type=2 #23
+2024/06/22-21:57:42.194 7f64 Delete type=0 #25
+2024/06/22-21:57:42.194 7f64 Delete type=2 #27
+2024/06/22-21:57:42.194 7f64 Delete type=0 #29
+2024/06/22-21:57:42.194 7f64 Delete type=2 #30
+2024/06/22-21:57:42.194 7f64 Delete type=0 #32
+2024/06/22-21:57:42.194 7f64 Delete type=2 #33
+2024/06/22-21:57:42.195 7f64 Delete type=0 #35
