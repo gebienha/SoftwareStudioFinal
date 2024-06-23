@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/home/components/routine_step.dart';
-import 'routine_step.dart';
 
-// Define skin type categories
+// Category model
+class Category {
+  final String id;
+  final String title;
+  final String image;
+
+  const Category({
+    required this.id,
+    required this.title,
+    required this.image,
+  });
+}
+
+// Define skin type categories with images
 final List<Category> skinTypeCategories = [
-  Category(id: '1', title: 'Oily', color: Colors.blue),
-  Category(id: '2', title: 'Dry', color: Colors.red),
-  Category(id: '3', title: 'Combination', color: Colors.green),
-  Category(id: '4', title: 'Normal', color: Colors.purple),
+  const Category(id: '1', title: 'Oily', image: 'assets/oily_skin.png'),
+  const Category(id: '2', title: 'Dry', image: 'assets/dry_skin.png'),
+  const Category(id: '3', title: 'Combination', image: 'assets/combination_skin.png'),
+  const Category(id: '4', title: 'Normal', image: 'assets/normal_skin.png'),
 ];
 
 class SkincareRoutineScreen extends StatefulWidget {
@@ -55,7 +67,10 @@ class _SkincareRoutineScreenState extends State<SkincareRoutineScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Skincare Routines', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
+        title: Text(
+          'Skincare Routines',
+          style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18),
+        ),
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
@@ -94,7 +109,7 @@ class _SkincareRoutineScreenState extends State<SkincareRoutineScreen>
 
               return SlideTransition(
                 position: slideInAnimation,
-                child: child,
+                child: child!,
               );
             },
             child: CategoryGridItem(
@@ -108,19 +123,6 @@ class _SkincareRoutineScreenState extends State<SkincareRoutineScreen>
       ),
     );
   }
-}
-
-// Category model
-class Category {
-  final String id;
-  final String title;
-  final Color color;
-
-  const Category({
-    required this.id,
-    required this.title,
-    this.color = Colors.orange,
-  });
 }
 
 // CategoryGridItem widget
@@ -140,17 +142,35 @@ class CategoryGridItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(15),
-          color: category.color.withOpacity(0.7),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 2,
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
-        child: Center(
-          child: Text(
-            category.title,
-            style: Theme.of(context).textTheme.headline6!.copyWith(
-                  color: Colors.white,
-                ),
-            textAlign: TextAlign.center,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              category.image,
+              height: 80,
+              width: 80,
+            ),
+            SizedBox(height: 10),
+            Text(
+              category.title,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );
