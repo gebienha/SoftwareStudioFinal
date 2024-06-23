@@ -48,7 +48,7 @@ class AIChatScreen extends StatelessWidget {
           ),
         ),
       ),
-      //body: AIChat(),
+      body: AIChat(),
     );
   }
 }

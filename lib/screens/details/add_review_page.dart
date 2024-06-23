@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import '../../screens/details/components/firestore_review.dart';
+
+import 'package:flutter/material.dart';
 
 class AddReviewScreen extends StatefulWidget {
   static String routeName = "/add_review";
+  final String productId; // Product ID to add review for
 
-  const AddReviewScreen({Key? key}) : super(key: key);
+  const AddReviewScreen({Key? key, required this.productId}) : super(key: key);
 
   @override
   _AddReviewScreenState createState() => _AddReviewScreenState();
@@ -130,7 +134,8 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
                     'image': 'assets/images/user-placeholder.png', // Placeholder image
                   };
 
-                  Navigator.pop(context, newReview);
+                  await FirestoreService().addReview(widget.productId, newReview);
+                  Navigator.pop(context);
                 }
               },
               child: const Text("Submit Review"),

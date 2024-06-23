@@ -30,6 +30,7 @@ class SpecialOffers extends StatelessWidget {
                 category: "Popular in 2024",
                 numOfBrands: 5,
                 press: () {
+                  // Navigator.pushNamed(context, ProductsScreen.routeName);
                   Navigator.pushNamed(context, PopularBrandsScreen.routeName);
                 },
               ),
