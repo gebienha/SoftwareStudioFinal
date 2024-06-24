@@ -39,10 +39,10 @@ class Reviews extends StatelessWidget {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage(review['image']),
-                      radius: 20,
-                    ),
+                    // CircleAvatar(
+                    //   backgroundImage: AssetImage(review['image']),
+                    //   radius: 20,
+                    // ),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Column(
