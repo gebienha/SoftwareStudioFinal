@@ -31,6 +31,7 @@ import 'package:shop_app/screens/user_manual/user_manual.dart';
 import 'screens/home/components/skincare_routine.dart';
 import 'screens/home/components/routine_step.dart';
 import 'screens/home/components/routine_detail.dart';
+import 'screens/profile/components/my_profile.dart';
 
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
@@ -68,6 +69,8 @@ final Map<String, WidgetBuilder> routes = {
   SkincareRoutineStepScreen.routeName: (context) => SkincareRoutineStepScreen(),
   UserManual.routeName: (context) => UserManual(),
   AddAvatarPage.routeName: (context) => const AddAvatarPage(),
+  MyProfilePage.routeName: (context) => MyProfilePage(),
+  
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {

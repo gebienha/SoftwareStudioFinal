@@ -13,6 +13,8 @@ import '../../../theme_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/favorite/service/firestore.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
+
 
 class FavoriteProvider with ChangeNotifier {
   List<Product> _favoriteProducts = [];
@@ -73,20 +75,14 @@ class _HomeScreenState extends State<HomeScreen> {
             actions: [
               Container(
                 margin: EdgeInsets.only(right: 16),
-                child: IconButton(
-                  onPressed: () {
-                    themeNotifier.isDark 
-                      ? themeNotifier.isDark = false 
-                      : themeNotifier.isDark = true;
+                child: DayNightSwitcher(
+                  isDarkModeEnabled: themeNotifier.isDark,
+                  dayBackgroundColor:  Color(0xFF60C6A2),
+                  onStateChanged: (isDarkModeEnabled) {
+                    setState(() {
+                      themeNotifier.isDark = isDarkModeEnabled;
+                    });
                   },
-                  icon: Icon(
-                    themeNotifier.isDark ? Icons.wb_sunny_rounded : Icons.nightlight_round,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: themeNotifier.isDark ? Colors.black54 : Color(0xFF60C6A2),
                 ),
               ),
             ],
