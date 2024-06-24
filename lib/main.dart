@@ -12,6 +12,7 @@ import 'screens/questions/quiz.dart';
 import 'screens/questions/results_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'routes.dart';
+import 'screens/profile/components/avatar_provider.dart'; 
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +30,7 @@ void main() async{
         Provider<NavigationService>(create: (_) => NavigationService()),
         ChangeNotifierProvider(create: (_) => FavoriteProvider()),
         Provider<List<Product>>(create: (_) => demoProducts),
+        ChangeNotifierProvider(create: (_) => AvatarNotifier()),
       ],
       child: MyApp(),
     ),
