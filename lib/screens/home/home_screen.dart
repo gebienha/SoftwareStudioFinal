@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'components/categories.dart';
 import 'components/discount_banner.dart';
@@ -98,10 +99,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   //HomeHeader(),
                   DiscountBanner(),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Center(child: SearchField()), // Add SearchField
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsets.symmetric(horizontal: 20),
+                  //   child: Center(child: SearchField()), // Add SearchField
+                  // ),
                   Categories(),
                   SpecialOffers(),
                   SizedBox(height: 20),
@@ -116,3 +117,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
