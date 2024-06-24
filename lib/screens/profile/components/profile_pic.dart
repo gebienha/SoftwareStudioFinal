@@ -85,7 +85,8 @@ class _ProfilePicState extends State<ProfilePic> {
                         borderRadius: BorderRadius.circular(50),
                         side: const BorderSide(color: Colors.white),
                       ),
-                      backgroundColor: const Color(0xFF60C6A2),
+                      // backgroundColor: const Color(0xFF60C6A2),
+                      backgroundColor: Theme.of(context).colorScheme.primaryContainer
                     ),
                     onPressed: () async {
                       final result = await Navigator.pushNamed(
@@ -115,7 +116,7 @@ class _ProfilePicState extends State<ProfilePic> {
                 ? CircularProgressIndicator()
                 : Text(
                     'Hi, $firstName!',
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onPrimaryContainer),
                   ),
           ),
       ],
