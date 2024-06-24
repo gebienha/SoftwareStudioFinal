@@ -102,7 +102,7 @@ class _ProfilePicState extends State<ProfilePic> {
                         });
                       }
                     },
-                    child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+                    child: SvgPicture.asset("assets/icons/Camera Icon.svg", color: Theme.of(context).colorScheme.onPrimaryContainer),
                   ),
                 ),
               ),
