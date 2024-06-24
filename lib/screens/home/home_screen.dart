@@ -73,20 +73,14 @@ class _HomeScreenState extends State<HomeScreen> {
             actions: [
               Container(
                 margin: EdgeInsets.only(right: 16),
-                child: IconButton(
-                  onPressed: () {
-                    themeNotifier.isDark 
-                      ? themeNotifier.isDark = false 
-                      : themeNotifier.isDark = true;
+                child: DayNightSwitcher(
+                  isDarkModeEnabled: themeNotifier.isDark,
+                  dayBackgroundColor:  Color(0xFF60C6A2),
+                  onStateChanged: (isDarkModeEnabled) {
+                    setState(() {
+                      themeNotifier.isDark = isDarkModeEnabled;
+                    });
                   },
-                  icon: Icon(
-                    themeNotifier.isDark ? Icons.wb_sunny_rounded : Icons.nightlight_round,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: themeNotifier.isDark ? Colors.black54 : Color(0xFF60C6A2),
                 ),
               ),
             ],
