@@ -51,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: null,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
         leading: const SizedBox(), // This removes the back arrow
@@ -66,22 +66,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     initialAvatarSvgData: avatarSvgData,
                     initialName: displayName,
                   ),
-                  const SizedBox(height: 20),
-                  ProfileMenu(
-                    text: "My Account",
-                    icon: "assets/icons/User Icon.svg",
-                    press: () => {},
-                  ),
-                  ProfileMenu(
-                    text: "Notifications",
-                    icon: "assets/icons/Bell.svg",
-                    press: () {},
-                  ),
-                  ProfileMenu(
-                    text: "Settings",
-                    icon: "assets/icons/Settings.svg",
-                    press: () {},
-                  ),
+                  // const SizedBox(height: 20),
+                  // ProfileMenu(
+                  //   text: "My Account",
+                  //   icon: "assets/icons/User Icon.svg",
+                  //   press: () => {},
+                  // ),
+                  // ProfileMenu(
+                  //   text: "Notifications",
+                  //   icon: "assets/icons/Bell.svg",
+                  //   press: () {},
+                  // ),
+                  // ProfileMenu(
+                  //   text: "Settings",
+                  //   icon: "assets/icons/Settings.svg",
+                  //   press: () {},
+                  // ),
                   ProfileMenu(
                     text: "Skin Tracker",
                     icon: "assets/icons/Question mark.svg",
