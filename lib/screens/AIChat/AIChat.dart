@@ -7,6 +7,7 @@ import 'models/chat_message.dart';
 import 'services/assistant.dart';
 import 'package:shop_app/screens/questions/results_screen.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/screens/questions/quiz.dart';
 //import 'services/chat.dart';
 
 class AIChat extends StatefulWidget {
@@ -21,19 +22,33 @@ class _ChatScreenState extends State<AIChat> {
   @override
   void initState() {
     super.initState();
-    _chatService.fetchMessages();
-    
-    // Get the summary data from the provider
-    final summaryData = Provider.of<QuizSummaryProvider>(context, listen: false).summaryData;
-    
-    // Format the summary data as a string
-    final summaryMessage = summaryData.map((data) {
-      final questionIndex = data['question_index'] as int?;
-      return 'Q${questionIndex != null ? questionIndex + 1 : 'N/A'}: ${data['user_answer']}';
-    }).join('\n').trim();
-    
-    // Send the summary message
-    _chatService.fetchPromptResponse(summaryMessage);
+    _initializeChat();
+  }
+
+  Future<void> _initializeChat() async {
+    final benderaProvider = Provider.of<BenderaProvider>(context, listen: false);
+    await benderaProvider.fetchBendera(); // Ensure the bendera value is fetched
+    await _chatService.fetchMessages();
+
+    if (benderaProvider.bendera == 0) {
+      // Fetch messages and summary data if bendera is 0
+      await _chatService.fetchMessages();
+
+      // Get the summary data from the provider
+      final summaryData = Provider.of<QuizSummaryProvider>(context, listen: false).summaryData;
+
+      // Format the summary data as a string
+      final summaryMessage = summaryData.map((data) {
+        final questionIndex = data['question_index'] as int?;
+        return 'Q${questionIndex != null ? questionIndex + 1 : 'N/A'}: ${data['user_answer']}';
+      }).join('\n').trim();
+
+      // Send the summary message
+      await _chatService.fetchPromptResponse(summaryMessage);
+
+      // Update the flag to indicate initialization has been done
+      benderaProvider.bendera = 1;
+    }
   }
 
   @override
