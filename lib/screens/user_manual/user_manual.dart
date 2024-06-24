@@ -128,7 +128,7 @@ class IconsData {
     Icons.search_outlined,
     Icons.track_changes,
     Icons.favorite_border,
-    Icons.swipe,
+    Icons.face,
   ];
 }
 
