@@ -5,6 +5,8 @@ import 'components/profile_menu.dart';
 import 'components/firestore.dart';
 import 'components/profile_pic.dart';
 import '../../screens/skintracker/skin_tracker.dart';
+import 'package:shop_app/screens/profile/components/my_profile.dart';
+
 
 class ProfileScreen extends StatefulWidget {
   static String routeName = "/profile";
@@ -65,6 +67,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ProfilePic(
                     initialAvatarSvgData: avatarSvgData,
                     initialName: displayName,
+                  ),
+                  ProfileMenu(
+                  text: "My Profile",
+                  icon: "assets/icons/User Icon.svg",
+                  press: () {
+                  Navigator.pushNamed(context, MyProfilePage.routeName);
+                    },
                   ),
                   ProfileMenu(
                     text: "Skin Tracker",
