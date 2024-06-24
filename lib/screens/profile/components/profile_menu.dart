@@ -20,34 +20,34 @@ class ProfileMenu extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: TextButton(
         style: TextButton.styleFrom(
-          foregroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
+          foregroundColor: Color(0xFF60C6A2),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          backgroundColor: const Color(0xFFF5F6F9),
         ),
         onPressed: press,
         child: Row(
           children: [
             SvgPicture.asset(
               icon,
-              color: Theme.of(context).colorScheme.onSecondaryContainer,
+              color: Color(0xFF60C6A2),
               width: 22,
             ),
             const SizedBox(width: 20),
             Expanded(
               child: Text(
                 text,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                style: const TextStyle(
+                  color: Colors.black,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios,
-              color: Theme.of(context).colorScheme.onSecondaryContainer,
+              color: Color(0xFF60C6A2),
             ),
           ],
         ),
