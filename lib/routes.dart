@@ -32,6 +32,7 @@ import 'screens/home/components/skincare_routine.dart';
 import 'screens/home/components/routine_step.dart';
 import 'screens/home/components/routine_detail.dart';
 
+
 final Map<String, WidgetBuilder> routes = {
   InitScreen.routeName: (context) => const InitScreen(),
   SplashScreen.routeName: (context) => const SplashScreen(),

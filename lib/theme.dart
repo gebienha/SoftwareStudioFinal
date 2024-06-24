@@ -98,7 +98,7 @@ import 'constants.dart'; // Import your constants file or define constants inlin
 
 const kColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xff196b52),
+  primary: Color(0xFF196B52),
   surfaceTint: Color(0xFF018786),
   onPrimary: Color(0xFFFFFFFF),
   primaryContainer: Color(0xffa5f2d3),

@@ -5,12 +5,12 @@ import 'package:http/http.dart' as http;
 
 class ChatService {
   static const String _apiKey =
-      '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'; // FIXME: Replace with your API key
+      'sk-tired-fvzbRH6rU5SIMPiy7mLGT3BlbkFJ4n74qk5TpUf6YwxqHJYT'; // FIXME: Replace with your API key
   // Assuming you have created an assistant and a thread beforehand and have their IDs
   static const String _assistantId =
-      'asst_tfSvpQ2BKUNk1XAR3fS1yr2V'; // FIXME: Replace with your assistant ID
+      'asst_Tpo0eM5WsR7sbkxZn3c6FMBE'; // FIXME: Replace with your assistant ID
   static const String _threadId =
-      'thread_yA8PA8TnjHLNTolhmkc6jput'; // FIXME: Replace with your thread ID
+      'thread_GQJhbGli4yuNCGj5tGbN6y4d'; // FIXME: Replace with your thread ID
   static const String _baseUrl = 'https://api.openai.com/v1';
   static const String _messagesUrl = '$_baseUrl/threads/$_threadId/messages';
   static const String _runsUrl = '$_baseUrl/threads/$_threadId/runs';

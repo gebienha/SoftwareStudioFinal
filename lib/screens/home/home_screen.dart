@@ -1,18 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'components/categories.dart';
 import 'components/discount_banner.dart';
-import 'components/home_header.dart';
+import 'components/home_drawer.dart';
 import 'components/popular_product.dart';
 import 'components/special_offers.dart';
-import 'components/search_field.dart'; 
-import 'components/home_drawer.dart';
 import 'package:provider/provider.dart';
 import '../../../main.dart';
 import '../../../theme_model.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/favorite/service/firestore.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
 
 class FavoriteProvider with ChangeNotifier {
   List<Product> _favoriteProducts = [];
@@ -65,28 +62,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
-      builder: (context, ThemeModel themeNotifier, child) {
+    return Consumer<ThemeModel>(
+      builder: (context, themeNotifier, child) {
         return Scaffold(
           appBar: AppBar(
-            title: Text('BeautyBlendr', style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
+            title: Text(
+              'BeautyBlendr',
+              style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18),
+            ),
             actions: [
               Container(
-                margin: EdgeInsets.only(right: 16),
-                child: IconButton(
-                  onPressed: () {
-                    themeNotifier.isDark 
-                      ? themeNotifier.isDark = false 
-                      : themeNotifier.isDark = true;
+                margin: const EdgeInsets.only(right: 16),
+                child: DayNightSwitcher(
+                  isDarkModeEnabled: themeNotifier.isDark,
+                  dayBackgroundColor:  Color(0xFF60C6A2),
+                  onStateChanged: (isDarkModeEnabled) {
+                    setState(() {
+                      themeNotifier.isDark = isDarkModeEnabled;
+                    });
                   },
-                  icon: Icon(
-                    themeNotifier.isDark ? Icons.wb_sunny_rounded : Icons.nightlight_round,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: themeNotifier.isDark ? Colors.black54 : Color(0xFF60C6A2),
                 ),
               ),
             ],
@@ -97,12 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.symmetric(vertical: 16),
               child: Column(
                 children: [
-                  //HomeHeader(),
                   DiscountBanner(),
-                  // Padding(
-                  //   padding: EdgeInsets.symmetric(horizontal: 20),
-                  //   child: Center(child: SearchField()), // Add SearchField
-                  // ),
                   Categories(),
                   SpecialOffers(),
                   SizedBox(height: 20),
@@ -117,4 +106,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
