@@ -1,10 +1,11 @@
-2024/06/24-13:25:04.492 3120 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.5b66a1c6\flutter_tools_chrome_device.aaa37f52\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/24-13:25:04.494 3120 Recovering log #17
-2024/06/24-13:25:04.494 3120 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.5b66a1c6\flutter_tools_chrome_device.aaa37f52\Default\Site Characteristics Database/000017.log 
-2024/06/24-13:25:04.496 3120 Delete type=0 #3
-2024/06/24-13:25:04.496 3120 Delete type=2 #4
-2024/06/24-13:25:04.496 3120 Delete type=0 #6
-2024/06/24-13:25:04.496 3120 Delete type=2 #7
-2024/06/24-13:25:04.496 3120 Delete type=2 #8
-2024/06/24-13:25:04.497 3120 Delete type=0 #10
-2024/06/24-13:25:04.497 3120 Delete type=2 #12
+2024/06/24-14:47:31.169 9578 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.df604d37\flutter_tools_chrome_device.f25fd3ac\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/24-14:47:31.170 9578 Recovering log #17
+2024/06/24-14:47:31.170 9578 (ignoring error) C:\Users\asus\AppData\Local\Temp\flutter_tools.df604d37\flutter_tools_chrome_device.f25fd3ac\Default\Site Characteristics Database/000017.log: dropping 382 bytes; Corruption: checksum mismatch
+2024/06/24-14:47:31.171 9578 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.df604d37\flutter_tools_chrome_device.f25fd3ac\Default\Site Characteristics Database/000017.log 
+2024/06/24-14:47:31.172 9578 Delete type=0 #3
+2024/06/24-14:47:31.172 9578 Delete type=2 #4
+2024/06/24-14:47:31.172 9578 Delete type=0 #6
+2024/06/24-14:47:31.172 9578 Delete type=2 #7
+2024/06/24-14:47:31.172 9578 Delete type=2 #8
+2024/06/24-14:47:31.172 9578 Delete type=0 #10
+2024/06/24-14:47:31.172 9578 Delete type=2 #12
