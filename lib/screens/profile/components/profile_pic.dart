@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../screens/profile/components/add_avatar_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
+import 'package:firebase_auth/firebase_auth.dart'; // Import Firebase Auth
 
 class ProfilePic extends StatefulWidget {
   final String? initialAvatarSvgData;
@@ -15,12 +17,37 @@ class ProfilePic extends StatefulWidget {
 class _ProfilePicState extends State<ProfilePic> {
   String? _avatarSvgData;
   String? _name;
+  String firstName = '';
+  bool isLoading = true;
 
   @override
   void initState() {
     super.initState();
     _avatarSvgData = widget.initialAvatarSvgData;
     _name = widget.initialName;
+    fetchFirstName();
+  }
+
+  Future<void> fetchFirstName() async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user != null) {
+        final uid = user.uid;
+        final doc = await FirebaseFirestore.instance.collection('users').doc(uid).get();
+        if (doc.exists) {
+          setState(() {
+            firstName = doc.data()?['firstName'] ?? 'User';
+            isLoading = false;
+          });
+        }
+      }
+    } catch (e) {
+      // Handle error
+      setState(() {
+        firstName = 'User';
+        isLoading = false;
+      });
+    }
   }
 
   @override
@@ -84,10 +111,12 @@ class _ProfilePicState extends State<ProfilePic> {
         if (_name != null)
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
-            child: Text(
-              'Hi, $_name!',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+            child: isLoading
+                ? CircularProgressIndicator()
+                : Text(
+                    'Hi, $firstName!',
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
           ),
       ],
     );
