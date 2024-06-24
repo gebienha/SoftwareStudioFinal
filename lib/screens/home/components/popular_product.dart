@@ -15,7 +15,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SectionTitle(
-            title: "Popular Products",
+            title: "All Products",
             press: () {
               Navigator.pushNamed(context, ProductsScreen.routeName);
             },
@@ -37,7 +37,7 @@ class PopularProducts extends StatelessWidget {
                           context,
                           DetailsScreen.routeName,
                           arguments: ProductDetailsArguments(
-                              product: demoProducts[index]),
+                              product: demoProducts[index],),
                         ),
                       ),
                     );

@@ -5,6 +5,7 @@ import 'components/product_description.dart';
 import 'components/product_images.dart';
 import 'components/top_rounded_container.dart';
 import 'components/reviews.dart';
+import 'package:provider/provider.dart';
 
 class SeeMoreDetailScreen extends StatelessWidget {
   static String routeName = "/SeeMoreDetails";
@@ -18,10 +19,10 @@ class SeeMoreDetailScreen extends StatelessWidget {
       // Handle the error by showing a placeholder or returning early
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Product Details"),
+          title: const Text("Product Details", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
         body: const Center(
-          child: Text("No product details available."),
+          child: Text("No product details available.", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
         ),
       );
     }
@@ -31,7 +32,8 @@ class SeeMoreDetailScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
-      backgroundColor: const Color(0xFFF5F6F9),
+      // backgroundColor: const Color(0xFFF5F6F9),
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -59,37 +61,24 @@ class SeeMoreDetailScreen extends StatelessWidget {
         children: [
           ProductImages(product: product),
           TopRoundedContainer(
-            color: Colors.white,
+            // color: Colors.white,
+            color: Theme.of(context).colorScheme.secondaryContainer,
             child: Column(
               children: [
                 ProductDescription(
                   product: product,
                   pressOnSeeMore: () {},
                 ),
-                TopRoundedContainer(
-                  color: const Color(0xFFF6F7F9),
-                  child: Column(
+                // TopRoundedContainer(
+                //   color: Theme.of(context).colorScheme.primaryContainer,
+                //   child: Column(
                     
-                  ),
-                ),
+                //   ),
+                // ),
               ],
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: TopRoundedContainer(
-        color: Colors.white,
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, CartScreen.routeName);
-              },
-              child: const Text("Add To Wishlist"),
-            ),
-          ),
-        ),
       ),
     );
   }

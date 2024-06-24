@@ -15,22 +15,43 @@ class DiscountBanner extends StatelessWidget {
         vertical: 16,
       ),
       decoration: BoxDecoration(
-        color: const Color(0xFF60C6A2),
+        // color: Colors.white, // Change background to white for better contrast
         borderRadius: BorderRadius.circular(20),
       ),
-      child: const Text.rich(
-        TextSpan(
-          style: TextStyle(color: Colors.white),
-          children: [
-            TextSpan(text: "A Summer Surprise\n"),
-            TextSpan(
-              text: "Cashback 20%",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+      child: Center(
+        child: RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            style: const TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+
             ),
-          ],
+            children: [
+              TextSpan(
+                text: "Hello, User!\n",
+                style: TextStyle(
+                  fontSize: 20, // Smaller font size for the first line
+                  color: Theme.of(context).colorScheme.onSecondaryContainer
+                ),
+              ),
+              TextSpan(
+                text: "Search for your perfect ",
+                style: TextStyle(
+                  fontSize: 24, // Bigger font size for the second line
+                  color: Theme.of(context).colorScheme.onSecondaryContainer
+                ),
+              ),
+              TextSpan(
+                text: "skincare",
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer, // Use the specific green color
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

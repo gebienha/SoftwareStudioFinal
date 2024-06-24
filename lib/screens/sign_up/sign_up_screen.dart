@@ -1,12 +1,43 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../components/socal_card.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import '../../components/socal_card.dart'; // Ensure this import is correct
 import '../../constants.dart';
+import '../complete_profile/complete_profile_screen.dart';
 import 'components/sign_up_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   static String routeName = "/sign_up";
 
   const SignUpScreen({super.key});
+
+  Future<void> _googleSignIn(BuildContext context) async {
+    try {
+      print('Attempting to sign in with Google...');
+      final GoogleSignIn googleSignIn = GoogleSignIn(
+        clientId: '39536504302-as5ubn1qs8hl6re4qiehnl25mvrrmgqd.apps.googleusercontent.com', // Replace with your OAuth Client ID
+      );
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+      if (googleUser == null) {
+        print('User canceled the sign-in');
+        return;
+      }
+
+      print('User signed in: ${googleUser.email}');
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      await FirebaseAuth.instance.signInWithCredential(credential);
+      print('Signed in with Google, navigating to CompleteProfileScreen');
+      Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+    } catch (error) {
+      print('Error during Google sign-in: $error');
+      // Handle error
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +47,7 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
-        title: const Text("Sign Up", style: TextStyle(color: Color(0xFF60C6A2))),
+        title: const Text("Sign Up", style: TextStyle(color: Color(0xFF60C6A2), fontSize: 18)),
       ),
       body: SafeArea(
         child: SizedBox(
@@ -66,7 +97,7 @@ class SignUpScreen extends StatelessWidget {
                     children: [
                       SocalCard(
                         icon: "assets/icons/google-icon.svg",
-                        press: () {},
+                        press: () => _googleSignIn(context),
                       ),
                       SocalCard(
                         icon: "assets/icons/facebook-2.svg",
@@ -98,3 +129,4 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+

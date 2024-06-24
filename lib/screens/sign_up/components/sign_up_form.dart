@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shop_app/screens/sign_up/sign_up_success.dart';
 import '../../../components/custom_surfix_icon.dart';
 import '../../../components/form_error.dart';
 import '../../../constants.dart';
@@ -18,6 +21,7 @@ class _SignUpFormState extends State<SignUpForm> {
   String? conform_password;
   bool remember = false;
   final List<String?> errors = [];
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   void addError({String? error}) {
     if (!errors.contains(error)) {
@@ -32,6 +36,31 @@ class _SignUpFormState extends State<SignUpForm> {
       setState(() {
         errors.remove(error);
       });
+    }
+  }
+
+  Future<void> _signUp() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      try {
+        await _auth.createUserWithEmailAndPassword(
+          email: email!,
+          password: password!,
+        );
+        // Navigate to success screen
+        Navigator.pushNamed(context, CompleteProfileScreen.routeName);
+      } on FirebaseAuthException catch (e) {
+        // Handle error
+        if (e.code == 'email-already-in-use') {
+          addError(error: "The email address is already in use.");
+        } else if (e.code == 'weak-password') {
+          addError(error: "The password is too weak.");
+        } else {
+          addError(error: e.message);
+        }
+      } catch (e) {
+        addError(error: "An unknown error occurred.");
+      }
     }
   }
 
@@ -160,13 +189,7 @@ class _SignUpFormState extends State<SignUpForm> {
           FormError(errors: errors),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // if all are valid then go to success screen
-                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
-              }
-            },
+            onPressed: _signUp,
             style: ElevatedButton.styleFrom(
               backgroundColor: Color(0xFF60C6A2),
               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -190,3 +213,4 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 }
+

@@ -30,17 +30,17 @@ class _ProductDescriptionState extends State<ProductDescription> {
   Widget getContent() {
     switch (selectedButtonIndex) {
       case 0:
-        return Text(widget.product.detail, textAlign: TextAlign.justify);
+        return Text(widget.product.detail, textAlign: TextAlign.justify, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
       case 1:
-        return Text(widget.product.recommend, textAlign: TextAlign.justify);
+        return Text(widget.product.recommend, textAlign: TextAlign.justify, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
       case 2:
-        return Text(widget.product.benefit, textAlign: TextAlign.justify);
+        return Text(widget.product.benefit, textAlign: TextAlign.justify, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
       case 3:
-        return Text(widget.product.ingredient, textAlign: TextAlign.justify);
+        return Text(widget.product.ingredient, textAlign: TextAlign.justify, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
       case 4:
-        return Text(widget.product.howto, textAlign: TextAlign.justify);
+        return Text(widget.product.howto, textAlign: TextAlign.justify,style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
       default:
-        return Text(widget.product.detail, textAlign: TextAlign.justify);
+        return Text(widget.product.detail, textAlign: TextAlign.justify, style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer));
     }
   }
 
@@ -52,7 +52,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
           Text(
             text,
             style: TextStyle(
-              color: selectedButtonIndex == index ? kPrimaryColor : Colors.grey,
+              color: selectedButtonIndex == index ? Theme.of(context).colorScheme.primary : Colors.grey,
               fontWeight: selectedButtonIndex == index ? FontWeight.bold : FontWeight.normal,
             ),
           ),
@@ -76,7 +76,8 @@ class _ProductDescriptionState extends State<ProductDescription> {
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 8), // Top padding for title
           child: Text(
             widget.product.title,
-            style: Theme.of(context).textTheme.titleLarge,
+            // style: Theme.of(context).textTheme.titleLarge,
+            style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer)
           ),
         ),
         Padding(
@@ -87,40 +88,35 @@ class _ProductDescriptionState extends State<ProductDescription> {
               Text(
                 '\$${widget.product.price.toStringAsFixed(2)}', // Displaying price with $ sign
                 style: TextStyle(
-                  color: kPrimaryColor,
+                  // color: kPrimaryColor,
+                  color: Theme.of(context).colorScheme.onTertiaryContainer,
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
               ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    widget.product.isFavourite = !widget.product.isFavourite;
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: widget.product.isFavourite
-                        ? const Color(0xFFFFE6E6)
-                        : const Color(0xFFF5F6F9),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
-                    ),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/icons/Heart Icon_2.svg",
-                    colorFilter: ColorFilter.mode(
-                      widget.product.isFavourite
-                          ? const Color(0xFFFF4848)
-                          : const Color(0xFFDBDEE4),
-                      BlendMode.srcIn,
-                    ),
-                    height: 16,
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: widget.product.isFavourite
+                      ? const Color(0xFFFFE6E6)
+                      : const Color(0xFFF5F6F9),
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    bottomLeft: Radius.circular(20),
                   ),
                 ),
+                child: SvgPicture.asset(
+                  "assets/icons/Heart Icon_2.svg",
+                  colorFilter: ColorFilter.mode(
+                    widget.product.isFavourite
+                        ? const Color(0xFFFF4848)
+                        : const Color(0xFFDBDEE4),
+                    BlendMode.srcIn,
+                  ),
+                  height: 16,
+                ),
               ),
+              
             ],
           ),
         ),
@@ -129,6 +125,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
           child: Text(
             widget.product.description,
             textAlign: TextAlign.justify,
+            style: TextStyle(color: Theme.of(context).colorScheme. onSecondaryContainer),
           ),
         ),
         Padding(

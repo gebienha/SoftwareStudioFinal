@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import '../../screens/details/components/firestore_review.dart';
+
+import 'package:flutter/material.dart';
 
 class AddReviewScreen extends StatefulWidget {
   static String routeName = "/add_review";
+  final String productId; // Product ID to add review for
 
-  const AddReviewScreen({Key? key}) : super(key: key);
+  const AddReviewScreen({Key? key, required this.productId}) : super(key: key);
 
   @override
   _AddReviewScreenState createState() => _AddReviewScreenState();
@@ -42,11 +46,12 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Add Your Review",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.onSecondaryContainer
               ),
             ),
             const SizedBox(height: 20),
@@ -114,9 +119,13 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
               ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {
-                if (_nameController.text.isNotEmpty && _reviewController.text.isNotEmpty && _rating > 0) {
-                  final usagePeriod = _isOtherSelected ? _otherUsageController.text : _selectedUsagePeriod;
+              onPressed: () async {
+                if (_nameController.text.isNotEmpty &&
+                    _reviewController.text.isNotEmpty &&
+                    _rating > 0) {
+                  final usagePeriod = _isOtherSelected
+                      ? _otherUsageController.text
+                      : _selectedUsagePeriod;
                   final newReview = {
                     'name': _nameController.text,
                     'comment': _reviewController.text,
@@ -125,7 +134,8 @@ class _AddReviewScreenState extends State<AddReviewScreen> {
                     'image': 'assets/images/user-placeholder.png', // Placeholder image
                   };
 
-                  Navigator.pop(context, newReview);
+                  await FirestoreService().addReview(widget.productId, newReview);
+                  Navigator.pop(context);
                 }
               },
               child: const Text("Submit Review"),

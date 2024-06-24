@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'components/splash_content.dart';
 import '../../constants.dart';
@@ -110,3 +111,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+

@@ -1,4 +1,44 @@
-2024/06/14-12:42:39.910 3630 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.d2a9feb5\flutter_tools_chrome_device.494ba377\Default\shared_proto_db/MANIFEST-000001
-2024/06/14-12:42:39.910 3630 Recovering log #4
-2024/06/14-12:42:39.911 3630 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.d2a9feb5\flutter_tools_chrome_device.494ba377\Default\shared_proto_db/000004.log 
-2024/06/14-12:42:39.912 3630 Delete type=0 #3
+2024/06/24-04:15:45.284 10fc Reusing MANIFEST C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.243bfa17\flutter_tools_chrome_device.d0c10648\Default\shared_proto_db/MANIFEST-000001
+2024/06/24-04:15:45.284 10fc Recovering log #60
+2024/06/24-04:15:45.285 10fc Reusing old log C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.243bfa17\flutter_tools_chrome_device.d0c10648\Default\shared_proto_db/000060.log 
+2024/06/24-04:15:45.286 10fc Delete type=2 #3
+2024/06/24-04:15:45.286 10fc Delete type=0 #3
+2024/06/24-04:15:45.286 10fc Delete type=0 #4
+2024/06/24-04:15:45.286 10fc Delete type=2 #5
+2024/06/24-04:15:45.286 10fc Delete type=0 #6
+2024/06/24-04:15:45.286 10fc Delete type=2 #7
+2024/06/24-04:15:45.286 10fc Delete type=0 #9
+2024/06/24-04:15:45.286 10fc Delete type=2 #10
+2024/06/24-04:15:45.286 10fc Delete type=0 #12
+2024/06/24-04:15:45.286 10fc Delete type=2 #14
+2024/06/24-04:15:45.286 10fc Delete type=0 #16
+2024/06/24-04:15:45.286 10fc Delete type=2 #17
+2024/06/24-04:15:45.286 10fc Delete type=0 #19
+2024/06/24-04:15:45.286 10fc Delete type=2 #20
+2024/06/24-04:15:45.286 10fc Delete type=0 #22
+2024/06/24-04:15:45.286 10fc Delete type=2 #23
+2024/06/24-04:15:45.286 10fc Delete type=0 #25
+2024/06/24-04:15:45.286 10fc Delete type=2 #27
+2024/06/24-04:15:45.286 10fc Delete type=0 #29
+2024/06/24-04:15:45.287 10fc Delete type=2 #30
+2024/06/24-04:15:45.287 10fc Delete type=0 #32
+2024/06/24-04:15:45.287 10fc Delete type=2 #33
+2024/06/24-04:15:45.287 10fc Delete type=0 #35
+2024/06/24-04:15:45.287 10fc Delete type=2 #36
+2024/06/24-04:15:45.287 10fc Delete type=0 #38
+2024/06/24-04:15:45.287 10fc Delete type=2 #39
+2024/06/24-04:15:45.287 10fc Delete type=0 #41
+2024/06/24-04:15:45.287 10fc Delete type=2 #42
+2024/06/24-04:15:45.287 10fc Delete type=0 #44
+2024/06/24-04:15:45.287 10fc Delete type=2 #45
+2024/06/24-04:15:45.287 10fc Delete type=0 #47
+2024/06/24-04:15:45.287 10fc Delete type=2 #49
+2024/06/24-04:15:45.287 10fc Delete type=0 #51
+2024/06/24-04:15:45.287 10fc Delete type=2 #52
+2024/06/24-04:15:45.287 10fc Delete type=0 #54
+2024/06/24-04:15:45.287 10fc Delete type=2 #55
+2024/06/24-04:15:45.287 10fc Delete type=0 #57
+2024/06/24-04:15:45.287 10fc Delete type=2 #58
+2024/06/24-04:16:01.403 2768 Level-0 table #65: started
+2024/06/24-04:16:01.406 2768 Level-0 table #65: 135270 bytes OK
+2024/06/24-04:16:01.407 2768 Delete type=0 #60

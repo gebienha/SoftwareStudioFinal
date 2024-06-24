@@ -1,3 +1,4 @@
-2024/06/16-21:41:57.615 1db4 Reusing MANIFEST C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.53a667ba\flutter_tools_chrome_device.74dc3481\Default\Local Storage\leveldb/MANIFEST-000001
-2024/06/16-21:41:57.622 1db4 Recovering log #3
-2024/06/16-21:41:57.625 1db4 Reusing old log C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.53a667ba\flutter_tools_chrome_device.74dc3481\Default\Local Storage\leveldb/000003.log 
+2024/06/24-04:15:45.216 75cc Reusing MANIFEST C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.243bfa17\flutter_tools_chrome_device.d0c10648\Default\Local Storage\leveldb/MANIFEST-000001
+2024/06/24-04:15:45.219 75cc Recovering log #4
+2024/06/24-04:15:45.221 75cc Reusing old log C:\Users\Tiffany\AppData\Local\Temp\flutter_tools.243bfa17\flutter_tools_chrome_device.d0c10648\Default\Local Storage\leveldb/000004.log 
+2024/06/24-04:15:45.221 75cc Delete type=0 #3

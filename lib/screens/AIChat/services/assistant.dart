@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../models/chat_message.dart';
 import 'package:http/http.dart' as http;
 
+
 class ChatService {
   static const String _apiKey =
       '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'; // FIXME: Replace with your API key

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:shop_app/screens/init_screen.dart';
 
@@ -11,8 +12,8 @@ class LoginSuccessScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const SizedBox(),
-        title: const Text("Login Success", style: TextStyle(color: Color(0xFF60C6A2))),
-        backgroundColor: Colors.white,
+        title: Text("Login Success", style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer, fontSize: 18)),
+        // backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Color(0xFF60C6A2)),
       ),
@@ -34,12 +35,12 @@ class LoginSuccessScreen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      const Text(
+                      Text(
                         "Success",
                         style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF60C6A2),
+                          color: Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
                       const Spacer(),
@@ -51,17 +52,17 @@ class LoginSuccessScreen extends StatelessWidget {
                               Navigator.pushNamed(context, InitScreen.routeName);
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF60C6A2),
+                              backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                               padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                               minimumSize: Size(100, 50),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
                             ),
-                            child: const Text(
+                            child: Text(
                               "Back to home",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Theme.of(context).colorScheme.onPrimaryContainer,
                                 fontSize: 16,
                                 fontFamily: 'Inter',
                                 fontWeight: FontWeight.w600,
@@ -82,3 +83,4 @@ class LoginSuccessScreen extends StatelessWidget {
     );
   }
 }
+

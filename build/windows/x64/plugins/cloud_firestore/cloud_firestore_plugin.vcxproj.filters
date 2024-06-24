@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\cloud_firestore_plugin_c_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\cloud_firestore_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\messages.g.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\firestore_codec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\include\cloud_firestore\cloud_firestore_plugin_c_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\cloud_firestore_plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\messages.g.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\firestore_codec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\build\windows\x64\generated\cloud_firestore\plugin_version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\IdeaPad\Documents\GitHub\SoftwareStudioFinalBranch\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore\windows\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{446335B9-CAB2-3351-9AC0-C9DFD27C8A6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8C7CD7AB-5AC8-3553-822C-3708EAD72684}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

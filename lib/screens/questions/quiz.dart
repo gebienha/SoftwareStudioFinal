@@ -6,14 +6,40 @@ import 'results_screen.dart';
 import '../AIChat/AIChatScreen.dart';
 import '../../../constants.dart';
 import 'package:provider/provider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class FirestoreService {
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
+
+  Future<void> saveBendera(int value) async {
+    await _db.collection('bendera').doc('currentBendera').set({'value': value});
+  }
+
+  Future<int> fetchBendera() async {
+    DocumentSnapshot doc = await _db.collection('bendera').doc('currentBendera').get();
+    return doc.exists ? doc['value'] as int : 0;
+  }
+}
+
 
 class BenderaProvider with ChangeNotifier {
   int _bendera = 0;
+  final FirestoreService _firestoreService = FirestoreService(); // Initialize the Firestore service
+  
+  BenderaProvider() {
+    fetchBendera();
+  }
 
   int get bendera => _bendera;
 
   set bendera(int value) {
     _bendera = value;
+    notifyListeners();
+    _firestoreService.saveBendera(value); // Save the value to Firestore
+  }
+
+  Future<void> fetchBendera() async {
+    _bendera = await _firestoreService.fetchBendera();
     notifyListeners();
   }
 }
