@@ -11,7 +11,7 @@ import 'screens/questions/quiz.dart';
 import 'screens/questions/results_screen.dart';
 import 'screens/home/home_screen.dart';
 import 'routes.dart';
-import 'screens/profile/components/avatar_provider.dart'; 
+import 'screens/profile/components/avatar_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
