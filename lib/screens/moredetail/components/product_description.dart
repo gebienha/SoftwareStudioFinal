@@ -52,7 +52,7 @@ class _ProductDescriptionState extends State<ProductDescription> {
           Text(
             text,
             style: TextStyle(
-              color: selectedButtonIndex == index ? Theme.of(context).colorScheme.primary : Colors.grey,
+              color: selectedButtonIndex == index ? Theme.of(context).colorScheme.primary : Theme.of(context).colorScheme.outline,
               fontWeight: selectedButtonIndex == index ? FontWeight.bold : FontWeight.normal,
             ),
           ),

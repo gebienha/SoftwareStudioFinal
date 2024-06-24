@@ -120,7 +120,7 @@ class SkincareRoutineStepScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Text(
           routineStepDetails,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 18, color: Theme.of(context).colorScheme.onSecondaryContainer),
         ),
       ),
     );

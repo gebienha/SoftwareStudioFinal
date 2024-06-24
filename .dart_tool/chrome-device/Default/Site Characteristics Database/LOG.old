@@ -1,10 +1,23 @@
-2024/06/23-22:13:11.388 405c Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.5e1f7e5d\flutter_tools_chrome_device.44b4508\Default\Site Characteristics Database/MANIFEST-000001
-2024/06/23-22:13:11.389 405c Recovering log #17
-2024/06/23-22:13:11.390 405c Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.5e1f7e5d\flutter_tools_chrome_device.44b4508\Default\Site Characteristics Database/000017.log 
-2024/06/23-22:13:11.391 405c Delete type=0 #3
-2024/06/23-22:13:11.391 405c Delete type=2 #4
-2024/06/23-22:13:11.391 405c Delete type=0 #6
-2024/06/23-22:13:11.392 405c Delete type=2 #7
-2024/06/23-22:13:11.392 405c Delete type=2 #8
-2024/06/23-22:13:11.392 405c Delete type=0 #10
-2024/06/23-22:13:11.392 405c Delete type=2 #12
+<<<<<<< HEAD
+2024/06/23-22:34:04.693 18e0 Reusing MANIFEST C:\Users\asus\AppData\Local\Temp\flutter_tools.27fc9f7e\flutter_tools_chrome_device.d32af32b\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/23-22:34:04.696 18e0 Recovering log #17
+2024/06/23-22:34:04.697 18e0 Reusing old log C:\Users\asus\AppData\Local\Temp\flutter_tools.27fc9f7e\flutter_tools_chrome_device.d32af32b\Default\Site Characteristics Database/000017.log 
+2024/06/23-22:34:04.698 18e0 Delete type=0 #3
+2024/06/23-22:34:04.698 18e0 Delete type=2 #4
+2024/06/23-22:34:04.698 18e0 Delete type=0 #6
+2024/06/23-22:34:04.698 18e0 Delete type=2 #7
+2024/06/23-22:34:04.698 18e0 Delete type=2 #8
+2024/06/23-22:34:04.699 18e0 Delete type=0 #10
+2024/06/23-22:34:04.699 18e0 Delete type=2 #12
+=======
+2024/06/23-22:07:24.594 370c Reusing MANIFEST C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6ee4e864\flutter_tools_chrome_device.decf23aa\Default\Site Characteristics Database/MANIFEST-000001
+2024/06/23-22:07:24.595 370c Recovering log #17
+2024/06/23-22:07:24.596 370c Reusing old log C:\Users\IdeaPad\AppData\Local\Temp\flutter_tools.6ee4e864\flutter_tools_chrome_device.decf23aa\Default\Site Characteristics Database/000017.log 
+2024/06/23-22:07:24.597 370c Delete type=0 #3
+2024/06/23-22:07:24.597 370c Delete type=2 #4
+2024/06/23-22:07:24.598 370c Delete type=0 #6
+2024/06/23-22:07:24.598 370c Delete type=2 #7
+2024/06/23-22:07:24.599 370c Delete type=2 #8
+2024/06/23-22:07:24.599 370c Delete type=0 #10
+2024/06/23-22:07:24.599 370c Delete type=2 #12
+>>>>>>> 1fe9ee35b079260f82635f9b8dd0be213d4113e0

@@ -392,6 +392,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "smooth_page_indicator",
+      "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///C:/Users/asus/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
@@ -512,7 +518,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-06-24T05:21:47.546837Z",
+  "generated": "2024-06-24T05:23:18.232774Z",
   "generator": "pub",
   "generatorVersion": "3.3.2"
 }
