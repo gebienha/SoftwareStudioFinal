@@ -12,7 +12,7 @@ class SizeConfig {
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
     orientation = _mediaQueryData.orientation;
-    defaultSize = orientation == Orientation.landscape ? screenWidth * 0.024 : screenHeight * 0.024;
+    defaultSize = orientation == Orientation.landscape ? screenWidth : screenHeight;
   }
 }
 

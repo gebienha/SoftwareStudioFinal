@@ -15,7 +15,7 @@ class Land extends StatelessWidget {
       bottom: getProportionateScreenHeight(-190),
       right: 0,
       child: Image.asset(
-        isDayMood ? "assets/images/land_tree_light.png" : "assets/images/land_tree_dark.png",
+        isDayMood ? "assets/images/land_tree_light.png" : "assets/images/land_tree_light.png",
         height: SizeConfig.screenHeight,
         width: SizeConfig.screenWidth,
         fit: BoxFit.cover, // Cover the entire screen

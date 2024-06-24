@@ -100,15 +100,15 @@ class _PersonalizedSkincareRoutineScreenState
     );
 
     List<Color> lightBgColors = [
-      Color(0xFF8C2480),
-      Color(0xFFCE587D),
       Color(0xFFFF9485),
+      Color(0xFFCE587D),
+      Color(0xFFFCBC98),
       if (isFullSun) Color(0xFFFF9D80),
     ];
     var darkBgColors = [
-      Color(0xFF0D1441),
-      Color(0xFF283584),
-      Color(0xFF376AB2),
+      Color(0xFF471069),
+      Color.fromARGB(255, 39, 103, 163),
+      Color(0xFF71c3f7),
     ];
 
     return Scaffold(
@@ -136,7 +136,7 @@ class _PersonalizedSkincareRoutineScreenState
         ),
         child: Stack(
           children: [
-            Sun(duration: _duration, isFullSun: isFullSun),
+            Sun(duration: _duration, isFullSun: isFullSun, isDayMood: isDayMood,),
             Land(isDayMood: isDayMood),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
