@@ -77,7 +77,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       return Center(
                         child: Text(
                           "No favorite products yet.",
-                          //style: Theme.of(context).textTheme.subtitle1,
+                          style: TextStyle(color: Theme.of(context).colorScheme.outline),
                         ),
                       );
                     } else {

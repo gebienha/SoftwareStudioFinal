@@ -37,7 +37,10 @@ class _AddAvatarPageState extends State<AddAvatarPage> {
                     scaffoldHeight: 300,
                     autosave: true,
                     theme: FluttermojiThemeData(
-                      labelTextStyle: Theme.of(context).textTheme.headlineSmall,
+                      // labelTextStyle: Theme.of(context).textTheme.headlineSmall,
+                      labelTextStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.onSecondaryContainer,
+                      ),
                       primaryBgColor: Theme.of(context).colorScheme.surfaceVariant,
                       selectedTileDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16.0),
@@ -71,7 +74,7 @@ class _AddAvatarPageState extends State<AddAvatarPage> {
                             height: 24,
                             child: CircularProgressIndicator(color: Colors.white),
                           )
-                        : const Text('Save Avatar'),
+                        : Text('Save Avatar', style: TextStyle(color: Theme.of(context).colorScheme.background)),
                   ),
                 ],
               ),
