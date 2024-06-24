@@ -81,6 +81,7 @@ class SkincareRoutineStepDetailScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer
                   ),
                 ),
               ),
@@ -93,7 +94,7 @@ class SkincareRoutineStepDetailScreen extends StatelessWidget {
             SizedBox(height: 20),
             Text(
               stepDescription,
-              style: TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: 14, color: Theme.of(context).colorScheme.onSecondaryContainer),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
@@ -102,9 +103,9 @@ class SkincareRoutineStepDetailScreen extends StatelessWidget {
                 onNextStep();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: kPrimaryColor,
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
               ),
-              child: Text('Next Step'),
+              child: Text('Next Step', style: TextStyle(color: Theme.of(context).colorScheme.background)),
             ),
             Spacer(),
           ],

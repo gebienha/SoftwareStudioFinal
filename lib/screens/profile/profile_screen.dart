@@ -46,19 +46,19 @@ class ProfileScreen extends StatelessWidget {
                 Navigator.pushNamed(context, MyProfilePage.routeName);
               },
             ),
-            ProfileMenu(
-              text: "Notifications",
-              icon: "assets/icons/Bell.svg",
-              press: () {},
-            ),
-            ProfileMenu(
-              text: "Settings",
-              icon: "assets/icons/Settings.svg",
-              press: () {},
-            ),
+            // ProfileMenu(
+            //   text: "Notifications",
+            //   icon: "assets/icons/Bell.svg",
+            //   press: () {},
+            // ),
+            // ProfileMenu(
+            //   text: "Settings",
+            //   icon: "assets/icons/Settings.svg",
+            //   press: () {},
+            // ),
             ProfileMenu(
               text: "Skin Tracker",
-              icon: "assets/icons/Question mark.svg",
+              icon: "assets/icons/calendar.svg",
               press: () {
                 Navigator.pushNamed(
                   context,
