@@ -29,7 +29,6 @@ class SpecialOffers extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/Image Banner 5.jpg",
                 category: "Skincare Routine",
-                numOfBrands: 5,
                 press: () {
                   // Navigator.pushNamed(context, ProductsScreen.routeName);
                   Navigator.pushNamed(context,SkincareRoutineScreen.routeName);
@@ -38,7 +37,6 @@ class SpecialOffers extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/Image Banner 2.png",
                 category: "Popular in 2024",
-                numOfBrands: 5,
                 press: () {
                   // Navigator.pushNamed(context, ProductsScreen.routeName);
                   Navigator.pushNamed(context, PopularBrandsScreen.routeName);
@@ -47,7 +45,6 @@ class SpecialOffers extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/Image Banner 3.png",
                 category: "Affordable Brands",
-                numOfBrands: 5,
                 press: () {
                   Navigator.pushNamed(context, CheapBrandsScreen.routeName);
                 },
@@ -66,12 +63,10 @@ class SpecialOfferCard extends StatelessWidget {
     Key? key,
     required this.category,
     required this.image,
-    required this.numOfBrands,
     required this.press,
   }) : super(key: key);
 
   final String category, image;
-  final int numOfBrands;
   final GestureTapCallback press;
 
   @override
@@ -121,7 +116,6 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
                       ],
                     ),
                   ),
