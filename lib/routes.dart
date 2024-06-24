@@ -67,7 +67,7 @@ final Map<String, WidgetBuilder> routes = {
   PersonalizedSkincareRoutineScreen.routeName: (context) => PersonalizedSkincareRoutineScreen(),
   SkincareRoutineStepScreen.routeName: (context) => SkincareRoutineStepScreen(),
   UserManual.routeName: (context) => UserManual(),
-  AddAvatarPage.routeName:(context) => const AddAvatarPage(),
+  AddAvatarPage.routeName: (context) => const AddAvatarPage(),
 };
 
 Route<dynamic> generateRoute(RouteSettings settings) {
