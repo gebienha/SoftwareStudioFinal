@@ -1,6 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'skincare_routine.dart';
 import 'routine_detail.dart';
+import 'routinestep_detail.dart';
+import 'package:shop_app/theme.dart';
+import 'package:shop_app/theme_model.dart';
 
 class PersonalizedSkincareRoutineScreen extends StatelessWidget {
   static const routeName = '/personalized-skincare-routine';
@@ -10,79 +14,83 @@ class PersonalizedSkincareRoutineScreen extends StatelessWidget {
     final skinTypeId = ModalRoute.of(context)!.settings.arguments as String;
     final skinType = skinTypeCategories.firstWhere((category) => category.id == skinTypeId);
 
-    // Example skincare routine data for each skin type with day and night routines
-    final Map<String, Map<String, List<String>>> skincareRoutines = {
-      '1': {
-        'Day': ['Cleanser', 'Toner', 'Serum', 'Moisturizer','Sunscreen'],
-        'Night': ['Cleanser', 'Toner', 'Serum', 'Face oil'],
-      },
-      '2': {
-        'Day': ['Hydrating Cleanser', 'Toner', 'Serum', 'Moisturizer', 'Sunscreen'],
-        'Night': ['Hydrating Cleanser', 'Toner', 'Serum', 'Night Cream', 'Face Oil'],
-      },
-      '3': {
-        'Day': ['Cleanser', 'Toner', 'Serum', 'Moisturizer','Sunscreen'],
-        'Night': ['Cleanser', 'Toner', 'Serum', 'Face Oil','Night Cream'],
-      },
-      '4': {
-        'Day': ['Cleanser', 'Toner', 'Serum', 'Moisturizer','Sunscreen'],
-        'Night': ['Cleanser', 'Toner', 'Serum', 'Face Oil','Night Cream'],
-      },
-    };
-
-    final dayRoutine = skincareRoutines[skinTypeId]?['Day'] ?? [];
-    final nightRoutine = skincareRoutines[skinTypeId]?['Night'] ?? [];
-
     return Scaffold(
       appBar: AppBar(
-        title: Text('${skinType.title} Skin Routine', style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Day Routine', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondaryContainer)),
-            Expanded(
-              child: ListView.builder(
-                itemCount: dayRoutine.length,
-                itemBuilder: (context, index) {
-                  final step = dayRoutine[index];
-                  return ListTile(
-                    title: Text(step, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        SkincareRoutineStepScreen.routeName,
-                        arguments: {'skinTypeId': skinTypeId, 'stepId': step, 'routineType': 'Day'},
-                      );
-                    },
-                  );
-                },
-              ),
-            ),
-            SizedBox(height: 16),
-            Text('Night Routine', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.onSecondaryContainer)),
-            Expanded(
-              child: ListView.builder(
-                itemCount: nightRoutine.length,
-                itemBuilder: (context, index) {
-                  final step = nightRoutine[index];
-                  return ListTile(
-                    title: Text(step, style: TextStyle(color: Theme.of(context).colorScheme.onSurface)),
-                    onTap: () {
-                      Navigator.pushNamed(
-                        context,
-                        SkincareRoutineStepScreen.routeName,
-                        arguments: {'skinTypeId': skinTypeId, 'stepId': step, 'routineType': 'Night'},
-                      );
-                    },
-                  );
-                },
-              ),
-            ),
-          ],
+        title: Text(
+          '${skinType.title} Skin Routine',
+          style: const TextStyle(
+            color: Color(0xFF60C6A2),
+            fontSize: 18.0,
+          ),
         ),
+        //backgroundColor: Color(0xFF60C6A2),
+      ),
+      body: Stack(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  color: const Color.fromARGB(255, 0, 255, 162).withOpacity(0.3), // Light orange for the left side
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  color: Color.fromARGB(255, 3, 84, 62).withOpacity(0.8), // Light blue for the right side
+                ),
+
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Choose Your Routine', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          SkincareRoutineStepScreen.routeName,
+                          arguments: {'skinTypeId': skinTypeId, 'routineType': 'Day'},
+                        );
+                      },
+                      child: const Column(
+                        children: [
+                          Icon(Icons.wb_sunny, size: 80, color: Color.fromARGB(255, 0, 0, 0)),
+                          SizedBox(height: 10),
+                          Text('Day Routine', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          SkincareRoutineStepScreen.routeName,
+                          arguments: {'skinTypeId': skinTypeId, 'routineType': 'Night'},
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Icon(Icons.nights_stay, size: 80, color: Color.fromARGB(255, 255, 255, 255)),
+                          SizedBox(height: 10),
+                          Text('Night Routine', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

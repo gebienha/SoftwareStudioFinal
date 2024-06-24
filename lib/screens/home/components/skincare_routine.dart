@@ -14,6 +14,7 @@ class Category {
   });
 }
 
+// Define skin type categories with images
 final List<Category> skinTypeCategories = [
   const Category(id: '1', title: 'Oily', image: "assets/images/oily_skin.jpg"),
   const Category(id: '2', title: 'Dry', image: "assets/images/dry_skin.jpg"),
