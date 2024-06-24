@@ -31,7 +31,7 @@ class ProfileMenu extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.onSecondaryContainer,
               width: 22,
             ),
             const SizedBox(width: 20),
@@ -39,7 +39,7 @@ class ProfileMenu extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w600,
@@ -48,7 +48,7 @@ class ProfileMenu extends StatelessWidget {
             ),
             Icon(
               Icons.arrow_forward_ios,
-              color: Theme.of(context).colorScheme.background,
+              color: Theme.of(context).colorScheme.onSecondaryContainer,
             ),
           ],
         ),
