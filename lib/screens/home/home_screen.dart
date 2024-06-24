@@ -13,6 +13,8 @@ import '../../../theme_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shop_app/models/Product.dart';
 import 'package:shop_app/screens/favorite/service/firestore.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
+
 
 class FavoriteProvider with ChangeNotifier {
   List<Product> _favoriteProducts = [];
