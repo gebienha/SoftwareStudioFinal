@@ -51,7 +51,7 @@ class _AddAvatarPageState extends State<AddAvatarPage> {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  TextFormField(
+                  /*TextFormField(
                     decoration: InputDecoration(
                       labelText: 'Name',
                       border: OutlineInputBorder(
@@ -61,7 +61,7 @@ class _AddAvatarPageState extends State<AddAvatarPage> {
                     validator: (value) =>
                         value!.isEmpty ? 'Please enter your name' : null,
                     onSaved: (value) => _enteredName = value!,
-                  ),
+                  ),*/
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: _isSavingAvatar ? null : () => _submit(),
