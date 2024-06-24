@@ -115,12 +115,12 @@ class _PersonalizedSkincareRoutineScreenState
       appBar: AppBar(
         title: Text(
           '${skinType.title} Skin Routine',
-          style: const TextStyle(
-            color: Color(0xFF60C6A2),
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimaryContainer,
             fontSize: 18.0,
           ),
         ),
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
       ),
       body: AnimatedContainer(
         duration: _duration,
