@@ -57,7 +57,7 @@ class HomeDrawer extends StatelessWidget {
               'Home',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             onTap: () {
@@ -74,7 +74,7 @@ class HomeDrawer extends StatelessWidget {
               'Products',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             onTap: () {
@@ -96,7 +96,7 @@ class HomeDrawer extends StatelessWidget {
               'Categories',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             onTap: () {
@@ -117,7 +117,7 @@ class HomeDrawer extends StatelessWidget {
               'Favorite',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             onTap: () {
@@ -136,7 +136,7 @@ class HomeDrawer extends StatelessWidget {
               'Skin Tracker',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
-                fontSize: 24,
+                fontSize: 20,
               ),
             ),
             onTap: () {
