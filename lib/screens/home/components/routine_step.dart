@@ -237,7 +237,7 @@ class _PersonalizedSkincareRoutineScreenState
                           VerticalSpacing(of: 10),
                           Text(
                             'Press the button to proceed',
-                            style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+                            style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255)),
                           ),
                         ],
                       ),
