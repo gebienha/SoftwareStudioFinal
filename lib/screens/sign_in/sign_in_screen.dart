@@ -99,14 +99,14 @@ class SignInScreen extends StatelessWidget {
                         icon: "assets/icons/google-icon.svg",
                         press: () => _googleSignIn(context), // Trigger Google Sign-In
                       ),
-                      SocalCard(
-                        icon: "assets/icons/facebook-2.svg",
-                        press: () {},
-                      ),
-                      SocalCard(
-                        icon: "assets/icons/twitter.svg",
-                        press: () {},
-                      ),
+                      // SocalCard(
+                      //   icon: "assets/icons/facebook-2.svg",
+                      //   press: () {},
+                      // ),
+                      // SocalCard(
+                      //   icon: "assets/icons/twitter.svg",
+                      //   press: () {},
+                      // ),
                     ],
                   ),
                   const SizedBox(height: 20),
