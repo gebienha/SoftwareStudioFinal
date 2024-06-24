@@ -16,10 +16,10 @@ class Category {
 
 // Define skin type categories with images
 final List<Category> skinTypeCategories = [
-  const Category(id: '1', title: 'Oily', image: 'assets/images/oily_skin.jpg'),
-  const Category(id: '2', title: 'Dry', image: 'assets/images/dry_skin.jpg'),
-  const Category(id: '3', title: 'Combination', image: 'assets/images/combination_skin.jpg'),
-  const Category(id: '4', title: 'Normal', image: 'assets/images/normal_skin.png'),
+  const Category(id: '1', title: 'Oily', image: "assets/images/oily_skin.jpg"),
+  const Category(id: '2', title: 'Dry', image: "assets/images/dry_skin.jpg"),
+  const Category(id: '3', title: 'Combination', image: "assets/images/combination_skin.jpg"),
+  const Category(id: '4', title: 'Normal', image: "assets/images/normal_skin.png"),
 ];
 
 class SkincareRoutineScreen extends StatefulWidget {
@@ -84,94 +84,69 @@ class _SkincareRoutineScreenState extends State<SkincareRoutineScreen>
         itemBuilder: (BuildContext context, int index) {
           final category = skinTypeCategories[index];
 
-          // Calculate the row number of the current category
-          int rowIndex = index ~/ 2;
-
-          return AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              final animationValue = _animationController.value;
-
-              // Adjust the Interval based on the row number
-              final slideInAnimation = Tween<Offset>(
-                begin: const Offset(0.0, 4),
-                end: const Offset(0.0, 0.0),
-              ).animate(
-                CurvedAnimation(
-                  parent: _animationController,
-                  curve: Interval(
-                    (rowIndex / (skinTypeCategories.length / 2)) * 0.5, // Adjusted Interval
-                    1.0,
-                    curve: Curves.easeInOutCubic,
+          return GestureDetector(
+            onTap: () => _selectSkinType(context, category),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(0, 3), // changes position of shadow
                   ),
-                ),
-              );
-
-              return SlideTransition(
-                position: slideInAnimation,
-                child: child!,
-              );
-            },
-            child: CategoryGridItem(
-              category: category,
-              onSelectCategory: () {
-                _selectSkinType(context, category);
-              },
+                ],
+              ),
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset(
+                      category.image,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Positioned.fill(
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.transparent,
+                            Colors.black54,
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                      padding: const EdgeInsets.fromLTRB(16, 40, 16, 12),
+                      child: Center(
+                        child: Text(
+                          category.title,
+                          maxLines: 2,
+                          textAlign: TextAlign.center,
+                          softWrap: true,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-// CategoryGridItem widget
-class CategoryGridItem extends StatelessWidget {
-  final Category category;
-  final VoidCallback onSelectCategory;
-
-  const CategoryGridItem({
-    required this.category,
-    required this.onSelectCategory,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onSelectCategory,
-      child: Container(
-        padding: const EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              category.image,
-              height: 80,
-              width: 80,
-            ),
-            SizedBox(height: 10),
-            Text(
-              category.title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
       ),
     );
   }
