@@ -38,6 +38,7 @@ class PersonalizedSkincareRoutineScreen extends StatelessWidget {
                 child: Container(
                   color: Color.fromARGB(255, 3, 84, 62).withOpacity(0.8), // Light blue for the right side
                 ),
+
               ),
             ],
           ),
